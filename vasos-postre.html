@@ -645,5 +645,33 @@
 
     <script src="js/header.js"></script>
 
+    <script>
+        document.getElementById('vasosForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const cantidad = document.getElementById('cantidad').value;
+            const fecha = document.getElementById('fecha').value;
+            const saboresChecked = Array.from(document.querySelectorAll('input[name="sabores"]:checked')).map(cb => cb.value);
+            const evento = document.getElementById('evento').value;
+            const comentarios = document.getElementById('comentarios').value.trim();
+            const entrega = document.querySelector('input[name="entrega"]:checked').value;
+
+            const texto = `Hola Tina! Quiero hacer un pedido de vasos de postre.\n\n` +
+                `Nombre: ${nombre}\n` +
+                `Teléfono: ${telefono}\n` +
+                `Email: ${email}\n` +
+                `Cantidad: ${cantidad} uds.\n` +
+                `Fecha del evento: ${fecha}\n` +
+                (saboresChecked.length ? `Sabores: ${saboresChecked.join(', ')}\n` : '') +
+                (evento ? `Tipo de evento: ${evento}\n` : '') +
+                `Entrega: ${entrega}\n` +
+                (comentarios ? `Comentarios: ${comentarios}` : '');
+
+            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
+        });
+    </script>
+
 </body>
 </html>

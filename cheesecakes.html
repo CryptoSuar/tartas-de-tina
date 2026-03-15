@@ -718,6 +718,31 @@
     
     <script src="js/header.js"></script>
 
+    <script>
+        document.getElementById('cheesecakeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const sabor = document.getElementById('sabor').value;
+            const fecha = document.getElementById('fecha').value;
+            const ocasion = document.getElementById('ocasion').value;
+            const comentarios = document.getElementById('comentarios').value.trim();
+            const entrega = document.querySelector('input[name="entrega"]:checked').value;
+
+            const texto = `Hola Tina! Quiero hacer un pedido de cheesecake.\n\n` +
+                `Nombre: ${nombre}\n` +
+                `Teléfono: ${telefono}\n` +
+                `Email: ${email}\n` +
+                `Cheesecake: ${sabor}\n` +
+                `Fecha de recogida/entrega: ${fecha}\n` +
+                (ocasion ? `Ocasión: ${ocasion}\n` : '') +
+                `Entrega: ${entrega}\n` +
+                (comentarios ? `Comentarios: ${comentarios}` : '');
+
+            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
+        });
+    </script>
 
 </body>
 </html>

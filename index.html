@@ -1094,34 +1094,21 @@
         const formMessage = document.getElementById('formMessage');
         
         if (contactForm) {
-            contactForm.addEventListener('submit', async (e) => {
+            contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
-                const formData = {
-                    nombre: document.getElementById('nombre').value,
-                    telefono: document.getElementById('telefono').value,
-                    email: document.getElementById('email').value,
-                    mensaje: document.getElementById('mensaje').value
-                };
-                
-                // Mostrar mensaje de éxito (simulado por ahora)
-                formMessage.style.display = 'block';
-                formMessage.className = 'form-message success';
-                formMessage.innerHTML = `
-                    <i class="fas fa-check-circle"></i>
-                    <h3>¡Gracias por contactar!</h3>
-                    <p>Hemos recibido tu mensaje. Te responderemos lo antes posible.</p>
-                `;
-                
-                // Limpiar formulario
-                contactForm.reset();
-                
-                // Scroll al mensaje
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // TODO: Aquí se implementará el envío real de email
-                // Por ahora solo mostramos el mensaje de confirmación
-                console.log('Datos del formulario:', formData);
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const mensaje = document.getElementById('mensaje').value.trim();
+
+                const texto = `Hola Tina! Me gustaría contactar contigo.\n\n` +
+                    `Nombre: ${nombre}\n` +
+                    `Teléfono: ${telefono}\n` +
+                    `Email: ${email}\n` +
+                    `Mensaje: ${mensaje}`;
+
+                window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
             });
         }
 

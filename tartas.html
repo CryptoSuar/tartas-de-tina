@@ -1120,38 +1120,24 @@
         if (formPersonalizacion) {
             formPersonalizacion.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
-                // Validar que todos los campos estén completos
-                const formData = {
-                    tamano: formPersonalizacion.tamano.value,
-                    bizcocho: formPersonalizacion.bizcocho.value,
-                    relleno: formPersonalizacion.relleno.value,
-                    decoracion: formPersonalizacion.decoracion.value.trim()
-                };
-                
-                // Validación
-                if (!formData.tamano) {
-                    showNotification('Por favor, selecciona un tamaño', 'error');
-                    return;
-                }
-                
-                if (!formData.bizcocho) {
-                    showNotification('Por favor, selecciona un sabor de bizcocho', 'error');
-                    return;
-                }
-                
-                if (!formData.relleno) {
-                    showNotification('Por favor, selecciona un relleno', 'error');
-                    return;
-                }
-                
-                if (!formData.decoracion) {
-                    showNotification('Por favor, describe la decoración que deseas', 'error');
-                    return;
-                }
-                
-                // Si todo está correcto, añadir al carrito
-                addCustomCakeToCart(formData);
+
+                const tamano = formPersonalizacion.tamano.value;
+                const bizcocho = formPersonalizacion.bizcocho.value;
+                const relleno = formPersonalizacion.relleno.value;
+                const decoracion = formPersonalizacion.decoracion.value.trim();
+
+                if (!tamano) { showNotification('Por favor, selecciona un tamaño', 'error'); return; }
+                if (!bizcocho) { showNotification('Por favor, selecciona un sabor de bizcocho', 'error'); return; }
+                if (!relleno) { showNotification('Por favor, selecciona un relleno', 'error'); return; }
+                if (!decoracion) { showNotification('Por favor, describe la decoración que deseas', 'error'); return; }
+
+                const texto = `Hola Tina! Me gustaría pedir una tarta personalizada.\n\n` +
+                    `Tamaño: ${tamano}\n` +
+                    `Bizcocho: ${bizcocho}\n` +
+                    `Relleno: ${relleno}\n` +
+                    `Decoración: ${decoracion}`;
+
+                window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
             });
         }
 

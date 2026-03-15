@@ -779,5 +779,35 @@
     
     <script src="js/header.js"></script>
 
+    <script>
+        document.getElementById('numeroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const numero = document.getElementById('numero').value.trim();
+            const fecha = document.getElementById('fecha').value;
+            const relleno = document.getElementById('relleno').value;
+            const colores = document.getElementById('colores').value.trim();
+            const decoracionChecked = Array.from(document.querySelectorAll('input[name="decoracion"]:checked')).map(cb => cb.value);
+            const comentarios = document.getElementById('comentarios').value.trim();
+            const entrega = document.querySelector('input[name="entrega"]:checked').value;
+
+            const texto = `Hola Tina! Me gustaría pedir una tarta de número.\n\n` +
+                `Nombre: ${nombre}\n` +
+                `Teléfono: ${telefono}\n` +
+                `Email: ${email}\n` +
+                `Número(s): ${numero}\n` +
+                `Fecha del evento: ${fecha}\n` +
+                `Relleno: ${relleno}\n` +
+                (colores ? `Colores: ${colores}\n` : '') +
+                (decoracionChecked.length ? `Decoración: ${decoracionChecked.join(', ')}\n` : '') +
+                `Entrega: ${entrega}\n` +
+                (comentarios ? `Comentarios: ${comentarios}` : '');
+
+            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
+        });
+    </script>
+
 </body>
 </html>

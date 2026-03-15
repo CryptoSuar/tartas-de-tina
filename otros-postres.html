@@ -718,5 +718,29 @@
 
     <script src="js/header.js"></script>
 
+    <script>
+        document.getElementById('postresForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const fecha = document.getElementById('fecha').value;
+            const productosChecked = Array.from(document.querySelectorAll('input[name="productos"]:checked')).map(cb => cb.value);
+            const comentarios = document.getElementById('comentarios').value.trim();
+            const entrega = document.querySelector('input[name="entrega"]:checked').value;
+
+            const texto = `Hola Tina! Quiero hacer un pedido de postres.\n\n` +
+                `Nombre: ${nombre}\n` +
+                `Teléfono: ${telefono}\n` +
+                `Email: ${email}\n` +
+                `Fecha de recogida/entrega: ${fecha}\n` +
+                (productosChecked.length ? `Productos: ${productosChecked.join(', ')}\n` : '') +
+                `Entrega: ${entrega}\n` +
+                (comentarios ? `Comentarios: ${comentarios}` : '');
+
+            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
+        });
+    </script>
+
 </body>
 </html>
