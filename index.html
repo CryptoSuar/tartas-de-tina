@@ -13,6 +13,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- EmailJS — Integración de email en el formulario de contacto -->
+    <!-- PENDIENTE: Registrarse en emailjs.com y rellenar las credenciales -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // ============================================================
+        // CONFIGURACIÓN EMAILJS — Rellenar con tus datos de EmailJS
+        // 1. Crea cuenta en https://www.emailjs.com
+        // 2. Crea un servicio (Gmail recomendado)
+        // 3. Crea una plantilla con variables: {{nombre}}, {{telefono}}, {{email}}, {{mensaje}}
+        // 4. Sustituye los valores de abajo
+        // ============================================================
+        var EMAILJS_PUBLIC_KEY  = 'TU_PUBLIC_KEY_AQUI';   // Account → API Keys
+        var EMAILJS_SERVICE_ID  = 'TU_SERVICE_ID_AQUI';   // Email Services → Service ID
+        var EMAILJS_TEMPLATE_ID = 'TU_TEMPLATE_ID_AQUI';  // Email Templates → Template ID
+
+        if (EMAILJS_PUBLIC_KEY !== 'TU_PUBLIC_KEY_AQUI') {
+            emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+        }
+    </script>
 </head>
 <body>
     
@@ -1036,7 +1056,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-left">
-                    <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                    <p>&copy; 2025 Tartas de Tina. Todos los derechos reservados.</p>
                     <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
                 </div>
                 <div class="footer-bottom-right">
@@ -1060,6 +1080,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+        <script src="js/cart.js"></script>
         <script src="js/header.js"></script>
 
     <!-- JAVASCRIPT -->
@@ -1094,22 +1115,67 @@
         const formMessage = document.getElementById('formMessage');
         
         if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
+            contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                const nombre = document.getElementById('nombre').value.trim();
+                const nombre   = document.getElementById('nombre').value.trim();
                 const telefono = document.getElementById('telefono').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const mensaje = document.getElementById('mensaje').value.trim();
+                const email    = document.getElementById('email').value.trim();
+                const mensaje  = document.getElementById('mensaje').value.trim();
 
-                const texto = `Hola Tina! Me gustaría contactar contigo.\n\n` +
-                    `Nombre: ${nombre}\n` +
-                    `Teléfono: ${telefono}\n` +
-                    `Email: ${email}\n` +
-                    `Mensaje: ${mensaje}`;
+                // Validación básica
+                if (!nombre || !telefono || !email || !mensaje) {
+                    if (formMessage) {
+                        formMessage.style.display = 'block';
+                        formMessage.style.background = '#FFE4E6';
+                        formMessage.style.color = '#991B1B';
+                        formMessage.style.padding = '1rem';
+                        formMessage.style.borderRadius = '8px';
+                        formMessage.textContent = 'Por favor, rellena todos los campos.';
+                    }
+                    return;
+                }
 
-                window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
+                // Enviar por EmailJS si está configurado
+                if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'TU_PUBLIC_KEY_AQUI') {
+                    const btnSubmit = contactForm.querySelector('[type="submit"]');
+                    if (btnSubmit) { btnSubmit.disabled = true; btnSubmit.textContent = 'Enviando...'; }
+
+                    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        nombre:   nombre,
+                        telefono: telefono,
+                        email:    email,
+                        mensaje:  mensaje
+                    }).then(function() {
+                        if (formMessage) {
+                            formMessage.style.display = 'block';
+                            formMessage.style.background = '#D1FAE5';
+                            formMessage.style.color = '#065F46';
+                            formMessage.style.padding = '1rem';
+                            formMessage.style.borderRadius = '8px';
+                            formMessage.textContent = '¡Mensaje enviado! Te responderemos pronto.';
+                        }
+                        contactForm.reset();
+                        if (btnSubmit) { btnSubmit.disabled = false; btnSubmit.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensaje'; }
+                    }).catch(function() {
+                        // Si falla el email, redirige a WhatsApp como fallback
+                        abrirWhatsAppContacto(nombre, telefono, email, mensaje);
+                        if (btnSubmit) { btnSubmit.disabled = false; btnSubmit.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensaje'; }
+                    });
+                } else {
+                    // Sin EmailJS configurado → WhatsApp directamente
+                    abrirWhatsAppContacto(nombre, telefono, email, mensaje);
+                }
             });
+        }
+
+        function abrirWhatsAppContacto(nombre, telefono, email, mensaje) {
+            const texto = `Hola Tina! Me gustaría contactar contigo.\n\n` +
+                `Nombre: ${nombre}\n` +
+                `Teléfono: ${telefono}\n` +
+                `Email: ${email}\n` +
+                `Mensaje: ${mensaje}`;
+            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
         }
 
         // ==========================================

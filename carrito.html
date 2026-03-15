@@ -334,6 +334,182 @@
     .cart-empty-actions { flex-direction: column; align-items: center; }
     .cart-empty-actions .btn { width: 100%; max-width: 300px; justify-content: center; }
 }
+
+/* ==========================================
+   CARRITO CON PRODUCTOS
+   ========================================== */
+
+.cart-has-items { width: 100%; }
+
+.cart-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--gray-200);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.cart-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--black);
+    margin: 0;
+}
+
+.btn-vaciar {
+    background: none;
+    border: 1px solid var(--gray-300);
+    color: var(--gray-500);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn-vaciar:hover {
+    border-color: #FF6B7A;
+    color: #FF6B7A;
+    background: rgba(255, 107, 122, 0.05);
+}
+
+.cart-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.cart-item-card {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: var(--spacing-md);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    align-items: center;
+    transition: var(--transition-normal);
+}
+.cart-item-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.cart-item-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    background: var(--gray-100);
+}
+
+.cart-item-img-placeholder {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #FFF5F7, #F0F4FF);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.cart-item-name {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--black);
+    font-weight: 600;
+}
+.cart-item-cat {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+.cart-item-detail {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    cursor: pointer;
+    font-size: 1.125rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+.cart-item-remove:hover {
+    color: #FF6B7A;
+    background: rgba(255, 107, 122, 0.1);
+}
+
+.cart-checkout-box {
+    background: linear-gradient(135deg, #FFF5F7 0%, #F0F4FF 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.cart-info-nota {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+}
+.cart-info-nota i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.cart-info-nota p {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cart-checkout-btns {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .cart-item-card { grid-template-columns: 70px 1fr auto; gap: var(--spacing-sm); padding: var(--spacing-sm); }
+    .cart-item-img, .cart-item-img-placeholder { width: 70px; height: 70px; font-size: 1.5rem; }
+    .cart-item-name { font-size: 1rem; }
+    .cart-checkout-btns { flex-direction: column; }
+    .cart-checkout-btns .btn { width: 100%; justify-content: center; }
+    .cart-title { font-size: 1.375rem; }
+}
 </style>
 
 <!-- HERO INTERNO -->
@@ -347,22 +523,20 @@
     </div>
 </section>
 
-<!-- CARRITO VACÍO -->
+<!-- CARRITO DINÁMICO -->
 <section class="cart-page-section">
     <div class="container">
-        <div class="cart-empty-state">
 
+        <!-- Estado vacío (se muestra si no hay productos) -->
+        <div class="cart-empty-state" id="cartEmptyState">
             <div class="cart-empty-icon">
                 <i class="fas fa-shopping-cart"></i>
             </div>
-
             <h2>Tu carrito está vacío</h2>
-
             <p>
                 Todavía no has añadido ningún producto. Explora nuestro catálogo y encuentra
                 la creación perfecta para tu momento especial.
             </p>
-
             <div class="cart-empty-actions">
                 <a href="productos.html" class="btn btn-primary btn-large">
                     <i class="fas fa-birthday-cake"></i>
@@ -373,13 +547,42 @@
                     Pedir por WhatsApp
                 </a>
             </div>
-
         </div>
+
+        <!-- Carrito con productos (se muestra si hay productos) -->
+        <div class="cart-has-items" id="cartHasItems" style="display:none;">
+            <div class="cart-title-row">
+                <h2 class="cart-title">Tu Selección &mdash; <span id="cartItemCount">0</span> producto(s)</h2>
+                <button class="btn-vaciar" id="btnVaciarCarrito">
+                    <i class="fas fa-trash-alt"></i> Vaciar todo
+                </button>
+            </div>
+
+            <div class="cart-items-list" id="cartItemsList">
+                <!-- Los productos se generan por JavaScript -->
+            </div>
+
+            <div class="cart-checkout-box">
+                <div class="cart-info-nota">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Los precios se confirmarán contigo por WhatsApp una vez enviado el pedido. Sin compromiso &mdash; solo confirmamos disponibilidad y acordamos los detalles.</p>
+                </div>
+                <div class="cart-checkout-btns">
+                    <a href="productos.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-plus"></i> Seguir comprando
+                    </a>
+                    <button class="btn btn-primary btn-large" id="btnCheckoutWA">
+                        <i class="fab fa-whatsapp"></i> Confirmar Pedido por WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <!-- CÓMO PEDIR -->
-<section class="cart-info-section">
+<section class="cart-info-section" id="cartInfoSection">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Mientras tanto</span>
@@ -517,7 +720,7 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-left">
-                <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Tartas de Tina. Todos los derechos reservados.</p>
                 <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
             </div>
             <div class="footer-bottom-right">
@@ -542,8 +745,118 @@
 </a>
 
 
+    <script src="js/cart.js"></script>
     <script src="js/header.js"></script>
 
+    <script>
+    // ==========================================
+    // CARRITO — Lógica de la página
+    // ==========================================
+
+    function renderCart() {
+        var cart = getCart();
+        var emptyState  = document.getElementById('cartEmptyState');
+        var hasItems    = document.getElementById('cartHasItems');
+        var itemsList   = document.getElementById('cartItemsList');
+        var itemCount   = document.getElementById('cartItemCount');
+        var infoSection = document.getElementById('cartInfoSection');
+
+        if (cart.length === 0) {
+            emptyState.style.display  = 'block';
+            hasItems.style.display    = 'none';
+            if (infoSection) infoSection.style.display = 'block';
+            return;
+        }
+
+        emptyState.style.display  = 'none';
+        hasItems.style.display    = 'block';
+        if (infoSection) infoSection.style.display = 'none';
+        itemCount.textContent = cart.length;
+
+        itemsList.innerHTML = cart.map(function(item) {
+            var fecha    = new Date(item.fechaAdded);
+            var fechaStr = fecha.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+            // Construir detalles adicionales
+            var partes = [];
+            var d = item.detalles || {};
+            if (d.tamano)     partes.push('Tamaño: ' + d.tamano);
+            if (d.bizcocho)   partes.push('Bizcocho: ' + d.bizcocho);
+            if (d.relleno)    partes.push('Relleno: ' + d.relleno);
+            if (d.decoracion) partes.push('Decoración: ' + d.decoracion);
+            if (d.sabor)      partes.push('Sabor: ' + d.sabor);
+            if (d.cantidad)   partes.push('Cantidad: ' + d.cantidad);
+            var detallesHtml = partes.length > 0
+                ? '<span class="cart-item-detail">' + partes.join(' · ') + '</span>'
+                : '';
+
+            var imgHtml = item.imagen
+                ? '<img src="' + item.imagen + '" alt="' + item.nombre + '" class="cart-item-img" onerror="this.parentElement.innerHTML=\'<div class=&quot;cart-item-img-placeholder&quot;><i class=&quot;fas fa-birthday-cake&quot;></i></div>\'">'
+                : '<div class="cart-item-img-placeholder"><i class="fas fa-birthday-cake"></i></div>';
+
+            return '<div class="cart-item-card">' +
+                imgHtml +
+                '<div class="cart-item-info">' +
+                    '<span class="cart-item-name">' + item.nombre + '</span>' +
+                    '<span class="cart-item-cat">' + item.categoria + '</span>' +
+                    detallesHtml +
+                    '<span class="cart-item-detail"><i class="fas fa-calendar-alt" style="opacity:0.5;margin-right:4px"></i>Añadido el ' + fechaStr + '</span>' +
+                '</div>' +
+                '<button class="cart-item-remove" onclick="handleRemoveItem(' + item.id + ')" aria-label="Eliminar" title="Eliminar del carrito">' +
+                    '<i class="fas fa-times"></i>' +
+                '</button>' +
+            '</div>';
+        }).join('');
+    }
+
+    function handleRemoveItem(id) {
+        removeFromCart(id);
+        renderCart();
+        showToast('Producto eliminado del carrito', 'info');
+    }
+
+    function confirmClearCart() {
+        if (confirm('¿Seguro que quieres vaciar el carrito? Se eliminarán todos los productos.')) {
+            clearCart();
+            renderCart();
+        }
+    }
+
+    function checkoutWhatsApp() {
+        var cart = getCart();
+        if (cart.length === 0) return;
+
+        var productosTexto = cart.map(function(item, i) {
+            var linea = (i + 1) + '. ' + item.nombre + ' (' + item.categoria + ')';
+            var d = item.detalles || {};
+            var partes = [];
+            if (d.tamano)     partes.push('Tamaño: ' + d.tamano);
+            if (d.bizcocho)   partes.push('Bizcocho: ' + d.bizcocho);
+            if (d.relleno)    partes.push('Relleno: ' + d.relleno);
+            if (d.decoracion) partes.push('Decoración: ' + d.decoracion);
+            if (d.sabor)      partes.push('Sabor: ' + d.sabor);
+            if (d.cantidad)   partes.push('Cantidad: ' + d.cantidad);
+            if (partes.length > 0) linea += '\n   ' + partes.join(', ');
+            return linea;
+        }).join('\n');
+
+        var texto = 'Hola Tina! Me gustaría confirmar un pedido con los siguientes productos:\n\n' +
+            productosTexto +
+            '\n\nPor favor, indícame disponibilidad, precio y cómo proceder con la entrega. ¡Gracias!';
+
+        window.open('https://wa.me/34627189264?text=' + encodeURIComponent(texto), '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        renderCart();
+
+        var btnVaciar = document.getElementById('btnVaciarCarrito');
+        if (btnVaciar) btnVaciar.addEventListener('click', confirmClearCart);
+
+        var btnCheckout = document.getElementById('btnCheckoutWA');
+        if (btnCheckout) btnCheckout.addEventListener('click', checkoutWhatsApp);
+    });
+    </script>
 
 </body>
 </html>
