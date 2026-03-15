@@ -314,6 +314,27 @@
         padding-left: calc(var(--spacing-lg) + 1.5rem);
     }
 }
+
+/* ==========================================
+   OVERLAY AÑADIR AL CARRITO
+   ========================================== */
+.product-overlay {
+    display: flex !important;
+    opacity: 0;
+}
+
+.product-card:hover .product-overlay,
+.category-intro-image:hover .product-overlay {
+    opacity: 1;
+}
+
+.btn-add-cart {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+}
 </style>
 
 
@@ -357,7 +378,7 @@
                     <div class="product-image">
                         <img src="images/productos/tartas/tarta-oreo-stitch.jpg" alt="Tarta de Oreo con decoración de Stitch" onerror="this.src='https://images.unsplash.com/photo-1588195538326-c5b1e5b80d17?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Tarta Oreo con Stitch" data-imagen="images/productos/tartas/tarta-oreo-stitch.jpg" data-categoria="Tartas Personalizadas"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -378,7 +399,7 @@
                     <div class="product-image">
                         <img src="images/productos/tartas/tarta-frutos-bosque-40.jpg" alt="Tarta de frutos del bosque con chocolate blanco y corona para 40 cumpleaños" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Tarta Frutos del Bosque con Corona" data-imagen="images/productos/tartas/tarta-frutos-bosque-40.jpg" data-categoria="Tartas Personalizadas"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Elegante</div>
                     </div>
@@ -400,7 +421,7 @@
                     <div class="product-image">
                         <img src="images/productos/tartas/tarta-julio-familia.jpg" alt="Tarta de cumpleaños para Julio con imagen familiar" onerror="this.src='https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Tarta con Imagen Personalizada" data-imagen="images/productos/tartas/tarta-julio-familia.jpg" data-categoria="Tartas Personalizadas"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Personalizada</div>
                     </div>
@@ -452,7 +473,7 @@
                     <div class="product-image">
                         <img src="images/productos/cheesecakes/cheesecake-frambuesa.jpg" alt="Cheesecake de Frambuesa" onerror="this.src='https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Cheesecake de Frambuesa" data-imagen="images/productos/cheesecakes/cheesecake-frambuesa.jpg" data-categoria="Cheesecakes"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Fresco</div>
                     </div>
@@ -474,7 +495,7 @@
                     <div class="product-image">
                         <img src="images/productos/cheesecakes/tarta-queso-vasca.jpg" alt="Tarta de Queso Vasca" onerror="this.src='https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Tarta de Queso Vasca" data-imagen="images/productos/cheesecakes/tarta-queso-vasca.jpg" data-categoria="Cheesecakes"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Tradicional</div>
                     </div>
@@ -496,7 +517,7 @@
                     <div class="product-image">
                         <img src="images/productos/cheesecakes/cheesecake-dubai.jpg" alt="Cheesecake de Dubai" onerror="this.src='https://images.unsplash.com/photo-1533134486753-c833f0ed4866?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Cheesecake de Dubai" data-imagen="images/productos/cheesecakes/cheesecake-dubai.jpg" data-categoria="Cheesecakes"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge premium">Premium</div>
                     </div>
@@ -548,7 +569,7 @@
                     <div class="product-image">
                         <img src="images/productos/numeros/tarta-numero-50.jpg" alt="Tarta en forma de número 50" onerror="this.src='https://images.unsplash.com/photo-1607923439755-7fdbfdbf2c93?w=800&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Tarta Con Forma De Número" data-imagen="images/productos/numeros/tarta-numero-50.jpg" data-categoria="Tartas de Números"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Muy Demandada</div>
                     </div>
@@ -598,8 +619,11 @@
             
             <!-- Layout Imagen + Texto como Tartas de Números -->
             <div class="category-intro-content">
-                <div class="category-intro-image">
+                <div class="category-intro-image" style="position:relative;">
                     <img src="images/productos/macarons/macarons-variados.jpg" alt="Variedad de Macarons" onerror="this.src='https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80'">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view btn-add-cart" data-nombre="Colección de Macarons" data-imagen="images/productos/macarons/macarons-variados.jpg" data-categoria="Macarons"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
+                    </div>
                 </div>
                 
                 <div class="category-intro-text">
@@ -677,7 +701,7 @@
                     <div class="product-image">
                         <img src="images/productos/mousses/mousse-fresa-vainilla.jpg" alt="Tarta Mousse de Fresa con Vainilla" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Mousse Fresa con Vainilla" data-imagen="images/productos/mousses/mousse-fresa-vainilla.jpg" data-categoria="Tartas de Mousse"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Popular</div>
                     </div>
@@ -699,7 +723,7 @@
                     <div class="product-image">
                         <img src="images/productos/mousses/mousse-mermelada-fresa-nata.jpg" alt="Tarta Mousse de Mermelada de Fresa con Nata" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Mousse Mermelada de Fresa con Nata" data-imagen="images/productos/mousses/mousse-mermelada-fresa-nata.jpg" data-categoria="Tartas de Mousse"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Tradicional</div>
                     </div>
@@ -721,7 +745,7 @@
                     <div class="product-image">
                         <img src="images/productos/mousses/mousse-frutos-bosque.jpg" alt="Tarta Mousse de Frutos del Bosque" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Mousse Frutos del Bosque" data-imagen="images/productos/mousses/mousse-frutos-bosque.jpg" data-categoria="Tartas de Mousse"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -780,7 +804,7 @@
                     <div class="product-image">
                         <img src="images/productos/vasos/vasos-red-velvet-fresa.jpg" alt="Vasos de Postre Red Velvet con Fresa" onerror="this.src='https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Vasos Red Velvet con Fresa" data-imagen="images/productos/vasos/vasos-red-velvet-fresa.jpg" data-categoria="Vasos de Postre"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Elegante</div>
                     </div>
@@ -802,7 +826,7 @@
                     <div class="product-image">
                         <img src="images/productos/vasos/vasos-snickers.jpg" alt="Vasos de Postre sabor Snickers" onerror="this.src='https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Vasos Sabor Snickers" data-imagen="images/productos/vasos/vasos-snickers.jpg" data-categoria="Vasos de Postre"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Popular</div>
                     </div>
@@ -824,7 +848,7 @@
                     <div class="product-image">
                         <img src="images/productos/vasos/vasos-fresa-nata.jpg" alt="Vasos de Postre de Fresa y Nata" onerror="this.src='https://images.unsplash.com/photo-1587241321921-91a834d82f0e?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Vasos Fresa y Nata" data-imagen="images/productos/vasos/vasos-fresa-nata.jpg" data-categoria="Vasos de Postre"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -883,7 +907,7 @@
                     <div class="product-image">
                         <img src="images/productos/otros/nueces-galleta.jpg" alt="Nueces de galleta rellenas" onerror="this.src='https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Nueces de Galleta Rellenas" data-imagen="images/productos/otros/nueces-galleta.jpg" data-categoria="Postres Artesanales"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -904,7 +928,7 @@
                     <div class="product-image">
                         <img src="images/productos/otros/flautas-rellenas.jpg" alt="Flautas rellenas de nata o merengue" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Flautas Rellenas" data-imagen="images/productos/otros/flautas-rellenas.jpg" data-categoria="Postres Artesanales"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -925,7 +949,7 @@
                     <div class="product-image">
                         <img src="images/productos/otros/helado-bizcocho.jpg" alt="Helados de bizcocho bañados en chocolate" onerror="this.src='https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80'">
                         <div class="product-overlay">
-                            <button class="btn-quick-view">Ver Detalles</button>
+                            <button class="btn-quick-view btn-add-cart" data-nombre="Helados de Bizcocho" data-imagen="images/productos/otros/helado-bizcocho.jpg" data-categoria="Postres Artesanales"><i class="fas fa-shopping-bag"></i> Añadir al Carrito</button>
                         </div>
                         <div class="product-badge">Único</div>
                     </div>
@@ -1075,6 +1099,17 @@
     
     <script src="js/cart.js"></script>
     <script src="js/header.js"></script>
+    <script>
+        document.querySelectorAll('.btn-add-cart').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var nombre = this.dataset.nombre;
+                var imagen = this.dataset.imagen;
+                var categoria = this.dataset.categoria;
+                addToCart(nombre, imagen, categoria);
+            });
+        });
+    </script>
 
 
 </body>
