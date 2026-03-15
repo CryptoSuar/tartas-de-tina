@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tartas de mousse artesanales en Tarragona. Ligeras y esponjosas: Fresa con Vainilla, Frutos del Bosque. Perfectas para cualquier ocasión.">
+    <title>Tartas de Mousse - Tartas de Tina | Repostería Artesanal</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HEADER STICKY - ALINEACIÓN VERTICAL CORREGIDA -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo clickeable -->
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    
+                    <!-- MENÚ DESPLEGABLE DE PRODUCTOS -->
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER - ALINEACIÓN CORREGIDA -->
+<style>
+/* ==========================================
+   LOGO CLICKEABLE
+   ========================================== */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link .logo {
+    cursor: pointer;
+}
+
+/* ==========================================
+   CORRECCIÓN DE ALINEACIÓN VERTICAL
+   ========================================== */
+
+/* Asegurar que la lista de navegación use flexbox con alineación central */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center; /* 👈 CLAVE: Alinear todos los items al centro */
+}
+
+/* Resetear estilos del item de lista */
+.nav-list > li {
+    display: flex; /* 👈 IMPORTANTE */
+    align-items: center; /* 👈 IMPORTANTE */
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que TODOS los nav-link tengan la misma alineación */
+.nav-link {
+    display: inline-flex; /* 👈 inline-flex para mantener comportamiento inline */
+    align-items: center; /* 👈 Alinear contenido verticalmente */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+/* ==========================================
+   MENÚ DESPLEGABLE DE PRODUCTOS
+   ========================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle con MISMA altura que otros nav-link */
+.dropdown-toggle {
+    gap: 0.375rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px; /* Pequeño espacio entre texto y flecha */
+}
+
+/* Rotar la flecha cuando está hover */
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Efecto hover y active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+
+/* Items del menú desplegable */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+
+/* Línea separadora entre items */
+.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* ==========================================
+   RESPONSIVE - MENÚ MÓVIL
+   ========================================== */
+@media (max-width: 992px) {
+    /* En móvil cambiar de flex a block */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    
+    .nav-list > li {
+        width: 100%;
+    }
+    
+    /* En móvil, el dropdown se comporta diferente */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    
+    /* Mostrar dropdown en móvil cuando se activa */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform var(--transition-normal);
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-item {
+        padding-left: calc(var(--spacing-lg) + 1rem);
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-item:hover {
+        padding-left: calc(var(--spacing-lg) + 1.5rem);
+    }
+}
+</style>
+
+
+    
+    <!-- HERO INTERNO -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Tartas de Mousse</h1>
+                <p class="page-hero-subtitle">Ligeras, esponjosas y llenas de sabor</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="category-intro">
+        <div class="container">
+            <div class="category-intro-content">
+                <div class="category-intro-text">
+                    <span class="section-label">Textura Perfecta</span>
+                    <h2 class="section-title">El Placer de una Mousse Artesanal</h2>
+                    
+                    <p class="category-intro-description">
+                        Nuestras tartas de mousse son una experiencia sensorial única. Con una textura 
+                        increíblemente ligera y esponjosa, cada bocado se deshace en tu boca dejando 
+                        un sabor intenso y delicado que perdura.
+                    </p>
+                    
+                    <p class="category-intro-description">
+                        Perfectas para cualquier ocasión del año, estas tartas combinan elegancia 
+                        y sabor en una presentación espectacular. Elaboradas con ingredientes 
+                        de primera calidad y técnicas profesionales.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item-large">
+                            <i class="fas fa-cloud"></i>
+                            <div>
+                                <h4>Textura Ligera</h4>
+                                <p>Suaves y esponjosas como una nube</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-large">
+                            <i class="fas fa-fire"></i>
+                            <div>
+                                <h4>Sabores Intensos</h4>
+                                <p>Cada sabor está perfectamente equilibrado</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-large">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <h4>Para Cualquier Ocasión</h4>
+                                <p>Deliciosas durante todo el año</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-large">
+                            <i class="fas fa-magic"></i>
+                            <div>
+                                <h4>Presentación Elegante</h4>
+                                <p>Ideales para impresionar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-intro-image">
+                    <img src="images/productos/mousses/mousse-fresa-vainilla.jpg" alt="Tarta Mousse de Fresa con Vainilla" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DISPONIBLES -->
+    <section class="category-section gray-bg">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nuestras Opciones</span>
+                <h2 class="section-title">Tartas de Mousse Disponibles</h2>
+                <p class="section-subtitle">Dos sabores irresistibles para elegir</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Mousse Fresa con Vainilla -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/mousse-fresa-vainilla.jpg" alt="Tarta Mousse de Fresa con Vainilla" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse de Fresa con Vainilla</h3>
+                        <p class="product-description-short">
+                            Delicada combinación de mousse de fresa fresca con toques de vainilla natural. 
+                            Ligera, esponjosa y con un equilibrio perfecto entre dulzura y frescura.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-seedling"></i> Fresa Fresca</span>
+                            <span class="feature-tag"><i class="fas fa-cookie"></i> Vainilla Natural</span>
+                            <span class="feature-tag"><i class="fas fa-cloud"></i> Ultra Ligera</span>
+                        </div>
+                        <div class="product-highlight-box">
+                            <h4><i class="fas fa-star"></i> Perfecto para...</h4>
+                            <p>Celebraciones de primavera y verano, San Valentín, o cualquier momento que necesite un toque romántico y fresco.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mousse Frutos del Bosque -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/mousse-frutos-bosque.jpg" alt="Tarta Mousse de Frutos del Bosque" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'">
+                        <div class="product-badge">Intenso</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse de Frutos del Bosque</h3>
+                        <p class="product-description-short">
+                            Intenso sabor a frutos rojos en una mousse suave y esponjosa. 
+                            Frambuesas, arándanos y moras se combinan para crear una experiencia deliciosa.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-leaf"></i> Frutos Rojos</span>
+                            <span class="feature-tag"><i class="fas fa-fire"></i> Sabor Intenso</span>
+                            <span class="feature-tag"><i class="fas fa-cloud"></i> Esponjosa</span>
+                        </div>
+                        <div class="product-highlight-box">
+                            <h4><i class="fas fa-star"></i> Perfecto para...</h4>
+                            <p>Amantes de los sabores intensos y naturales, celebraciones elegantes y quienes buscan algo diferente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <i class="fas fa-magic"></i>
+                <div>
+                    <h4>¿Buscas otro sabor?</h4>
+                    <p>Si tienes en mente un sabor diferente para tu tarta de mousse, ¡consúltanos! Podemos crear sabores personalizados según disponibilidad de ingredientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMACIÓN DE PEDIDO -->
+    <section class="category-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Cómo Pedir</span>
+                <h2 class="section-title">Información de Pedido</h2>
+            </div>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <h4><i class="fas fa-euro-sign"></i> Pedido Mínimo</h4>
+                    <p>El pedido mínimo general es de <strong>20€</strong>. El pago se realiza al recibir el producto.</p>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-clock"></i> Antelación</h4>
+                    <p>Mínimo <strong>4 días de antelación</strong> para garantizar la frescura y calidad óptima.</p>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-truck"></i> Entrega</h4>
+                    <p>Recogida en Tarragona o entrega a domicilio (consultar disponibilidad).</p>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-snowflake"></i> Conservación</h4>
+                    <p>Las tartas de mousse deben conservarse en frío. Te daremos instrucciones al recogerla.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE PEDIDO -->
+    <section class="order-form-section" id="pedir">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Haz tu Pedido</span>
+                <h2 class="section-title">Solicita tu Tarta de Mousse</h2>
+                <p class="section-subtitle">Elige tu sabor favorito y completa el formulario</p>
+            </div>
+            
+            <div class="order-form-wrapper">
+                <form id="mousseForm" class="order-form">
+                    <!-- Datos personales -->
+                    <h3 class="form-section-title"><i class="fas fa-user"></i> Tus Datos</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    
+                    <!-- Selección de producto -->
+                    <h3 class="form-section-title"><i class="fas fa-birthday-cake"></i> Tu Tarta de Mousse</h3>
+                    
+                    <div class="form-group">
+                        <label for="sabor">Sabor de Mousse *</label>
+                        <select id="sabor" name="sabor" required>
+                            <option value="">Selecciona un sabor</option>
+                            <option value="fresa-vainilla">Mousse de Fresa con Vainilla</option>
+                            <option value="frutos-bosque">Mousse de Frutos del Bosque</option>
+                            <option value="personalizado">Otro sabor (consultar disponibilidad)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">Fecha de recogida/entrega *</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ocasion">Ocasión (opcional)</label>
+                            <select id="ocasion" name="ocasion">
+                                <option value="">Selecciona una opción</option>
+                                <option value="cumpleanos">Cumpleaños</option>
+                                <option value="celebracion">Celebración familiar</option>
+                                <option value="cena">Cena especial</option>
+                                <option value="regalo">Regalo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios adicionales</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="¿Alguna petición especial? ¿Alergias? Si elegiste 'Otro sabor', cuéntanos qué tienes en mente..."></textarea>
+                    </div>
+                    
+                    <!-- Entrega -->
+                    <h3 class="form-section-title"><i class="fas fa-truck"></i> Entrega</h3>
+                    
+                    <div class="form-group">
+                        <label>¿Cómo prefieres recibirla?</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="recogida" name="entrega" value="recogida" checked>
+                                <label for="recogida">Recogida en punto de entrega (Tarragona)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="domicilio" name="entrega" value="domicilio">
+                                <label for="domicilio">Entrega a domicilio (consultar disponibilidad)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Pedido
+                    </button>
+                </form>
+                
+                <div id="formMessage" class="form-message" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLAMADA A LA ACCIÓN FINAL -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title">¿Prefieres Hablar Directamente?</h2>
+                <p class="final-cta-text">
+                    Contacta con nosotros por WhatsApp y te ayudaremos a elegir 
+                    la tarta de mousse perfecta para tu ocasión.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20mousse" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="productos.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-arrow-left"></i>
+                        Ver Más Productos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section footer-about">
+                    <h3>Tartas de Tina</h3>
+                    <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                        <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestros Productos</h3>
+                    <ul>
+                        <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                        <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                        <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                        <li><a href="macarons.html">Macarons</a></li>
+                        <li><a href="mousses.html">Tartas de Mousse</a></li>
+                        <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                        <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+34627189264">+34 627 189 264</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tarragona, España 43007</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                    <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <span class="separator">|</span>
+                    <a href="cookies.html">Política de Cookies</a>
+                    <span class="separator">|</span>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <span class="separator">|</span>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20mousse" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    
+    <script src="js/header.js"></script>
+
+</body>
+</html>

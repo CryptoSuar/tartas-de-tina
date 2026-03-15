@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestros productos artesanales: tartas personalizadas, cheesecakes, macarons, tartas de mousse y más. Cada creación es única y hecha con amor.">
+    <title>Nuestros Productos - Tartas de Tina | Repostería Artesanal</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HEADER STICKY - ALINEACIÓN VERTICAL CORREGIDA -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo clickeable -->
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    
+                    <!-- MENÚ DESPLEGABLE DE PRODUCTOS -->
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER - ALINEACIÓN CORREGIDA -->
+<style>
+/* ==========================================
+   LOGO CLICKEABLE
+   ========================================== */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link .logo {
+    cursor: pointer;
+}
+
+/* ==========================================
+   CORRECCIÓN DE ALINEACIÓN VERTICAL
+   ========================================== */
+
+/* Asegurar que la lista de navegación use flexbox con alineación central */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center; /* 👈 CLAVE: Alinear todos los items al centro */
+}
+
+/* Resetear estilos del item de lista */
+.nav-list > li {
+    display: flex; /* 👈 IMPORTANTE */
+    align-items: center; /* 👈 IMPORTANTE */
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que TODOS los nav-link tengan la misma alineación */
+.nav-link {
+    display: inline-flex; /* 👈 inline-flex para mantener comportamiento inline */
+    align-items: center; /* 👈 Alinear contenido verticalmente */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+/* ==========================================
+   MENÚ DESPLEGABLE DE PRODUCTOS
+   ========================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle con MISMA altura que otros nav-link */
+.dropdown-toggle {
+    gap: 0.375rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px; /* Pequeño espacio entre texto y flecha */
+}
+
+/* Rotar la flecha cuando está hover */
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Efecto hover y active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+
+/* Items del menú desplegable */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+
+/* Línea separadora entre items */
+.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* ==========================================
+   RESPONSIVE - MENÚ MÓVIL
+   ========================================== */
+@media (max-width: 992px) {
+    /* En móvil cambiar de flex a block */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    
+    .nav-list > li {
+        width: 100%;
+    }
+    
+    /* En móvil, el dropdown se comporta diferente */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    
+    /* Mostrar dropdown en móvil cuando se activa */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform var(--transition-normal);
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-item {
+        padding-left: calc(var(--spacing-lg) + 1rem);
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-item:hover {
+        padding-left: calc(var(--spacing-lg) + 1.5rem);
+    }
+}
+</style>
+
+
+    
+    <!-- HERO INTERNO -->
+    <section class="page-hero page-hero-with-image">
+        <div class="page-hero-background">
+            <img src="images/heroes/hero-productos.jpg" alt="Fondo Productos" onerror="this.src='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1920&q=80'">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Nuestros Productos</h1>
+                <p class="page-hero-subtitle">Tartas artesanales únicas hechas con amor</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TARTAS PERSONALIZADAS -->
+    <section class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-header-text">
+                    <span class="section-label">Lo Más Demandado</span>
+                    <h2 class="section-title">Tartas Personalizadas</h2>
+                    <p class="category-description">
+                        Crea la tarta de tus sueños completamente personalizada. Desde 1kg hasta 4kg, 
+                        con más de 10 sabores de bizcocho, +10 rellenos diferentes, cualquier color 
+                        y decoración que imagines. Trabajamos con imágenes comestibles y figuritas personalizadas.
+                    </p>
+                </div>
+                <a href="tartas.html" class="btn btn-primary">
+                    Ver Todas las Opciones
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Tarta 1: Oreo con Stitch -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-oreo-stitch.jpg" alt="Tarta de Oreo con decoración de Stitch" onerror="this.src='https://images.unsplash.com/photo-1588195538326-c5b1e5b80d17?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta Oreo con Stitch</h3>
+                        <p class="product-description-short">
+                            Deliciosa tarta de Oreo decorada con el adorable Stitch. 
+                            Perfecta para fans de los dibujos animados.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-cookie-bite"></i> Sabor Oreo</span>
+                            <span class="feature-tag"><i class="fas fa-palette"></i> Decoración Personalizada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarta 2: Frutos del Bosque con Corona -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-frutos-bosque-40.jpg" alt="Tarta de frutos del bosque con chocolate blanco y corona para 40 cumpleaños" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Elegante</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta Frutos del Bosque con Corona</h3>
+                        <p class="product-description-short">
+                            Tarta de frutos del bosque con chocolate blanco, exterior rojo 
+                            y corona dorada. Ideal para celebraciones especiales como 40 cumpleaños.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-seedling"></i> Frutos del Bosque</span>
+                            <span class="feature-tag"><i class="fas fa-crown"></i> Con Corona</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarta 3: Julio con Imagen Familiar -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-julio-familia.jpg" alt="Tarta de cumpleaños para Julio con imagen familiar" onerror="this.src='https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Personalizada</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta con Imagen Personalizada</h3>
+                        <p class="product-description-short">
+                            Tarta de nata y limón con imagen comestible personalizada. 
+                            Convierte tus recuerdos en un delicioso postre.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-lemon"></i> Nata y Limón</span>
+                            <span class="feature-tag"><i class="fas fa-image"></i> Imagen Comestible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-cta">
+                <a href="tartas.html" class="btn btn-outline btn-large">
+                    Ver Todas las Tartas Personalizadas
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHEESECAKES -->
+    <section class="category-section gray-bg">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-header-text">
+                    <span class="section-label">Cremosas y Deliciosas</span>
+                    <h2 class="section-title">Cheesecakes</h2>
+                    <p class="category-description">
+                        Suaves, cremosas e irresistibles. Nuestras cheesecakes son elaboradas 
+                        con queso de la mejor calidad y técnicas tradicionales que garantizan 
+                        la textura perfecta que se derrite en tu boca.
+                    </p>
+                </div>
+                <a href="cheesecakes.html" class="btn btn-primary">
+                    Ver Todos los Sabores
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Cheesecake 1: Frambuesa -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/cheesecakes/cheesecake-frambuesa.jpg" alt="Cheesecake de Frambuesa" onerror="this.src='https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Fresco</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cheesecake de Frambuesa</h3>
+                        <p class="product-description-short">
+                            Cremosa base de queso con un toque de frescura gracias a las frambuesas. 
+                            Equilibrio perfecto entre dulce y ácido.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-seedling"></i> Frambuesa Fresca</span>
+                            <span class="feature-tag"><i class="fas fa-heart"></i> Cremoso</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cheesecake 2: Tarta de Queso Vasca -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/cheesecakes/tarta-queso-vasca.jpg" alt="Tarta de Queso Vasca" onerror="this.src='https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Tradicional</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Queso Vasca</h3>
+                        <p class="product-description-short">
+                            La auténtica receta vasca con su característico exterior caramelizado 
+                            y su interior cremoso que se deshace en la boca.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-fire"></i> Caramelizada</span>
+                            <span class="feature-tag"><i class="fas fa-star"></i> Receta Auténtica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cheesecake 3: Dubai -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/cheesecakes/cheesecake-dubai.jpg" alt="Cheesecake de Dubai" onerror="this.src='https://images.unsplash.com/photo-1533134486753-c833f0ed4866?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge premium">Premium</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cheesecake de Dubai</h3>
+                        <p class="product-description-short">
+                            Nuestra creación premium inspirada en los sabores exóticos de Dubai. 
+                            Una experiencia única de chocolate y pistachos.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-gem"></i> Premium</span>
+                            <span class="feature-tag"><i class="fas fa-magic"></i> Sabor Exclusivo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-cta">
+                <a href="cheesecakes.html" class="btn btn-outline btn-large">
+                    Ver Todos los Cheesecakes
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARTAS DE NÚMEROS -->
+    <section class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-header-text">
+                    <span class="section-label">Para Celebraciones</span>
+                    <h2 class="section-title">Tartas de Números</h2>
+                    <p class="category-description">
+                        Tartas en forma de número (del 0 al 9) con base de galleta, 
+                        rellenas de cremas deliciosas como queso, chocolate, kinder, nata y más. 
+                        Decoradas con frutas, macarons, chocolates y totalmente personalizables.
+                    </p>
+                </div>
+                <a href="tartas-numeros.html" class="btn btn-primary">
+                    Personaliza tu Número
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid single-item">
+                <!-- Tarta Número 50 -->
+                <div class="product-card featured-large">
+                    <div class="product-image">
+                        <img src="images/productos/numeros/tarta-numero-50.jpg" alt="Tarta en forma de número 50" onerror="this.src='https://images.unsplash.com/photo-1607923439755-7fdbfdbf2c93?w=800&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Muy Demandada</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta Con Forma De Número </h3>
+                        <p class="product-description-short">
+                            Impresionante tarta en forma de número 50, perfecta para celebraciones de cumpleaños. 
+                            Base de galleta rellena de crema al gusto y decorada con frutas frescas, macarons 
+                            o chocolates.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-cookie"></i> Base de Galleta</span>
+                            <span class="feature-tag"><i class="fas fa-ice-cream"></i> Varios Rellenos</span>
+                            <span class="feature-tag"><i class="fas fa-palette"></i> Personalizable</span>
+                            <span class="feature-tag"><i class="fas fa-sort-numeric-up"></i> Cualquier Número</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-cta">
+                <a href="tartas-numeros.html" class="btn btn-outline btn-large">
+                    Ver Todas las Opciones de Números
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MACARONS -->
+    <section class="category-section gray-bg">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-header-text">
+                    <span class="section-label">Pequeñas Delicias</span>
+                    <h2 class="section-title">Macarons</h2>
+                    <p class="category-description">
+                        Delicados macarons franceses con la textura perfecta: crujientes por fuera 
+                        y suaves por dentro. Más de 10 sabores diferentes para deleitar tu paladar. 
+                        Pedido mínimo: 6 unidades.
+                    </p>
+                </div>
+                <a href="macarons.html" class="btn btn-primary">
+                    Ver Sabores Disponibles
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Layout Imagen + Texto como Tartas de Números -->
+            <div class="category-intro-content">
+                <div class="category-intro-image">
+                    <img src="images/productos/macarons/macarons-variados.jpg" alt="Variedad de Macarons" onerror="this.src='https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80'">
+                </div>
+                
+                <div class="category-intro-text">
+                    <h3 class="product-name" style="font-size: 1.75rem; margin-bottom: var(--spacing-md);">Colección de Macarons</h3>
+                    <p class="category-intro-description" style="font-size: 1.0625rem; line-height: 1.8; color: var(--gray-700); margin-bottom: var(--spacing-xl);">
+                        Descubre nuestra exquisita variedad de macarons artesanales. 
+                        Cada uno es una pequeña obra de arte con sabores únicos y texturas perfectas.
+                    </p>
+                    
+                    <!-- Feature Tags Compactos (como Tartas de Números) -->
+                    <div class="product-features-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                        <div class="feature-tag-large">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <strong>Macaron de Dubai</strong>
+                                <p>Sabor premium con chocolate y pistachos</p>
+                            </div>
+                        </div>
+                        <div class="feature-tag-large">
+                            <i class="fas fa-lemon"></i>
+                            <div>
+                                <strong>Mango y Maracuyá</strong>
+                                <p>Explosión tropical y refrescante</p>
+                            </div>
+                        </div>
+                        <div class="feature-tag-large">
+                            <i class="fas fa-seedling"></i>
+                            <div>
+                                <strong>Baileys y Fresa</strong>
+                                <p>Combinación elegante y deliciosa</p>
+                            </div>
+                        </div>
+                        <div class="feature-tag-large">
+                            <i class="fas fa-cookie"></i>
+                            <div>
+                                <strong>Pistacho</strong>
+                                <p>Clásico francés irresistible</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-cta">
+                <a href="macarons.html" class="btn btn-outline btn-large">
+                    Ver Todos los Sabores de Macarons
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+        
+    <!-- TARTAS DE MOUSSE -->
+    <section class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-header-text">
+                    <span class="section-label">Ligeras y Esponjosas</span>
+                    <h2 class="section-title">Tartas de Mousse</h2>
+                    <p class="category-description">
+                        Tartas de mousse con textura ligera y esponjosa, perfectas para cualquier ocasión. 
+                        Sabores intensos que se deshacen en la boca. Disponemos de opciones fijas 
+                        y también puedes consultar por sabores personalizados.
+                    </p>
+                </div>
+                <a href="mousses.html" class="btn btn-primary">
+                    Ver Opciones de Mousse
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Mousse 1: Fresa con Vainilla (IZQUIERDA) -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/mousse-fresa-vainilla.jpg" alt="Tarta Mousse de Fresa con Vainilla" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse Fresa con Vainilla</h3>
+                        <p class="product-description-short">
+                            Delicada combinación de mousse de fresa fresca con toques de vainilla. 
+                            Ligera, esponjosa y con un sabor que te encantará.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-cloud"></i> Textura Ligera</span>
+                            <span class="feature-tag"><i class="fas fa-seedling"></i> Fresa Fresca</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mousse 2: NUEVA - Mermelada de Fresa con Nata (CENTRO) -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/mousse-mermelada-fresa-nata.jpg" alt="Tarta Mousse de Mermelada de Fresa con Nata" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Tradicional</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse Mermelada de Fresa con Nata</h3>
+                        <p class="product-description-short">
+                            Clásica combinación de mermelada de fresa casera con mousse de nata. 
+                            Un sabor tradicional en una textura moderna y sofisticada.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-heart"></i> Mermelada Casera</span>
+                            <span class="feature-tag"><i class="fas fa-star"></i> Clásica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mousse 3: Frutos del Bosque (DERECHA) -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/mousse-frutos-bosque.jpg" alt="Tarta Mousse de Frutos del Bosque" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse Frutos del Bosque</h3>
+                        <p class="product-description-short">
+                            Intenso sabor a frutos del bosque en una mousse suave y esponjosa. 
+                            Perfecta para los amantes de los sabores naturales.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-cloud"></i> Esponjosa</span>
+                            <span class="feature-tag"><i class="fas fa-fire"></i> Sabor Intenso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-magic"></i>
+                <div>
+                    <h4>¿Buscas otro sabor?</h4>
+                    <p>También podemos crear mousses personalizadas. Contáctanos para consultar disponibilidad de otros sabores.</p>
+                </div>
+            </div>
+
+            <div class="category-cta">
+                <a href="mousses.html" class="btn btn-outline btn-large">
+                    Ver Todas las Tartas de Mousse
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VASOS DE POSTRE -->
+    <section class="category-section gray-bg">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-header-text">
+                    <span class="section-label">Perfectos para Eventos</span>
+                    <h2 class="section-title">Vasos de Postre Individuales</h2>
+                    <p class="category-description">
+                        Porciones individuales en elegantes vasitos que combinan sabor y presentación. 
+                        Ideales para bodas, cumpleaños, comuniones o cualquier evento especial. 
+                        Pedido mínimo: 6 unidades.
+                    </p>
+                </div>
+                <a href="vasos-postre.html" class="btn btn-primary">
+                    Ver Tipos de Vasos
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Vaso 1: Red Velvet con Fresa -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/vasos/vasos-red-velvet-fresa.jpg" alt="Vasos de Postre Red Velvet con Fresa" onerror="this.src='https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Elegante</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Vasos Red Velvet con Fresa</h3>
+                        <p class="product-description-short">
+                            Vasitos de red velvet coronados con fresas frescas. 
+                            Perfectos para eventos elegantes y celebraciones especiales.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-wine-glass"></i> Porción Individual</span>
+                            <span class="feature-tag"><i class="fas fa-seedling"></i> Con Fresa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vaso 2: Snickers -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/vasos/vasos-snickers.jpg" alt="Vasos de Postre sabor Snickers" onerror="this.src='https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Vasos Sabor Snickers</h3>
+                        <p class="product-description-short">
+                            Irresistibles vasitos con sabor a Snickers. 
+                            Cacahuetes, caramelo y chocolate en cada bocado.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-candy-cane"></i> Sabor Snickers</span>
+                            <span class="feature-tag"><i class="fas fa-heart"></i> Irresistible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vaso 3: Fresa y Nata -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/vasos/vasos-fresa-nata.jpg" alt="Vasos de Postre de Fresa y Nata" onerror="this.src='https://images.unsplash.com/photo-1587241321921-91a834d82f0e?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Vasos Fresa y Nata</h3>
+                        <p class="product-description-short">
+                            El clásico que nunca falla. Fresas frescas con nata suave 
+                            en un vasito perfecto para cualquier ocasión.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-seedling"></i> Fresa Fresca</span>
+                            <span class="feature-tag"><i class="fas fa-star"></i> Clásico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-magic"></i>
+                <div>
+                    <h4>¿Necesitas otro sabor?</h4>
+                    <p>Podemos crear vasos personalizados para tu evento. Contáctanos para consultar disponibilidad.</p>
+                </div>
+            </div>
+
+            <div class="category-cta">
+                <a href="vasos-postre.html" class="btn btn-outline btn-large">
+                    Ver Todos los Vasos de Postre
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- POSTRES ARTESANALES-->
+    <section class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-header-text">
+                    <span class="section-label">Más Dulces Creaciones</span>
+                    <h2 class="section-title">Postres Artesanales</h2>
+                    <p class="category-description">
+                        Amplia variedad de dulces artesanales para complementar tus celebraciones. 
+                        Desde galletas especiales hasta helados de bizcocho, cada postre es único 
+                        y elaborado con la misma dedicación que nuestras tartas.
+                    </p>
+                </div>
+                <a href="otros-postres.html" class="btn btn-primary">
+                    Ver Toda la Variedad
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Postre 1: Nueces de Galleta -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/otros/nueces-galleta.jpg" alt="Nueces de galleta rellenas" onerror="this.src='https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nueces de Galleta Rellenas</h3>
+                        <p class="product-description-short">
+                            Galletas en forma de nuez rellenas de dulce de leche, nutella o lotus. 
+                            Pequeñas delicias perfectas para acompañar el café.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-cookie"></i> 3 Rellenos</span>
+                            <span class="feature-tag"><i class="fas fa-coffee"></i> Perfectas con Café</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postre 2: Flautas Rellenas -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/otros/flautas-rellenas.jpg" alt="Flautas rellenas de nata o merengue" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Flautas Rellenas</h3>
+                        <p class="product-description-short">
+                            Crujientes flautas rellenas de suave nata o esponjoso merengue. 
+                            Un postre clásico que nunca pasa de moda.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-ice-cream"></i> Nata o Merengue</span>
+                            <span class="feature-tag"><i class="fas fa-cookie-bite"></i> Crujientes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postre 3: Helados de Bizcocho -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/otros/helado-bizcocho.jpg" alt="Helados de bizcocho bañados en chocolate" onerror="this.src='https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80'">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Ver Detalles</button>
+                        </div>
+                        <div class="product-badge">Único</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Helados de Bizcocho</h3>
+                        <p class="product-description-short">
+                            Originales helados hechos de bizcocho y bañados en chocolate. 
+                            Una creación única que combina texturas y sabores.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-ice-cream"></i> Base Bizcocho</span>
+                            <span class="feature-tag"><i class="fas fa-star"></i> Creación Única</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-cta">
+                <a href="otros-postres.html" class="btn btn-outline btn-large">
+                    Descubrir Más Postres
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLAMADA A LA ACCIÓN FINAL -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title">¿Listo para Hacer tu Pedido?</h2>
+                <p class="final-cta-text">
+                    Explora nuestros productos, elige tu favorito y personalízalo a tu gusto. 
+                    Estamos aquí para hacer realidad tu dulce sueño.
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#contacto" class="btn btn-primary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Contáctanos Ahora
+                    </a>
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido" class="btn btn-secondary btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section footer-about">
+                    <h3>Tartas de Tina</h3>
+                    <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                        <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestros Productos</h3>
+                    <ul>
+                        <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                        <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                        <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                        <li><a href="macarons.html">Macarons</a></li>
+                        <li><a href="mousses.html">Tartas de Mousse</a></li>
+                        <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                        <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+34627189264">+34 627 189 264</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tarragona, España 43007</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                    <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <span class="separator">|</span>
+                    <a href="cookies.html">Política de Cookies</a>
+                    <span class="separator">|</span>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <span class="separator">|</span>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    
+    <script src="js/header.js"></script>
+
+
+</body>
+</html>

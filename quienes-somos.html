@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce la historia de Tartas de Tina - Más de 10 años creando tartas artesanales únicas en Tarragona">
+    <title>Quiénes Somos - Tartas de Tina | Repostería Artesanal</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HEADER STICKY - ALINEACIÓN VERTICAL CORREGIDA -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo clickeable -->
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    
+                    <!-- MENÚ DESPLEGABLE DE PRODUCTOS -->
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER - ALINEACIÓN CORREGIDA -->
+<style>
+/* ==========================================
+   LOGO CLICKEABLE
+   ========================================== */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link .logo {
+    cursor: pointer;
+}
+
+/* ==========================================
+   CORRECCIÓN DE ALINEACIÓN VERTICAL
+   ========================================== */
+
+/* Asegurar que la lista de navegación use flexbox con alineación central */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center; /* 👈 CLAVE: Alinear todos los items al centro */
+}
+
+/* Resetear estilos del item de lista */
+.nav-list > li {
+    display: flex; /* 👈 IMPORTANTE */
+    align-items: center; /* 👈 IMPORTANTE */
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que TODOS los nav-link tengan la misma alineación */
+.nav-link {
+    display: inline-flex; /* 👈 inline-flex para mantener comportamiento inline */
+    align-items: center; /* 👈 Alinear contenido verticalmente */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+/* ==========================================
+   MENÚ DESPLEGABLE DE PRODUCTOS
+   ========================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle con MISMA altura que otros nav-link */
+.dropdown-toggle {
+    gap: 0.375rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px; /* Pequeño espacio entre texto y flecha */
+}
+
+/* Rotar la flecha cuando está hover */
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Efecto hover y active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+
+/* Items del menú desplegable */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+
+/* Línea separadora entre items */
+.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* ==========================================
+   RESPONSIVE - MENÚ MÓVIL
+   ========================================== */
+@media (max-width: 992px) {
+    /* En móvil cambiar de flex a block */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    
+    .nav-list > li {
+        width: 100%;
+    }
+    
+    /* En móvil, el dropdown se comporta diferente */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    
+    /* Mostrar dropdown en móvil cuando se activa */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform var(--transition-normal);
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-item {
+        padding-left: calc(var(--spacing-lg) + 1rem);
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-item:hover {
+        padding-left: calc(var(--spacing-lg) + 1.5rem);
+    }
+}
+</style>
+
+
+
+    <!-- HERO INTERNO CON IMAGEN DE FONDO -->
+<section class="page-hero page-hero-with-image">
+    <div class="page-hero-background">
+        <img src="images/about/hero-quienes-somos.jpg" alt="Fondo Quiénes Somos" onerror="this.src='https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=1920&q=80'">
+    </div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Nuestra Historia</h1>
+            <p class="page-hero-subtitle">Más de 10 años convirtiendo momentos especiales en dulces recuerdos</p>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCIÓN: MI HISTORIA -->
+    <section class="about-story" id="historia">
+        <div class="container">
+            <div class="story-content">
+                <!-- Imagen a la izquierda -->
+                <div class="story-image">
+                    <img src="images/about/bohdana-pastelera.jpg" alt="Bohdana - Tina en su cocina" onerror="this.src='https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80'">
+                </div>
+                
+                <!-- Texto a la derecha -->
+                <div class="story-text">
+                    <span class="section-label-large">Mi Historia</span>
+                    <h2>De un Hobby a una Pasión Profesional</h2>
+                    
+                    <p>Todo comenzó hace más de una década en mi propia cocina. Lo que empezó como un simple pasatiempo, una forma de relajarme creando algo dulce para mi familia y amigos, se transformó en algo mucho más grande de lo que jamás imaginé.</p>
+                    
+                    <p>Con el paso de los años, lo que era un hobby se convirtió en una verdadera pasión. Cada tarta que creaba era una oportunidad para aprender, mejorar y sobre todo, para hacer feliz a alguien. Las sonrisas de las personas al ver sus tartas personalizadas me motivaron a seguir adelante.</p>
+                    
+                    <div class="story-highlight">
+                        <p>Hace 2 años tomé la decisión de convertir mi pasión en mi profesión. Desde entonces, he tenido el privilegio de formar parte de cientos de celebraciones especiales, creando tartas únicas que cuentan historias y celebran momentos inolvidables.</p>
+                    </div>
+                    
+                    <p>Hoy, Tartas de Tina es más que un negocio para mí: es la realización de un sueño, es poder dedicarme a lo que amo y compartir esa alegría con cada cliente que confía en mí para sus momentos más especiales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CERTIFICACIONES -->
+    <section class="certifications-section" id="certificaciones">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label-large">Formación Profesional</span>
+                <h2 class="section-title">Certificaciones que Avalan mi Experiencia</h2>
+                <p class="section-subtitle">La excelencia requiere formación continua. He invertido cientos de horas perfeccionando mi técnica con los mejores profesionales.</p>
+            </div>
+            
+            <div class="certifications-grid-2x3">
+                <!-- Fila 1 -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Tartas de Bizcocho</h3>
+                    <p>Curso de 19 horas</p>
+                    <p><strong>Olena Ovchinnikova</strong></p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <h3>Cheesecakes</h3>
+                    <p>Curso Profesional</p>
+                    <p><strong>Home Bake Courses</strong></p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h3>Tartas de Mousse</h3>
+                    <p>Curso de 15 horas</p>
+                    <p><strong>Olena Ovchinnikova</strong></p>
+                </div>
+                
+                <!-- Fila 2 -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Cheesecakes Avanzado</h3>
+                    <p>Curso Especializado</p>
+                    <p><strong>Studio Pas Academy</strong></p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Manipulador de Alimentos</h3>
+                    <p>Certificación Oficial</p>
+                    <p><strong>Qualitas Alimentaria Proyecto SLU</strong></p>
+                    <p style="margin-top: 0.5rem;"><i class="fas fa-check-circle" style="color: var(--success-color);"></i> Certificado Oficial</p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Formación Continua</h3>
+                    <p>Más de 100 horas</p>
+                    <p><strong>Diversos cursos especializados</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: ¿POR QUÉ ELEGIRNOS? -->
+<section class="values-section" id="valores">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label-large">¿Por Qué Elegirnos?</span>
+            <h2 class="section-title">La Confianza de Cientos de Clientes Satisfechos</h2>
+        </div>
+        
+        <!-- Contenedor con texto + estadísticas a la izquierda e imagen a la derecha -->
+        <div class="values-intro-with-image">
+            <div class="values-intro">
+                <p class="values-description">
+                    Cada día recibo mensajes de clientes emocionados compartiendo lo especial que fue su celebración gracias a nuestras tartas. No es solo un comentario amable, es la confirmación de que estamos haciendo algo bien.
+                </p>
+                
+                <p class="values-description">
+                    Nuestros clientes vuelven una y otra vez, no solo por la calidad excepcional de nuestros productos, sino porque saben que cada pedido será tratado con la misma dedicación y cuidado que el primero. Desde una pequeña celebración familiar hasta grandes eventos, cada tarta recibe la misma atención meticulosa.
+                </p>
+                
+                <div class="values-highlight">
+                    <p>Lo que nos hace diferentes es simple: <strong>nos importa de verdad</strong>. No hacemos tartas en serie ni seguimos plantillas genéricas. Escuchamos tus ideas, entendemos qué es lo que hace especial tu momento, y creamos algo único que supera tus expectativas.</p>
+                </div>
+                
+                <div class="experience-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Tartas Creadas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Clientes Satisfechos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen a la derecha -->
+            <div class="values-image">
+                <img src="images/about/tina-pastelera-2.jpg" alt="Tina - Pastelera profesional" onerror="this.src='https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80'">
+            </div>
+        </div>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-card-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Compromiso Total</h3>
+                <p>Cuando aceptamos tu pedido, nos comprometemos al 100%. Cumplimos con los plazos acordados, respetamos tus especificaciones y estamos en contacto contigo durante todo el proceso para asegurarnos de que todo sea perfecto.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-card-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3>Atención Personalizada</h3>
+                <p>No eres un número más en nuestra familia de clientes. Nos tomamos el tiempo para conocerte, entender tu visión y crear una experiencia personalizada desde el primer contacto hasta la entrega.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-card-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Creatividad Sin Límites</h3>
+                <p>Estoy en constante formación y siempre busco maneras de mejorar y sorprender. Tu imaginación es el único límite para lo que podemos crear juntos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA FINAL -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="about-cta-content">
+                <h2>¿Vamos A Crear Tu Tarta Perfecta?</h2>
+                <p>Déjame ser parte de tu próxima celebración. Juntos crearemos algo realmente especial.</p>
+                <div class="cta-buttons">
+                    <a href="productos.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-birthday-cake"></i>
+                        Ver Nuestros Productos
+                    </a>
+                    <a href="index.html#contacto" class="btn btn-secondary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section footer-about">
+                    <h3>Tartas de Tina</h3>
+                    <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                        <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestros Productos</h3>
+                    <ul>
+                        <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                        <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                        <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                        <li><a href="macarons.html">Macarons</a></li>
+                        <li><a href="mousses.html">Tartas de Mousse</a></li>
+                        <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                        <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+34627189264">+34 627 189 264</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tarragona, España 43007</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                    <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <span class="separator">|</span>
+                    <a href="cookies.html">Política de Cookies</a>
+                    <span class="separator">|</span>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <span class="separator">|</span>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+        <script src="js/header.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        if (nav.classList.contains('active')) {
+                            nav.classList.remove('active');
+                            menuToggle.classList.remove('active');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

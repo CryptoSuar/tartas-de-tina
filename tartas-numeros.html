@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tartas de números artesanales en Tarragona. Del 0 al 9, base de galleta, rellenas de deliciosas cremas y decoración personalizada. Perfectas para cumpleaños.">
+    <title>Tartas de Números - Tartas de Tina | Repostería Artesanal</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HEADER STICKY - ALINEACIÓN VERTICAL CORREGIDA -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo clickeable -->
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    
+                    <!-- MENÚ DESPLEGABLE DE PRODUCTOS -->
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER - ALINEACIÓN CORREGIDA -->
+<style>
+/* ==========================================
+   LOGO CLICKEABLE
+   ========================================== */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link .logo {
+    cursor: pointer;
+}
+
+/* ==========================================
+   CORRECCIÓN DE ALINEACIÓN VERTICAL
+   ========================================== */
+
+/* Asegurar que la lista de navegación use flexbox con alineación central */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center; /* 👈 CLAVE: Alinear todos los items al centro */
+}
+
+/* Resetear estilos del item de lista */
+.nav-list > li {
+    display: flex; /* 👈 IMPORTANTE */
+    align-items: center; /* 👈 IMPORTANTE */
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que TODOS los nav-link tengan la misma alineación */
+.nav-link {
+    display: inline-flex; /* 👈 inline-flex para mantener comportamiento inline */
+    align-items: center; /* 👈 Alinear contenido verticalmente */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+/* ==========================================
+   MENÚ DESPLEGABLE DE PRODUCTOS
+   ========================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle con MISMA altura que otros nav-link */
+.dropdown-toggle {
+    gap: 0.375rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px; /* Pequeño espacio entre texto y flecha */
+}
+
+/* Rotar la flecha cuando está hover */
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Efecto hover y active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+
+/* Items del menú desplegable */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+
+/* Línea separadora entre items */
+.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* ==========================================
+   RESPONSIVE - MENÚ MÓVIL
+   ========================================== */
+@media (max-width: 992px) {
+    /* En móvil cambiar de flex a block */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    
+    .nav-list > li {
+        width: 100%;
+    }
+    
+    /* En móvil, el dropdown se comporta diferente */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    
+    /* Mostrar dropdown en móvil cuando se activa */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform var(--transition-normal);
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-item {
+        padding-left: calc(var(--spacing-lg) + 1rem);
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-item:hover {
+        padding-left: calc(var(--spacing-lg) + 1.5rem);
+    }
+}
+</style>
+
+
+    
+    <!-- HERO INTERNO -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Tartas de Números</h1>
+                <p class="page-hero-subtitle">Del 0 al 9, personaliza tu número especial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="category-intro">
+        <div class="container">
+            <div class="category-intro-content">
+                <div class="category-intro-text">
+                    <span class="section-label">Muy Demandadas</span>
+                    <h2 class="section-title">Celebra con Estilo tu Número Especial</h2>
+                    
+                    <p class="category-intro-description">
+                        Las tartas de números son perfectas para celebrar cumpleaños y ocasiones especiales 
+                        de una manera única y espectacular. Cada número es creado artesanalmente con una 
+                        base de galleta crujiente, relleno de deliciosas cremas y decoración totalmente 
+                        personalizada.
+                    </p>
+                    
+                    <p class="category-intro-description">
+                        Ya sea para celebrar los 18, los 30, los 50 o cualquier edad especial, 
+                        nuestras tartas de números son el centro de atención perfecto. Combina 
+                        dos dígitos para crear números de dos cifras impresionantes.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item-large">
+                            <i class="fas fa-sort-numeric-up"></i>
+                            <div>
+                                <h4>Números del 0 al 9</h4>
+                                <p>Cualquier número, combínalos para crear tu edad</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-large">
+                            <i class="fas fa-cookie"></i>
+                            <div>
+                                <h4>Base de Galleta</h4>
+                                <p>Crujiente y deliciosa, la base perfecta</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-large">
+                            <i class="fas fa-ice-cream"></i>
+                            <div>
+                                <h4>Rellenos Variados</h4>
+                                <p>Crema de queso, chocolate, kinder, nata y más</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-large">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <h4>Decoración Personalizada</h4>
+                                <p>Frutas, macarons, chocolates y más</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-intro-image">
+                    <img src="images/productos/numeros/tarta-numero-50.jpg" alt="Tarta de número 50" onerror="this.src='https://images.unsplash.com/photo-1607923439755-7fdbfdbf2c93?w=800&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPCIONES DE PERSONALIZACIÓN -->
+    <section class="customization-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Personaliza</span>
+                <h2 class="section-title">Crea tu Tarta de Número Perfecta</h2>
+                <p class="section-subtitle">Elige cada detalle para hacerla única</p>
+            </div>
+            
+            <div class="customization-grid">
+                <!-- Número -->
+                <div class="customization-card">
+                    <div class="customization-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Elige tu Número</h3>
+                    <p>Disponibles del 0 al 9, combínalos para crear cualquier cifra</p>
+                    <div class="customization-options">
+                        <span class="option-tag">0</span>
+                        <span class="option-tag">1</span>
+                        <span class="option-tag">2</span>
+                        <span class="option-tag">3</span>
+                        <span class="option-tag">4</span>
+                        <span class="option-tag">5</span>
+                        <span class="option-tag">6</span>
+                        <span class="option-tag">7</span>
+                        <span class="option-tag">8</span>
+                        <span class="option-tag">9</span>
+                    </div>
+                </div>
+                
+                <!-- Relleno -->
+                <div class="customization-card">
+                    <div class="customization-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Elige el Relleno</h3>
+                    <p>Deliciosas cremas para el interior</p>
+                    <div class="customization-options">
+                        <span class="option-tag">Crema de queso</span>
+                        <span class="option-tag">Chocolate</span>
+                        <span class="option-tag">Kinder</span>
+                        <span class="option-tag">Nata</span>
+                        <span class="option-tag">Nutella</span>
+                        <span class="option-tag">Lotus</span>
+                        <span class="option-tag">Dulce de leche</span>
+                    </div>
+                </div>
+                
+                <!-- Decoración -->
+                <div class="customization-card">
+                    <div class="customization-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Decoración</h3>
+                    <p>Personaliza el exterior a tu gusto</p>
+                    <div class="customization-options">
+                        <span class="option-tag">Frutas frescas</span>
+                        <span class="option-tag">Macarons</span>
+                        <span class="option-tag">Chocolates</span>
+                        <span class="option-tag">Flores comestibles</span>
+                        <span class="option-tag">Merengues</span>
+                        <span class="option-tag">Galletas</span>
+                    </div>
+                </div>
+                
+                <!-- Colores -->
+                <div class="customization-card">
+                    <div class="customization-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Colores</h3>
+                    <p>Elige la paleta de colores que prefieras</p>
+                    <div class="customization-options">
+                        <span class="option-tag">Rosa</span>
+                        <span class="option-tag">Azul</span>
+                        <span class="option-tag">Dorado</span>
+                        <span class="option-tag">Rojo</span>
+                        <span class="option-tag">Natural</span>
+                        <span class="option-tag">Multicolor</span>
+                        <span class="option-tag">Personalizado</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <h4>Importante: Solo Números</h4>
+                    <p>Actualmente solo trabajamos con números (0-9), no realizamos letras. Cada número tiene una base fija de galleta que no se puede cambiar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EJEMPLO DESTACADO -->
+    <section class="category-section gray-bg">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ejemplo</span>
+                <h2 class="section-title">Así Quedan Nuestras Tartas de Números</h2>
+            </div>
+            
+            <div class="products-grid single-item">
+                <div class="product-card featured-large">
+                    <div class="product-image">
+                        <img src="images/productos/numeros/tarta-numero-50.jpg" alt="Tarta en forma de número 50" onerror="this.src='https://images.unsplash.com/photo-1607923439755-7fdbfdbf2c93?w=800&q=80'">
+                        <div class="product-badge">Ejemplo Real</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta Número 50</h3>
+                        <p class="product-description-short">
+                            Impresionante tarta en forma de número 50, perfecta para celebrar medio siglo de vida. 
+                            Base de galleta crujiente, rellena de crema suave y decorada con frutas frescas, 
+                            macarons artesanales y detalles de chocolate.
+                        </p>
+                        <div class="product-features-list">
+                            <span class="feature-tag"><i class="fas fa-cookie"></i> Base de Galleta</span>
+                            <span class="feature-tag"><i class="fas fa-ice-cream"></i> Crema Suave</span>
+                            <span class="feature-tag"><i class="fas fa-seedling"></i> Frutas Frescas</span>
+                            <span class="feature-tag"><i class="fas fa-circle"></i> Macarons</span>
+                        </div>
+                        <div class="product-highlight-box">
+                            <h4><i class="fas fa-lightbulb"></i> ¿Sabías que?</h4>
+                            <p>Podemos crear cualquier combinación de números. Para edades de dos cifras como 18, 25, 40, 50... simplemente pide los dos números y los preparamos para que encajen perfectamente juntos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE PEDIDO -->
+    <section class="order-form-section" id="pedir">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Haz tu Pedido</span>
+                <h2 class="section-title">Personaliza tu Tarta de Número</h2>
+                <p class="section-subtitle">Cuéntanos qué número celebras y cómo te gustaría decorarlo</p>
+            </div>
+            
+            <div class="order-form-wrapper">
+                <form id="numeroForm" class="order-form">
+                    <!-- Datos personales -->
+                    <h3 class="form-section-title"><i class="fas fa-user"></i> Tus Datos</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    
+                    <!-- Detalles del número -->
+                    <h3 class="form-section-title"><i class="fas fa-hashtag"></i> Tu Tarta de Número</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="numero">Número(s) que necesitas *</label>
+                            <input type="text" id="numero" name="numero" required placeholder="Ej: 50, 18, 3..." maxlength="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha del evento *</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="relleno">Relleno preferido *</label>
+                            <select id="relleno" name="relleno" required>
+                                <option value="">Selecciona un relleno</option>
+                                <option value="crema-queso">Crema de queso</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="kinder">Kinder</option>
+                                <option value="nata">Nata</option>
+                                <option value="nutella">Nutella</option>
+                                <option value="lotus">Lotus</option>
+                                <option value="dulce-leche">Dulce de leche</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="colores">Colores preferidos</label>
+                            <input type="text" id="colores" name="colores" placeholder="Ej: Rosa y dorado, azul...">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Decoración deseada (selecciona las que quieras)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="frutas" name="decoracion" value="frutas">
+                                <label for="frutas">Frutas frescas</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="macarons" name="decoracion" value="macarons">
+                                <label for="macarons">Macarons</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="chocolates" name="decoracion" value="chocolates">
+                                <label for="chocolates">Chocolates</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="flores" name="decoracion" value="flores">
+                                <label for="flores">Flores comestibles</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="merengues" name="decoracion" value="merengues">
+                                <label for="merengues">Merengues</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="galletas" name="decoracion" value="galletas">
+                                <label for="galletas">Galletas</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios adicionales</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="¿Alguna petición especial? ¿Una temática concreta? ¿Tienes alguna imagen de referencia?"></textarea>
+                    </div>
+                    
+                    <!-- Entrega -->
+                    <h3 class="form-section-title"><i class="fas fa-truck"></i> Entrega</h3>
+                    
+                    <div class="form-group">
+                        <label>¿Cómo prefieres recibirla?</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="recogida" name="entrega" value="recogida" checked>
+                                <label for="recogida">Recogida en punto de entrega (Tarragona)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="domicilio" name="entrega" value="domicilio">
+                                <label for="domicilio">Entrega a domicilio (consultar disponibilidad)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4><i class="fas fa-clock"></i> Antelación</h4>
+                            <p>Mínimo 4 días de antelación para garantizar disponibilidad.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-euro-sign"></i> Pedido mínimo</h4>
+                            <p>El pedido mínimo es de 20€. Pago al recibir el producto.</p>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Solicitar Presupuesto
+                    </button>
+                </form>
+                
+                <div id="formMessage" class="form-message" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLAMADA A LA ACCIÓN FINAL -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title">¿Prefieres Contarnos tu Idea?</h2>
+                <p class="final-cta-text">
+                    Si tienes dudas o quieres explicarnos mejor lo que tienes en mente, 
+                    contacta con nosotros directamente.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20número" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="productos.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-arrow-left"></i>
+                        Ver Más Productos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section footer-about">
+                    <h3>Tartas de Tina</h3>
+                    <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                        <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestros Productos</h3>
+                    <ul>
+                        <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                        <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                        <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                        <li><a href="macarons.html">Macarons</a></li>
+                        <li><a href="mousses.html">Tartas de Mousse</a></li>
+                        <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                        <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+34627189264">+34 627 189 264</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tarragona, España 43007</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                    <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <span class="separator">|</span>
+                    <a href="cookies.html">Política de Cookies</a>
+                    <span class="separator">|</span>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <span class="separator">|</span>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20número" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    
+    <script src="js/header.js"></script>
+
+</body>
+</html>

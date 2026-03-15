@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Términos y Condiciones de Tartas de Tina. Condiciones de compra, pedidos, entregas y devoluciones.">
+    <title>Términos y Condiciones - Tartas de Tina</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HEADER STICKY - ALINEACIÓN VERTICAL CORREGIDA -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo clickeable -->
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    
+                    <!-- MENÚ DESPLEGABLE DE PRODUCTOS -->
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER - ALINEACIÓN CORREGIDA -->
+<style>
+/* ==========================================
+   LOGO CLICKEABLE
+   ========================================== */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link .logo {
+    cursor: pointer;
+}
+
+/* ==========================================
+   CORRECCIÓN DE ALINEACIÓN VERTICAL
+   ========================================== */
+
+/* Asegurar que la lista de navegación use flexbox con alineación central */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center; /* 👈 CLAVE: Alinear todos los items al centro */
+}
+
+/* Resetear estilos del item de lista */
+.nav-list > li {
+    display: flex; /* 👈 IMPORTANTE */
+    align-items: center; /* 👈 IMPORTANTE */
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que TODOS los nav-link tengan la misma alineación */
+.nav-link {
+    display: inline-flex; /* 👈 inline-flex para mantener comportamiento inline */
+    align-items: center; /* 👈 Alinear contenido verticalmente */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+/* ==========================================
+   MENÚ DESPLEGABLE DE PRODUCTOS
+   ========================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle con MISMA altura que otros nav-link */
+.dropdown-toggle {
+    gap: 0.375rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px; /* Pequeño espacio entre texto y flecha */
+}
+
+/* Rotar la flecha cuando está hover */
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Efecto hover y active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+
+/* Items del menú desplegable */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+
+/* Línea separadora entre items */
+.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* ==========================================
+   RESPONSIVE - MENÚ MÓVIL
+   ========================================== */
+@media (max-width: 992px) {
+    /* En móvil cambiar de flex a block */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    
+    .nav-list > li {
+        width: 100%;
+    }
+    
+    /* En móvil, el dropdown se comporta diferente */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    
+    /* Mostrar dropdown en móvil cuando se activa */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform var(--transition-normal);
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-item {
+        padding-left: calc(var(--spacing-lg) + 1rem);
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-item:hover {
+        padding-left: calc(var(--spacing-lg) + 1.5rem);
+    }
+}
+</style>
+
+
+    
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Términos y Condiciones</h1>
+                <p class="page-hero-subtitle">Condiciones de compra y contratación de servicios</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO LEGAL -->
+    <section class="legal-content">
+        <div class="container">
+            <div class="legal-wrapper">
+                
+                <div class="legal-section">
+                    <h2>1. Información General</h2>
+                    <p>Los presentes Términos y Condiciones regulan la relación comercial entre el cliente (en adelante, "el Cliente") y:</p>
+                    <div class="legal-info-box">
+                        <p><strong>Titular:</strong> Bohdana Yanchiy (Tartas de Tina)</p>
+                        <p><strong>NIF:</strong> X5527793L</p>
+                        <p><strong>Domicilio:</strong> C/ Violetes N, 43007 Tarragona, España</p>
+                        <p><strong>Email:</strong> tartasdetina@gmail.com</p>
+                        <p><strong>Teléfono:</strong> +34 627 189 264</p>
+                    </div>
+                    <p>Al realizar un pedido, el Cliente declara haber leído, entendido y aceptado los presentes Términos y Condiciones.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>2. Productos y Servicios</h2>
+                    <p>Tartas de Tina ofrece productos de repostería artesanal, incluyendo:</p>
+                    <ul>
+                        <li>Tartas personalizadas</li>
+                        <li>Cheesecakes y tartas de queso</li>
+                        <li>Tartas de números</li>
+                        <li>Macarons</li>
+                        <li>Tartas de mousse</li>
+                        <li>Vasos de postre individuales</li>
+                        <li>Otros postres artesanales</li>
+                    </ul>
+                    <p>Todos los productos son elaborados de forma artesanal bajo pedido, utilizando ingredientes de calidad. Las imágenes de los productos en el sitio web son orientativas y pueden variar ligeramente del producto final.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>3. Proceso de Pedido</h2>
+                    <h3>3.1. Realización del Pedido</h3>
+                    <p>Los pedidos pueden realizarse a través de:</p>
+                    <ul>
+                        <li>Formularios de contacto en el sitio web</li>
+                        <li>WhatsApp: +34 627 189 264</li>
+                        <li>Email: tartasdetina@gmail.com</li>
+                        <li>Teléfono: +34 627 189 264</li>
+                    </ul>
+                    
+                    <h3>3.2. Confirmación del Pedido</h3>
+                    <p>Una vez recibido el pedido, Tartas de Tina contactará con el Cliente para:</p>
+                    <ul>
+                        <li>Confirmar los detalles del pedido (producto, tamaño, sabor, decoración, etc.)</li>
+                        <li>Confirmar la disponibilidad</li>
+                        <li>Informar del precio final</li>
+                        <li>Acordar la fecha y método de entrega/recogida</li>
+                    </ul>
+                    <p>El pedido se considerará confirmado una vez que el Cliente acepte las condiciones comunicadas.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>4. Plazos y Antelación</h2>
+                    <div class="legal-info-box highlight">
+                        <p><strong>Antelación mínima:</strong> 4 días naturales antes de la fecha de entrega/recogida.</p>
+                        <p><strong>Pedidos elaborados:</strong> Se recomienda mayor antelación para diseños complejos o personalizaciones especiales.</p>
+                        <p><strong>Temporadas altas:</strong> Durante fechas señaladas (Navidad, San Valentín, etc.) se recomienda realizar los pedidos con mayor antelación.</p>
+                    </div>
+                    <p>Tartas de Tina se reserva el derecho de no aceptar pedidos que no cumplan con la antelación mínima requerida.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>5. Precios y Pedido Mínimo</h2>
+                    <h3>5.1. Precios</h3>
+                    <p>Los precios de los productos serán comunicados al Cliente antes de la confirmación del pedido. Los precios pueden variar en función de:</p>
+                    <ul>
+                        <li>Tamaño del producto</li>
+                        <li>Complejidad del diseño</li>
+                        <li>Ingredientes especiales</li>
+                        <li>Personalización requerida</li>
+                    </ul>
+                    
+                    <h3>5.2. Pedido Mínimo</h3>
+                    <div class="legal-info-box highlight">
+                        <p><strong>Pedido mínimo general:</strong> 20€</p>
+                        <p><strong>Macarons:</strong> Mínimo 6 unidades por pedido</p>
+                        <p><strong>Vasos de postre:</strong> Mínimo 6 unidades por pedido</p>
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h2>6. Forma de Pago</h2>
+                    <p>El pago se realiza <strong>en el momento de la entrega o recogida</strong> del producto.</p>
+                    <p>Métodos de pago aceptados:</p>
+                    <ul>
+                        <li>Efectivo</li>
+                        <li>Transferencia bancaria (acordar previamente)</li>
+                    </ul>
+                    <p>No se requiere pago anticipado, salvo acuerdo expreso entre las partes para pedidos especiales de gran volumen.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>7. Entrega y Recogida</h2>
+                    <h3>7.1. Recogida en Punto de Entrega</h3>
+                    <p>El Cliente puede recoger su pedido en el punto de entrega acordado en Tarragona. Se acordará previamente la fecha y hora de recogida.</p>
+                    
+                    <h3>7.2. Entrega a Domicilio</h3>
+                    <p>La entrega a domicilio está disponible en Tarragona y alrededores, sujeta a disponibilidad. El coste de entrega, si lo hubiera, será comunicado al Cliente antes de confirmar el pedido.</p>
+                    
+                    <h3>7.3. Responsabilidad en la Entrega</h3>
+                    <p>Una vez que el producto es entregado al Cliente o a la persona designada, la responsabilidad sobre el mismo pasa a ser del Cliente. Se recomienda:</p>
+                    <ul>
+                        <li>Verificar el estado del producto en el momento de la entrega</li>
+                        <li>Conservar el producto en las condiciones indicadas (refrigeración si es necesario)</li>
+                        <li>Consumir el producto en el plazo recomendado</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>8. Cancelaciones y Modificaciones</h2>
+                    <h3>8.1. Cancelación por el Cliente</h3>
+                    <p>Dado que los productos son elaborados bajo pedido y de forma personalizada:</p>
+                    <ul>
+                        <li>Las cancelaciones deben comunicarse con al menos <strong>48 horas de antelación</strong> a la fecha de entrega.</li>
+                        <li>Las cancelaciones realizadas con menos de 48 horas de antelación podrán conllevar el cobro parcial o total del pedido, en función de los materiales ya utilizados.</li>
+                    </ul>
+                    
+                    <h3>8.2. Modificaciones</h3>
+                    <p>Las modificaciones en el pedido (tamaño, sabor, diseño) deben solicitarse con la mayor antelación posible. La aceptación de modificaciones está sujeta a la disponibilidad y al estado de elaboración del pedido.</p>
+                    
+                    <h3>8.3. Cancelación por Tartas de Tina</h3>
+                    <p>Tartas de Tina se reserva el derecho de cancelar un pedido en casos excepcionales (fuerza mayor, falta de disponibilidad de ingredientes, etc.), en cuyo caso se comunicará al Cliente lo antes posible y no se realizará ningún cargo.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>9. Alergias e Intolerancias</h2>
+                    <p>Es responsabilidad del Cliente informar sobre cualquier alergia o intolerancia alimentaria antes de confirmar el pedido.</p>
+                    <p>Nuestros productos pueden contener o haber estado en contacto con:</p>
+                    <ul>
+                        <li>Gluten</li>
+                        <li>Huevo</li>
+                        <li>Leche y derivados lácteos</li>
+                        <li>Frutos secos</li>
+                        <li>Soja</li>
+                    </ul>
+                    <p>Tartas de Tina no se hace responsable de reacciones alérgicas si el Cliente no ha informado previamente de sus alergias o intolerancias.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>10. Reclamaciones</h2>
+                    <p>En caso de cualquier incidencia con el pedido, el Cliente debe comunicarlo en el momento de la entrega o, como máximo, en las 24 horas siguientes, aportando fotografías si es necesario.</p>
+                    <p>Las reclamaciones pueden realizarse a través de:</p>
+                    <ul>
+                        <li>Email: tartasdetina@gmail.com</li>
+                        <li>Teléfono/WhatsApp: +34 627 189 264</li>
+                    </ul>
+                    <p>Tartas de Tina estudiará cada caso y ofrecerá una solución adecuada.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>11. Propiedad Intelectual</h2>
+                    <p>Los diseños originales creados por Tartas de Tina son propiedad intelectual de Tartas de Tina. El Cliente no podrá utilizar fotografías de los productos para fines comerciales sin autorización previa.</p>
+                    <p>Tartas de Tina se reserva el derecho de fotografiar los productos elaborados y utilizar dichas imágenes con fines promocionales (redes sociales, web, etc.), salvo que el Cliente exprese su oposición por escrito.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>12. Protección de Datos</h2>
+                    <p>Los datos personales facilitados por el Cliente serán tratados de acuerdo con nuestra <a href="privacidad.html">Política de Privacidad</a>.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>13. Legislación Aplicable</h2>
+                    <p>Los presentes Términos y Condiciones se rigen por la legislación española. Para cualquier controversia derivada de estos Términos y Condiciones, las partes se someten a los Juzgados y Tribunales de Tarragona.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>14. Contacto</h2>
+                    <p>Para cualquier consulta relacionada con estos Términos y Condiciones:</p>
+                    <div class="legal-info-box">
+                        <p><strong>Email:</strong> <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a></p>
+                        <p><strong>Teléfono/WhatsApp:</strong> <a href="tel:+34627189264">+34 627 189 264</a></p>
+                        <p><strong>Dirección:</strong> C/ Violetes N, 43007 Tarragona, España</p>
+                    </div>
+                </div>
+
+                <div class="legal-footer">
+                    <p><strong>Última actualización:</strong> Diciembre 2024</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section footer-about">
+                    <h3>Tartas de Tina</h3>
+                    <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                        <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestros Productos</h3>
+                    <ul>
+                        <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                        <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                        <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                        <li><a href="macarons.html">Macarons</a></li>
+                        <li><a href="mousses.html">Tartas de Mousse</a></li>
+                        <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                        <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+34627189264">+34 627 189 264</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tarragona, España 43007</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                    <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <span class="separator">|</span>
+                    <a href="cookies.html">Política de Cookies</a>
+                    <span class="separator">|</span>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <span class="separator">|</span>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/34627189264" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+
+    <script src="js/header.js"></script>
+
+</body>
+</html>

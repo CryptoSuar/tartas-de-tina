@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de tartas artesanales de Tartas de Tina en Tarragona. Tartas personalizadas, cheesecakes, macarons, mousses y más creaciones dulces.">
+    <title>Galería - Tartas de Tina | Repostería Artesanal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER STICKY -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="galeria.html" class="nav-link active">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER -->
+<style>
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+.logo-link:hover { opacity: 0.8; }
+.logo-link .logo { cursor: pointer; }
+
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+.nav-list > li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+.dropdown { position: relative; }
+.dropdown-toggle { gap: 0.375rem; }
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px;
+}
+.dropdown:hover .dropdown-toggle i { transform: rotate(180deg); }
+.nav-link:hover, .nav-link.active { color: var(--primary-color); }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+.dropdown-menu li:not(:last-child) { border-bottom: 1px solid var(--gray-200); }
+
+@media (max-width: 992px) {
+    .nav-list { flex-direction: column; gap: var(--spacing-md); align-items: flex-start; }
+    .nav-list > li { width: 100%; }
+    .dropdown-menu {
+        position: static; transform: none;
+        box-shadow: none; background: var(--gray-50);
+        border-radius: 0; margin-top: 0; padding: 0;
+        opacity: 1; visibility: visible;
+        max-height: 0; overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    .dropdown.active .dropdown-menu { max-height: 500px; padding: var(--spacing-sm) 0; }
+    .dropdown-toggle i { transition: transform var(--transition-normal); }
+    .dropdown.active .dropdown-toggle i { transform: rotate(180deg); }
+    .dropdown-item { padding-left: calc(var(--spacing-lg) + 1rem); font-size: 0.875rem; }
+    .dropdown-item:hover { padding-left: calc(var(--spacing-lg) + 1.5rem); }
+}
+
+/* ==========================================
+   GALERÍA — ESTILOS ESPECÍFICOS
+   ========================================== */
+
+/* Filtros */
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--gray-300);
+    background: var(--white);
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-family: var(--font-body);
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-color: transparent;
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+/* Grid de galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-name {
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+}
+
+.gallery-item-cat {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.18);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    width: fit-content;
+}
+
+.gallery-item-zoom {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-dark);
+    font-size: 0.875rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all var(--transition-normal);
+}
+
+.gallery-item:hover .gallery-item-zoom {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item.hidden {
+    display: none;
+}
+
+/* Contador de resultados */
+.gallery-count {
+    text-align: center;
+    color: var(--gray-500);
+    font-size: 0.9375rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Sin resultados */
+.gallery-empty {
+    text-align: center;
+    padding: var(--spacing-3xl) 0;
+    color: var(--gray-500);
+    display: none;
+}
+
+.gallery-empty i {
+    font-size: 3rem;
+    color: var(--gray-300);
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-inner {
+    position: relative;
+    max-width: 900px;
+    max-height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-caption {
+    color: var(--white);
+    text-align: center;
+}
+
+.lightbox-caption h3 {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+}
+
+.lightbox-caption span {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.lightbox-prev { left: 1.25rem; }
+.lightbox-next { right: 1.25rem; }
+
+/* Responsive galería */
+@media (max-width: 992px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.625rem; }
+    .gallery-filters { gap: 0.5rem; }
+    .filter-btn { padding: 0.5rem 1rem; font-size: 0.875rem; }
+    .lightbox-prev { left: 0.5rem; }
+    .lightbox-next { right: 0.5rem; }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+}
+</style>
+
+<!-- JAVASCRIPT DROPDOWN MÓVIL -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown) {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        if (window.innerWidth <= 992) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            });
+        }
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 992) dropdown.classList.remove('active');
+        });
+    }
+});
+</script>
+
+<!-- HERO INTERNO -->
+<section class="page-hero page-hero-with-image">
+    <div class="page-hero-background">
+        <img src="images/heroes/hero-galeria.jpg" alt="Galería de creaciones" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80'">
+    </div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+        <div class="page-hero-content">
+            <span class="section-label" style="color: var(--primary-color);">Nuestras Creaciones</span>
+            <h1 class="page-hero-title">Galería</h1>
+            <p class="page-hero-subtitle">Cada pieza es única, hecha con amor y dedicación para tu momento especial</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="category-section" style="padding-top: var(--spacing-3xl);">
+    <div class="container">
+
+        <!-- Filtros -->
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th"></i> Todos
+            </button>
+            <button class="filter-btn" data-filter="tartas">
+                <i class="fas fa-birthday-cake"></i> Tartas
+            </button>
+            <button class="filter-btn" data-filter="cheesecakes">
+                <i class="fas fa-cheese"></i> Cheesecakes
+            </button>
+            <button class="filter-btn" data-filter="macarons">
+                <i class="fas fa-cookie"></i> Macarons
+            </button>
+            <button class="filter-btn" data-filter="mousses">
+                <i class="fas fa-cloud"></i> Mousses
+            </button>
+            <button class="filter-btn" data-filter="numeros">
+                <i class="fas fa-sort-numeric-up"></i> Tartas Números
+            </button>
+            <button class="filter-btn" data-filter="vasos">
+                <i class="fas fa-wine-glass"></i> Vasos Postre
+            </button>
+            <button class="filter-btn" data-filter="otros">
+                <i class="fas fa-star"></i> Otros Postres
+            </button>
+        </div>
+
+        <!-- Contador -->
+        <p class="gallery-count" id="galleryCount"></p>
+
+        <!-- Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+
+            <!-- TARTAS -->
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Vainilla" tabindex="0">
+                <img src="images/productos/tartas/tarta-vainilla.jpg" alt="Tarta de Vainilla" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tarta de Vainilla</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Arándanos" tabindex="0">
+                <img src="images/productos/tartas/tarta-arandanos.jpg" alt="Tarta de Arándanos" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tarta de Arándanos</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Frambuesa y Chocolate" tabindex="0">
+                <img src="images/productos/tartas/tarta-frambuesa-chocolate.jpg" alt="Tarta de Frambuesa y Chocolate" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Frambuesa y Chocolate</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Frambuesa y Almendra" tabindex="0">
+                <img src="images/productos/tartas/tarta-frambuesa-almendra.jpg" alt="Tarta de Frambuesa y Almendra" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Frambuesa y Almendra</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Frambuesa y Queso Crema" tabindex="0">
+                <img src="images/productos/tartas/tarta-frambuesa-queso-crema.jpg" alt="Tarta de Frambuesa y Queso Crema" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Frambuesa y Queso Crema</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Fresas con Miel" tabindex="0">
+                <img src="images/productos/tartas/tarta-fresas-miel.jpg" alt="Tarta de Fresas con Miel" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Fresas con Miel</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Fresa, Oreo y Helado" tabindex="0">
+                <img src="images/productos/tartas/tarta-fresa-oreo-helado.jpg" alt="Tarta Fresa Oreo Helado" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Fresa, Oreo y Helado</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Frutos del Bosque" tabindex="0">
+                <img src="images/productos/tartas/tarta-frutos-bosque-40.jpg" alt="Tarta de Frutos del Bosque" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Frutos del Bosque</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Queso con Frutos del Bosque" tabindex="0">
+                <img src="images/productos/tartas/tarta-queso-frutos-bosque.jpg" alt="Tarta Queso con Frutos del Bosque" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Queso y Frutos del Bosque</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Tres Chocolates" tabindex="0">
+                <img src="images/productos/tartas/tarta-tres-chocolates.jpg" alt="Tarta de Tres Chocolates" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tres Chocolates</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta de Maracuyá" tabindex="0">
+                <img src="images/productos/tartas/tarta-maracuya.jpg" alt="Tarta de Maracuyá" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Maracuyá</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Milhojas de Crema y Fresas" tabindex="0">
+                <img src="images/productos/tartas/tarta-milhojas-crema-fresas.jpg" alt="Tarta Milhojas de Crema y Fresas" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Milhojas Crema y Fresas</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Oreo" tabindex="0">
+                <img src="images/productos/tartas/tarta-oreo.jpg" alt="Tarta Oreo" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tarta Oreo</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Oreo y Stitch" tabindex="0">
+                <img src="images/productos/tartas/tarta-oreo-stitch.jpg" alt="Tarta Oreo y Stitch" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Oreo y Stitch</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Kinder Bueno" tabindex="0">
+                <img src="images/productos/tartas/tarta-kinder-bueno.jpg" alt="Tarta Kinder Bueno" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Kinder Bueno</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Lotus" tabindex="0">
+                <img src="images/productos/tartas/tarta-lotus.jpg" alt="Tarta Lotus" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tarta Lotus</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Carrot Cake con Frutos del Bosque" tabindex="0">
+                <img src="images/productos/tartas/carrot-cake-frutos-bosque.jpg" alt="Carrot Cake con Frutos del Bosque" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Carrot Cake</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Brazo Gitano de Queso y Frambuesa" tabindex="0">
+                <img src="images/productos/tartas/brazo-gitano-queso-frambuesa.jpg" alt="Brazo Gitano de Queso y Frambuesa" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Brazo Gitano Queso y Frambuesa</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Rollo de Merengue con Fresa y Mango" tabindex="0">
+                <img src="images/productos/tartas/rollo-merengue-fresa-mango.jpg" alt="Rollo de Merengue con Fresa y Mango" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Rollo Merengue Fresa y Mango</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Rollo de Mora y Nata" tabindex="0">
+                <img src="images/productos/tartas/rollo-mora-nata.jpg" alt="Rollo de Mora y Nata" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Rollo de Mora y Nata</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="tartas" data-name="Tarta Julio en Familia" tabindex="0">
+                <img src="images/productos/tartas/tarta-julio-familia.jpg" alt="Tarta Julio en Familia" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tarta Familiar</p>
+                    <span class="gallery-item-cat">Tartas</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- CHEESECAKES -->
+            <div class="gallery-item" data-category="cheesecakes" data-name="Cheesecake de Frambuesa" tabindex="0">
+                <img src="images/productos/cheesecakes/cheesecake-frambuesa.jpg" alt="Cheesecake de Frambuesa" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Cheesecake de Frambuesa</p>
+                    <span class="gallery-item-cat">Cheesecakes</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="cheesecakes" data-name="Tarta de Queso Vasca" tabindex="0">
+                <img src="images/productos/cheesecakes/tarta-queso-vasca.jpg" alt="Tarta de Queso Vasca" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tarta de Queso Vasca</p>
+                    <span class="gallery-item-cat">Cheesecakes</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="cheesecakes" data-name="Cheesecake de Dubai" tabindex="0">
+                <img src="images/productos/cheesecakes/cheesecake-dubai.jpg" alt="Cheesecake de Dubai" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Cheesecake de Dubai</p>
+                    <span class="gallery-item-cat">Cheesecakes</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- MACARONS -->
+            <div class="gallery-item" data-category="macarons" data-name="Macarons Variados" tabindex="0">
+                <img src="images/productos/macarons/macarons-variados.jpg" alt="Macarons Variados" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Macarons Variados</p>
+                    <span class="gallery-item-cat">Macarons</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- MOUSSES -->
+            <div class="gallery-item" data-category="mousses" data-name="Mousse de Fresa y Vainilla" tabindex="0">
+                <img src="images/productos/mousses/mousse-fresa-vainilla.jpg" alt="Mousse de Fresa y Vainilla" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Mousse Fresa y Vainilla</p>
+                    <span class="gallery-item-cat">Mousses</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="mousses" data-name="Mousse de Frutos del Bosque" tabindex="0">
+                <img src="images/productos/mousses/mousse-frutos-bosque.jpg" alt="Mousse de Frutos del Bosque" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Mousse Frutos del Bosque</p>
+                    <span class="gallery-item-cat">Mousses</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="mousses" data-name="Mousse de Mermelada de Fresa y Nata" tabindex="0">
+                <img src="images/productos/mousses/mousse-mermelada-fresa-nata.jpg" alt="Mousse de Mermelada de Fresa y Nata" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Mousse Mermelada Fresa y Nata</p>
+                    <span class="gallery-item-cat">Mousses</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- TARTAS DE NÚMEROS -->
+            <div class="gallery-item" data-category="numeros" data-name="Tarta Número 50" tabindex="0">
+                <img src="images/productos/numeros/tarta-numero-50.jpg" alt="Tarta Número 50" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Tarta Número 50</p>
+                    <span class="gallery-item-cat">Tartas Números</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- VASOS DE POSTRE -->
+            <div class="gallery-item" data-category="vasos" data-name="Vasos de Fresa y Nata" tabindex="0">
+                <img src="images/productos/vasos/vasos-fresa-nata.jpg" alt="Vasos de Fresa y Nata" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Vasos Fresa y Nata</p>
+                    <span class="gallery-item-cat">Vasos de Postre</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="vasos" data-name="Vasos Red Velvet y Fresa" tabindex="0">
+                <img src="images/productos/vasos/vasos-red-velvet-fresa.jpg" alt="Vasos Red Velvet y Fresa" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Vasos Red Velvet y Fresa</p>
+                    <span class="gallery-item-cat">Vasos de Postre</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="vasos" data-name="Vasos Snickers" tabindex="0">
+                <img src="images/productos/vasos/vasos-snickers.jpg" alt="Vasos Snickers" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Vasos Snickers</p>
+                    <span class="gallery-item-cat">Vasos de Postre</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <!-- OTROS POSTRES -->
+            <div class="gallery-item" data-category="otros" data-name="Flautas Rellenas" tabindex="0">
+                <img src="images/productos/otros/flautas-rellenas.jpg" alt="Flautas Rellenas" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Flautas Rellenas</p>
+                    <span class="gallery-item-cat">Otros Postres</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="otros" data-name="Helado de Bizcocho" tabindex="0">
+                <img src="images/productos/otros/helado-bizcocho.jpg" alt="Helado de Bizcocho" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Helado de Bizcocho</p>
+                    <span class="gallery-item-cat">Otros Postres</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="otros" data-name="Nueces con Galleta" tabindex="0">
+                <img src="images/productos/otros/nueces-galleta.jpg" alt="Nueces con Galleta" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <p class="gallery-item-name">Nueces con Galleta</p>
+                    <span class="gallery-item-cat">Otros Postres</span>
+                </div>
+                <div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+        </div>
+
+        <!-- Sin resultados (oculto por defecto) -->
+        <div class="gallery-empty" id="galleryEmpty">
+            <i class="fas fa-images"></i>
+            <p>No hay imágenes en esta categoría todavía.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta-section">
+    <div class="container">
+        <div class="final-cta-content">
+            <h2 class="final-cta-title">¿Te ha gustado lo que ves?</h2>
+            <p class="final-cta-text">Contacta con nosotros y creamos juntos tu tarta perfecta.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/34627189264?text=Hola!%20He%20visto%20la%20galería%20y%20me%20gustaría%20hacer%20un%20pedido" class="btn btn-primary btn-large" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Pedir por WhatsApp
+                </a>
+                <a href="productos.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-birthday-cake"></i>
+                    Ver Productos
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+
+            <div class="footer-section footer-about">
+                <h3>Tartas de Tina</h3>
+                <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Nuestros Productos</h3>
+                <ul>
+                    <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                    <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                    <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                    <li><a href="macarons.html">Macarons</a></li>
+                    <li><a href="mousses.html">Tartas de Mousse</a></li>
+                    <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                    <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+34627189264">+34 627 189 264</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tarragona, España 43007</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+            </div>
+            <div class="footer-bottom-right">
+                <a href="privacidad.html">Política de Privacidad</a>
+                <span class="separator">|</span>
+                <a href="cookies.html">Política de Cookies</a>
+                <span class="separator">|</span>
+                <a href="aviso-legal.html">Aviso Legal</a>
+                <span class="separator">|</span>
+                <a href="terminos-condiciones.html">Términos y Condiciones</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Botón WhatsApp Flotante -->
+<a href="https://wa.me/34627189264?text=Hola!%20He%20visto%20la%20galería%20y%20me%20gustaría%20hacer%20un%20pedido"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
+        <i class="fas fa-times"></i>
+    </button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    <div class="lightbox-inner">
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <div class="lightbox-caption">
+            <h3 id="lightboxName"></h3>
+            <span id="lightboxCat"></span>
+        </div>
+    </div>
+</div>
+
+    <script src="js/header.js"></script>
+
+<!-- JAVASCRIPT -->
+<script>
+    // ==========================================
+    // FILTROS DE GALERÍA
+    // ==========================================
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryCount = document.getElementById('galleryCount');
+    const galleryEmpty = document.getElementById('galleryEmpty');
+
+    function updateCount(visible) {
+        galleryCount.textContent = visible === galleryItems.length
+            ? visible + ' creaciones'
+            : visible + ' de ' + galleryItems.length + ' creaciones';
+    }
+
+    function filterGallery(filter) {
+        let visible = 0;
+        galleryItems.forEach(item => {
+            const match = filter === 'all' || item.dataset.category === filter;
+            item.classList.toggle('hidden', !match);
+            if (match) visible++;
+        });
+        galleryEmpty.style.display = visible === 0 ? 'block' : 'none';
+        updateCount(visible);
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterGallery(btn.dataset.filter);
+        });
+    });
+
+    // Inicializar contador
+    updateCount(galleryItems.length);
+
+    // ==========================================
+    // LIGHTBOX
+    // ==========================================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxName = document.getElementById('lightboxName');
+    const lightboxCat = document.getElementById('lightboxCat');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    let currentIndex = 0;
+    let visibleItems = [];
+
+    function getVisibleItems() {
+        return Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+    }
+
+    function openLightbox(index) {
+        visibleItems = getVisibleItems();
+        currentIndex = index;
+        const item = visibleItems[currentIndex];
+        const img = item.querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxName.textContent = item.dataset.name;
+        lightboxCat.textContent = item.querySelector('.gallery-item-cat').textContent;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function showPrev() {
+        visibleItems = getVisibleItems();
+        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+        openLightbox(currentIndex);
+    }
+
+    function showNext() {
+        visibleItems = getVisibleItems();
+        currentIndex = (currentIndex + 1) % visibleItems.length;
+        openLightbox(currentIndex);
+    }
+
+    galleryItems.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            visibleItems = getVisibleItems();
+            const visibleIndex = visibleItems.indexOf(item);
+            if (visibleIndex !== -1) openLightbox(visibleIndex);
+        });
+        item.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.click();
+            }
+        });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrev);
+    lightboxNext.addEventListener('click', showNext);
+
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+    });
+</script>
+
+</body>
+</html>

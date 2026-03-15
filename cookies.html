@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Cookies de Tartas de Tina. Información sobre el uso de cookies en nuestro sitio web.">
+    <title>Política de Cookies - Tartas de Tina</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HEADER STICKY - ALINEACIÓN VERTICAL CORREGIDA -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo clickeable -->
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    
+                    <!-- MENÚ DESPLEGABLE DE PRODUCTOS -->
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER - ALINEACIÓN CORREGIDA -->
+<style>
+/* ==========================================
+   LOGO CLICKEABLE
+   ========================================== */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link .logo {
+    cursor: pointer;
+}
+
+/* ==========================================
+   CORRECCIÓN DE ALINEACIÓN VERTICAL
+   ========================================== */
+
+/* Asegurar que la lista de navegación use flexbox con alineación central */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center; /* 👈 CLAVE: Alinear todos los items al centro */
+}
+
+/* Resetear estilos del item de lista */
+.nav-list > li {
+    display: flex; /* 👈 IMPORTANTE */
+    align-items: center; /* 👈 IMPORTANTE */
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que TODOS los nav-link tengan la misma alineación */
+.nav-link {
+    display: inline-flex; /* 👈 inline-flex para mantener comportamiento inline */
+    align-items: center; /* 👈 Alinear contenido verticalmente */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+/* ==========================================
+   MENÚ DESPLEGABLE DE PRODUCTOS
+   ========================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle con MISMA altura que otros nav-link */
+.dropdown-toggle {
+    gap: 0.375rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px; /* Pequeño espacio entre texto y flecha */
+}
+
+/* Rotar la flecha cuando está hover */
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Efecto hover y active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+
+/* Items del menú desplegable */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+
+/* Línea separadora entre items */
+.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* ==========================================
+   RESPONSIVE - MENÚ MÓVIL
+   ========================================== */
+@media (max-width: 992px) {
+    /* En móvil cambiar de flex a block */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    
+    .nav-list > li {
+        width: 100%;
+    }
+    
+    /* En móvil, el dropdown se comporta diferente */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    
+    /* Mostrar dropdown en móvil cuando se activa */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform var(--transition-normal);
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-item {
+        padding-left: calc(var(--spacing-lg) + 1rem);
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-item:hover {
+        padding-left: calc(var(--spacing-lg) + 1.5rem);
+    }
+}
+</style>
+
+
+    
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Política de Cookies</h1>
+                <p class="page-hero-subtitle">Información sobre el uso de cookies en nuestro sitio web</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO LEGAL -->
+    <section class="legal-content">
+        <div class="container">
+            <div class="legal-wrapper">
+                
+                <div class="legal-section">
+                    <h2>1. ¿Qué son las Cookies?</h2>
+                    <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo (ordenador, tablet o móvil) cuando visitas un sitio web. Las cookies permiten que el sitio web recuerde tus acciones y preferencias durante un período de tiempo, para que no tengas que volver a introducirlos cada vez que vuelvas al sitio o navegues de una página a otra.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>2. ¿Quién es el Responsable?</h2>
+                    <div class="legal-info-box">
+                        <p><strong>Responsable:</strong> Bohdana Yanchiy (Tartas de Tina)</p>
+                        <p><strong>NIF:</strong> X5527793L</p>
+                        <p><strong>Dirección:</strong> C/ Violetes N, 43007 Tarragona, España</p>
+                        <p><strong>Email:</strong> tartasdetina@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h2>3. Tipos de Cookies que Utilizamos</h2>
+                    <p>En nuestro sitio web utilizamos los siguientes tipos de cookies:</p>
+                    
+                    <h3>3.1. Cookies Técnicas o Necesarias</h3>
+                    <p>Son aquellas que permiten al usuario la navegación a través del sitio web y la utilización de las diferentes opciones o servicios que en ella existen. Por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los elementos que integran un pedido, etc.</p>
+                    
+                    <h3>3.2. Cookies de Preferencias o Personalización</h3>
+                    <p>Son aquellas que permiten recordar información para que el usuario acceda al servicio con determinadas características que pueden diferenciar su experiencia de la de otros usuarios, como el idioma, el número de resultados a mostrar cuando el usuario realiza una búsqueda, el aspecto o contenido del servicio en función del tipo de navegador, etc.</p>
+                    
+                    <h3>3.3. Cookies de Análisis o Medición</h3>
+                    <p>Son aquellas que permiten cuantificar el número de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio ofrecido. Para ello se analiza su navegación en nuestra página web con el fin de mejorar la oferta de productos o servicios que le ofrecemos.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>4. Cookies de Terceros</h2>
+                    <p>Nuestro sitio web puede utilizar servicios de terceros que, por cuenta propia, recopilarán información con fines estadísticos, de uso del sitio por parte del usuario y para la prestación de otros servicios relacionados con la actividad del sitio web y otros servicios de Internet.</p>
+                    <p>En particular, este sitio web puede utilizar:</p>
+                    <ul>
+                        <li><strong>Google Fonts:</strong> para la carga de tipografías.</li>
+                        <li><strong>Font Awesome:</strong> para la carga de iconos.</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>5. ¿Cómo Gestionar las Cookies?</h2>
+                    <p>Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de las opciones del navegador instalado en tu ordenador. A continuación te indicamos cómo hacerlo en los principales navegadores:</p>
+                    <ul>
+                        <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios</li>
+                        <li><strong>Mozilla Firefox:</strong> Opciones → Privacidad y seguridad → Cookies y datos del sitio</li>
+                        <li><strong>Safari:</strong> Preferencias → Privacidad → Cookies y datos de sitios web</li>
+                        <li><strong>Microsoft Edge:</strong> Configuración → Cookies y permisos del sitio → Cookies y datos almacenados</li>
+                    </ul>
+                    <p>Si bloqueas el uso de cookies en tu navegador es posible que algunos servicios o funcionalidades de la página web no estén disponibles.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>6. Cookies Utilizadas en Este Sitio Web</h2>
+                    <p>A continuación se identifican las cookies que se utilizan en este sitio web:</p>
+                    
+                    <div class="cookie-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Tipo</th>
+                                    <th>Finalidad</th>
+                                    <th>Duración</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cookieConsent</td>
+                                    <td>Técnica</td>
+                                    <td>Almacena el consentimiento del usuario respecto a las cookies</td>
+                                    <td>1 año</td>
+                                </tr>
+                                <tr>
+                                    <td>cart</td>
+                                    <td>Técnica</td>
+                                    <td>Almacena los productos añadidos al carrito</td>
+                                    <td>Sesión</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h2>7. Actualizaciones de la Política de Cookies</h2>
+                    <p>Tartas de Tina puede modificar esta Política de Cookies en función de exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos. Por ello, se aconseja a los usuarios que la visiten periódicamente.</p>
+                    <p>Cuando se produzcan cambios significativos en esta Política de Cookies, se comunicarán a los usuarios bien mediante la web o a través de correo electrónico a los usuarios registrados.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>8. Contacto</h2>
+                    <p>Si tienes cualquier duda sobre esta Política de Cookies, puedes contactarnos a través de:</p>
+                    <div class="legal-info-box">
+                        <p><strong>Email:</strong> <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a></p>
+                        <p><strong>Teléfono:</strong> <a href="tel:+34627189264">+34 627 189 264</a></p>
+                    </div>
+                </div>
+
+                <div class="legal-footer">
+                    <p><strong>Última actualización:</strong> Diciembre 2024</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            
+            <div class="footer-section footer-about">
+                <h3>Tartas de Tina</h3>
+                <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Nuestros Productos</h3>
+                <ul>
+                    <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                    <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                    <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                    <li><a href="macarons.html">Macarons</a></li>
+                    <li><a href="mousses.html">Tartas de Mousse</a></li>
+                    <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                    <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+34627189264">+34 627 189 264</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tarragona, España 43007</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+            </div>
+            <div class="footer-bottom-right">
+                <a href="privacidad.html">Política de Privacidad</a>
+                <span class="separator">|</span>
+                <a href="cookies.html">Política de Cookies</a>
+                <span class="separator">|</span>
+                <a href="aviso-legal.html">Aviso Legal</a>
+                <span class="separator">|</span>
+                <a href="terminos-condiciones.html">Términos y Condiciones</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <a href="https://wa.me/34627189264" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+
+    <script src="js/header.js"></script>
+
+</body>
+</html>

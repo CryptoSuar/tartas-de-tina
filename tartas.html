@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tartas personalizadas únicas en Tarragona. Elige tamaño, bizcocho, relleno y decoración. Más de 10 años creando tartas artesanales.">
+    <title>Tartas Personalizadas - Tartas de Tina | Repostería Artesanal</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HEADER STICKY - ALINEACIÓN VERTICAL CORREGIDA -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo clickeable -->
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>Tartas de Tina</h1>
+                    <span class="logo-tagline">Repostería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    
+                    <!-- MENÚ DESPLEGABLE DE PRODUCTOS -->
+                    <li class="dropdown">
+                        <a href="productos.html" class="nav-link dropdown-toggle">
+                            Productos
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tartas.html" class="dropdown-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Tartas Personalizadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="cheesecakes.html" class="dropdown-item">
+                                    <i class="fas fa-cheese"></i>
+                                    Cheesecakes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tartas-numeros.html" class="dropdown-item">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Tartas de Números
+                                </a>
+                            </li>
+                            <li>
+                                <a href="macarons.html" class="dropdown-item">
+                                    <i class="fas fa-cookie"></i>
+                                    Macarons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mousses.html" class="dropdown-item">
+                                    <i class="fas fa-cloud"></i>
+                                    Tartas de Mousse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="vasos-postre.html" class="dropdown-item">
+                                    <i class="fas fa-wine-glass"></i>
+                                    Vasos de Postre
+                                </a>
+                            </li>
+                            <li>
+                                <a href="otros-postres.html" class="dropdown-item">
+                                    <i class="fas fa-cookie-bite"></i>
+                                    Postres Artesanales
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                    <li><a href="index.html#como-pedir" class="nav-link">Cómo Pedir</a></li>
+                    <li><a href="index.html#preguntas" class="nav-link">Preguntas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="carrito.html" class="cart-btn" aria-label="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CSS ADICIONAL PARA EL HEADER - ALINEACIÓN CORREGIDA -->
+<style>
+/* ==========================================
+   LOGO CLICKEABLE
+   ========================================== */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition-normal);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo-link .logo {
+    cursor: pointer;
+}
+
+/* ==========================================
+   CORRECCIÓN DE ALINEACIÓN VERTICAL
+   ========================================== */
+
+/* Asegurar que la lista de navegación use flexbox con alineación central */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center; /* 👈 CLAVE: Alinear todos los items al centro */
+}
+
+/* Resetear estilos del item de lista */
+.nav-list > li {
+    display: flex; /* 👈 IMPORTANTE */
+    align-items: center; /* 👈 IMPORTANTE */
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegurar que TODOS los nav-link tengan la misma alineación */
+.nav-link {
+    display: inline-flex; /* 👈 inline-flex para mantener comportamiento inline */
+    align-items: center; /* 👈 Alinear contenido verticalmente */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+/* ==========================================
+   MENÚ DESPLEGABLE DE PRODUCTOS
+   ========================================== */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle con MISMA altura que otros nav-link */
+.dropdown-toggle {
+    gap: 0.375rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform var(--transition-normal);
+    margin-left: 2px; /* Pequeño espacio entre texto y flecha */
+}
+
+/* Rotar la flecha cuando está hover */
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Efecto hover y active */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-sm) 0;
+    min-width: 260px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+}
+
+/* Items del menú desplegable */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(255, 154, 162, 0.1), transparent);
+    color: var(--primary-color);
+    padding-left: calc(var(--spacing-lg) + 0.5rem);
+}
+
+/* Línea separadora entre items */
+.dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* ==========================================
+   RESPONSIVE - MENÚ MÓVIL
+   ========================================== */
+@media (max-width: 992px) {
+    /* En móvil cambiar de flex a block */
+    .nav-list {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+    }
+    
+    .nav-list > li {
+        width: 100%;
+    }
+    
+    /* En móvil, el dropdown se comporta diferente */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--gray-50);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+    }
+    
+    /* Mostrar dropdown en móvil cuando se activa */
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform var(--transition-normal);
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-item {
+        padding-left: calc(var(--spacing-lg) + 1rem);
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-item:hover {
+        padding-left: calc(var(--spacing-lg) + 1.5rem);
+    }
+}
+</style>
+
+
+
+    <!-- HERO INTERNO CON IMAGEN DE FONDO -->
+    <section class="page-hero page-hero-with-image">
+        <div class="page-hero-background">
+            <img src="images/heroes/hero-productos.jpg" alt="Fondo Productos" onerror="this.src='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1920&q=80'">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Tartas Personalizadas</h1>
+                <p class="page-hero-subtitle">Crea la tarta de tus sueños completamente a tu gusto</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: INTRODUCCIÓN Y BOTÓN DE PERSONALIZACIÓN -->
+    <section class="category-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">La Tarta de Tus Sueños</span>
+                <h2 class="section-title">Personalización Total</h2>
+                <p class="section-subtitle">
+                    Cada tarta es única y especial. Tú eliges el tamaño, el sabor del bizcocho, 
+                    el relleno, los colores y la decoración. Sin límites para tu creatividad.
+                </p>
+            </div>
+
+            <!-- Botón Principal de Personalización -->
+            <div style="text-align: center; margin: var(--spacing-2xl) 0;">
+                <button id="btnPersonalizar" class="btn btn-primary" style="font-size: 1.25rem; padding: 1.5rem 3rem; box-shadow: var(--shadow-lg);">
+                    <i class="fas fa-magic"></i>
+                    Personalizar Mi Tarta
+                </button>
+                <p style="margin-top: var(--spacing-md); color: var(--gray-600); font-size: 0.9375rem;">
+                    Selecciona todas las opciones y añade tu tarta personalizada al carrito
+                </p>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                    <h4>¿Prefieres algo ya hecho?</h4>
+                    <p>Más abajo encontrarás nuestra galería de tartas que puedes añadir directamente al carrito. 
+                    Si te gusta algún diseño, ¡añádelo y listo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: GALERÍA DE TARTAS LISTAS -->
+    <section class="category-section gray-bg">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nuestra Galería</span>
+                <h2 class="section-title">Tartas Listas para Añadir</h2>
+                <p class="section-subtitle">¿Te gusta alguno de estos diseños? Añádelo directamente al carrito</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Tarta 1: Kinder Bueno -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-kinder-bueno.jpg" alt="Tarta de Kinder Bueno">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Kinder Bueno</h3>
+                        <p class="product-description-short">Deliciosa tarta con decoración de Kinder Bueno y drip de chocolate.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Kinder Bueno', 'images/productos/tartas/tarta-kinder-bueno.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 2: Lotus -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-lotus.jpg" alt="Tarta de Lotus">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Lotus</h3>
+                        <p class="product-description-short">Espectacular tarta con galletas Lotus y decoración premium.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Lotus', 'images/productos/tartas/tarta-lotus.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 3: Rollo de merengue -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/rollo-merengue-fresa-mango.jpg" alt="Rollo de merengue con fresa y mango">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Rollo de Merengue</h3>
+                        <p class="product-description-short">Con fresa y mango, decorado con merengue y frutas frescas.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Rollo de Merengue con Fresa y Mango', 'images/productos/tartas/rollo-merengue-fresa-mango.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 4: Rollo de mora -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/rollo-mora-nata.jpg" alt="Rollo de mora y nata">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Rollo de Mora y Nata</h3>
+                        <p class="product-description-short">Rollo relleno de mora y nata con decoración de frutas.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Rollo de Mora y Nata', 'images/productos/tartas/rollo-mora-nata.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 5: Frambuesa y almendra -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-frambuesa-almendra.jpg" alt="Tarta de frambuesa y almendra">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Frambuesa y Almendra</h3>
+                        <p class="product-description-short">Elegante combinación con lazo rojo y frambuesas frescas.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Frambuesa y Almendra', 'images/productos/tartas/tarta-frambuesa-almendra.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 6: Frambuesa con queso crema -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-frambuesa-queso-crema.jpg" alt="Tarta de frambuesa con queso crema">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Frambuesa con Queso Crema</h3>
+                        <p class="product-description-short">Suave crema de queso coronada con frambuesas frescas.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Frambuesa con Queso Crema', 'images/productos/tartas/tarta-frambuesa-queso-crema.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 7: Arándanos -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-arandanos.jpg" alt="Tarta de arándanos">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Arándanos</h3>
+                        <p class="product-description-short">Hermosa tarta rosa con arándanos frescos en el centro.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Arándanos', 'images/productos/tartas/tarta-arandanos.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 8: Fresa y Oreo -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-fresa-oreo-helado.jpg" alt="Tarta de fresa y Oreo con heladitos">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Fresa y Oreo</h3>
+                        <p class="product-description-short">Con heladitos de chocolate y decoración para el número 1.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Fresa y Oreo', 'images/productos/tartas/tarta-fresa-oreo-helado.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 9: Frambuesas y chocolate -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-frambuesa-chocolate.jpg" alt="Tarta de frambuesas y chocolate">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Frambuesas y Chocolate</h3>
+                        <p class="product-description-short">Drip de chocolate con frambuesas y merengues rosas.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Frambuesas y Chocolate', 'images/productos/tartas/tarta-frambuesa-chocolate.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 10: Milhojas -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-milhojas-crema-fresas.jpg" alt="Tarta de milhojas con crema y fresas">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Milhojas</h3>
+                        <p class="product-description-short">Con crema y fresas bañadas en oro comestible.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Milhojas con Crema y Fresas', 'images/productos/tartas/tarta-milhojas-crema-fresas.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 11: Fresas con miel -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-fresas-miel.jpg" alt="Tarta de fresas con miel">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Fresas con Miel</h3>
+                        <p class="product-description-short">Decorada con fresas y mensaje personalizado "Feliz Cumpleaños".</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Fresas con Miel', 'images/productos/tartas/tarta-fresas-miel.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 12: Oreo -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-oreo.jpg" alt="Tarta de Oreo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Oreo</h3>
+                        <p class="product-description-short">Glaseado dorado con galletas Oreo y decoración elegante.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Oreo', 'images/productos/tartas/tarta-oreo.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 13: Queso crema con frutos -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-queso-frutos-bosque.jpg" alt="Tarta de queso crema con frutos del bosque">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Queso Crema</h3>
+                        <p class="product-description-short">Con frutos del bosque, grosellas y decoración navideña.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Queso Crema con Frutos del Bosque', 'images/productos/tartas/tarta-queso-frutos-bosque.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 14: Tres chocolates -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-tres-chocolates.jpg" alt="Tarta de tres chocolates">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Tres Chocolates</h3>
+                        <p class="product-description-short">Brazo gitano rectangular con frambuesas bañadas en oro.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Tres Chocolates', 'images/productos/tartas/tarta-tres-chocolates.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 15: Brazo gitano -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/brazo-gitano-queso-frambuesa.jpg" alt="Brazo gitano con queso y frambuesa">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Brazo Gitano</h3>
+                        <p class="product-description-short">Con queso, frambuesa y decoración de grosellas.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Brazo Gitano con Queso y Frambuesa', 'images/productos/tartas/brazo-gitano-queso-frambuesa.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 16: Carrot cake -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/carrot-cake-frutos-bosque.jpg" alt="Carrot cake con queso y frutos del bosque">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Carrot Cake</h3>
+                        <p class="product-description-short">Con queso y frutos del bosque. Combinación perfecta.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Carrot Cake con Frutos del Bosque', 'images/productos/tartas/carrot-cake-frutos-bosque.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarta 17: Maracuyá -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/tartas/tarta-maracuya.jpg" alt="Tarta de maracuyá">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Maracuyá</h3>
+                        <p class="product-description-short">Sabor tropical con decoración de frutas y topper dorado.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Maracuyá', 'images/productos/tartas/tarta-maracuya.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                 <!-- Tarta 18:  Vainilla y frutos de bosque -->
+                <div class="product-card">
+                   <div class="product-image">
+                      <img src="images/productos/tartas/tarta-vainilla.jpg" alt="Tarta de Vainilla y Frutos de bosque">
+                   </div>
+                   <div class="product-info">
+                        <h3 class="product-name">Tarta de Vainilla</h3>
+                        <p class="product-description-short">Tarta elegante con decoración de papel comestible y velas doradas.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Vainilla y Frutos de bosque', 'images/productos/tartas/tarta-vainilla.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                             Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA FINAL -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title">¿Listo para Crear tu Tarta Perfecta?</h2>
+                <p class="final-cta-text">
+                    Contáctanos por WhatsApp o por email y cuéntanos tu idea. 
+                    Te ayudaremos a diseñar la tarta perfecta para tu celebración.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20personalizada" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Contactar por WhatsApp
+                    </a>
+                    <a href="index.html#contacto" class="btn btn-secondary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Formulario de Contacto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section footer-about">
+                    <h3>Tartas de Tina</h3>
+                    <p>Más de 10 años creando momentos dulces e inolvidables en Tarragona. Cada tarta es una obra de arte comestible hecha con amor.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tartas_de_tina/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/34627189264" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tartasdetina@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="index.html#como-pedir">Cómo Pedir</a></li>
+                        <li><a href="index.html#preguntas">Preguntas Frecuentes</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestros Productos</h3>
+                    <ul>
+                        <li><a href="tartas.html">Tartas Personalizadas</a></li>
+                        <li><a href="cheesecakes.html">Cheesecakes</a></li>
+                        <li><a href="tartas-numeros.html">Tartas de Números</a></li>
+                        <li><a href="macarons.html">Macarons</a></li>
+                        <li><a href="mousses.html">Tartas de Mousse</a></li>
+                        <li><a href="vasos-postre.html">Vasos de Postre</a></li>
+                        <li><a href="otros-postres.html">Postres Artesanales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+34627189264">+34 627 189 264</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:tartasdetina@gmail.com">tartasdetina@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tarragona, España 43007</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/tartas_de_tina/" target="_blank">@tartas_de_tina</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Tartas de Tina. Todos los derechos reservados.</p>
+                    <p>Hecho con <i class="fas fa-heart"></i> en Tarragona</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <span class="separator">|</span>
+                    <a href="cookies.html">Política de Cookies</a>
+                    <span class="separator">|</span>
+                    <a href="aviso-legal.html">Aviso Legal</a>
+                    <span class="separator">|</span>
+                    <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- MODAL DE PERSONALIZACIÓN -->
+    <div id="modalPersonalizacion" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-magic"></i> Personaliza tu Tarta</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            
+            <form id="formPersonalizacion" class="personalization-form">
+                <!-- Paso 1: Tamaño -->
+                <div class="form-section">
+                    <h3><span class="step-number">1</span> Elige el Tamaño *</h3>
+                    <div class="options-grid">
+                        <label class="option-card">
+                            <input type="radio" name="tamano" value="1kg (4-6 personas)" required>
+                            <div class="option-content">
+                                <i class="fas fa-birthday-cake"></i>
+                                <strong>1 kg</strong>
+                                <span>4-6 personas</span>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="tamano" value="2kg (8-10 personas)" required>
+                            <div class="option-content">
+                                <i class="fas fa-birthday-cake"></i>
+                                <strong>2 kg</strong>
+                                <span>8-10 personas</span>
+                                <span class="badge-popular">Más popular</span>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="tamano" value="3kg (14-16 personas)" required>
+                            <div class="option-content">
+                                <i class="fas fa-birthday-cake"></i>
+                                <strong>3 kg</strong>
+                                <span>14-16 personas</span>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="tamano" value="4kg (20-22 personas)" required>
+                            <div class="option-content">
+                                <i class="fas fa-birthday-cake"></i>
+                                <strong>4 kg</strong>
+                                <span>20-22 personas</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Bizcocho -->
+                <div class="form-section">
+                    <h3><span class="step-number">2</span> Elige el Bizcocho *</h3>
+                    <div class="options-grid compact">
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Vainilla" required>
+                            <div class="option-content">
+                                <span class="emoji">🍰</span>
+                                <strong>Vainilla</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Almendra" required>
+                            <div class="option-content">
+                                <span class="emoji">🌰</span>
+                                <strong>Almendra</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Pistacho" required>
+                            <div class="option-content">
+                                <span class="emoji">🥜</span>
+                                <strong>Pistacho</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Chocolate" required>
+                            <div class="option-content">
+                                <span class="emoji">🍫</span>
+                                <strong>Chocolate</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Zanahoria" required>
+                            <div class="option-content">
+                                <span class="emoji">🥕</span>
+                                <strong>Zanahoria</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Red Velvet" required>
+                            <div class="option-content">
+                                <span class="emoji">❤️</span>
+                                <strong>Red Velvet</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Limón" required>
+                            <div class="option-content">
+                                <span class="emoji">🍋</span>
+                                <strong>Limón</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bizcocho" value="Mantequilla" required>
+                            <div class="option-content">
+                                <span class="emoji">🧈</span>
+                                <strong>Mantequilla</strong>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Paso 3: Relleno -->
+                <div class="form-section">
+                    <h3><span class="step-number">3</span> Elige el Relleno *</h3>
+                    <div class="options-grid compact">
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Nata" required>
+                            <div class="option-content">
+                                <span class="emoji">🥛</span>
+                                <strong>Nata</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Frambuesa" required>
+                            <div class="option-content">
+                                <span class="emoji">🍓</span>
+                                <strong>Frambuesa</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Caramelo" required>
+                            <div class="option-content">
+                                <span class="emoji">🍯</span>
+                                <strong>Caramelo</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Cereza" required>
+                            <div class="option-content">
+                                <span class="emoji">🍒</span>
+                                <strong>Cereza</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Mango" required>
+                            <div class="option-content">
+                                <span class="emoji">🥭</span>
+                                <strong>Mango</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Fresa" required>
+                            <div class="option-content">
+                                <span class="emoji">🍓</span>
+                                <strong>Fresa</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Chocolate" required>
+                            <div class="option-content">
+                                <span class="emoji">🍫</span>
+                                <strong>Chocolate</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Frutas del Bosque" required>
+                            <div class="option-content">
+                                <span class="emoji">🫐</span>
+                                <strong>Frutas del Bosque</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Pistacho" required>
+                            <div class="option-content">
+                                <span class="emoji">🥜</span>
+                                <strong>Pistacho</strong>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="relleno" value="Nocilla" required>
+                            <div class="option-content">
+                                <span class="emoji">🍫</span>
+                                <strong>Nocilla</strong>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Paso 4: Decoración -->
+                <div class="form-section">
+                    <h3><span class="step-number">4</span> Personalización y Decoración *</h3>
+                    <div class="form-group">
+                        <label for="decoracion">Describe cómo quieres tu tarta:</label>
+                        <textarea id="decoracion" name="decoracion" rows="4" required placeholder="Ej: Colores azul y amarillo, con fresas en la parte superior, mensaje 'Feliz Cumpleaños María', con lazos decorativos..."></textarea>
+                        <small>Cuéntanos los colores, tema, mensaje, decoración especial, imágenes comestibles, figuritas, etc.                             
+                            Nos pondremos en contacto antes de preparar la tarta.
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Botón de envío -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancelBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-shopping-cart"></i>
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+        <script src="js/header.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ==========================================
+        // VARIABLES GLOBALES
+        // ==========================================
+        const modal = document.getElementById('modalPersonalizacion');
+        const btnPersonalizar = document.getElementById('btnPersonalizar');
+        const closeModal = document.getElementById('closeModal');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const formPersonalizacion = document.getElementById('formPersonalizacion');
+
+        // ==========================================
+        // FUNCIONES DEL CARRITO
+        // ==========================================
+        
+        // Inicializar carrito
+        function initCart() {
+            if (!localStorage.getItem('cart')) {
+                localStorage.setItem('cart', JSON.stringify([]));
+            }
+            updateCartCount();
+        }
+
+        // Obtener carrito
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart') || '[]');
+        }
+
+        // Guardar carrito
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        // Actualizar contador del carrito
+        function updateCartCount() {
+            const cart = getCart();
+            const cartCount = document.getElementById('cartCount');
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+            }
+        }
+
+        // Añadir tarta pre-hecha al carrito
+        function addToCart(nombre, imagen) {
+            const cart = getCart();
+            
+            const producto = {
+                id: Date.now(),
+                tipo: 'pre-hecha',
+                nombre: nombre,
+                imagen: imagen,
+                fecha: new Date().toISOString()
+            };
+            
+            cart.push(producto);
+            saveCart(cart);
+            
+            // Mostrar confirmación
+            showNotification('✓ Tarta añadida al carrito', 'success');
+        }
+
+        // Añadir tarta personalizada al carrito
+        function addCustomCakeToCart(formData) {
+            const cart = getCart();
+            
+            const producto = {
+                id: Date.now(),
+                tipo: 'personalizada',
+                nombre: 'Tarta Personalizada',
+                tamano: formData.tamano,
+                bizcocho: formData.bizcocho,
+                relleno: formData.relleno,
+                decoracion: formData.decoracion,
+                imagen: 'images/productos/tartas/tarta-personalizada.jpg',
+                fecha: new Date().toISOString()
+            };
+            
+            cart.push(producto);
+            saveCart(cart);
+            
+            // Mostrar confirmación
+            showNotification('✓ Tarta personalizada añadida al carrito', 'success');
+            
+            // Cerrar modal
+            closeModalPersonalization();
+            
+            // Resetear formulario
+            formPersonalizacion.reset();
+        }
+
+        // ==========================================
+        // FUNCIONES DEL MODAL
+        // ==========================================
+        
+        // Abrir modal
+        function openModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Cerrar modal
+        function closeModalPersonalization() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners del modal
+        if (btnPersonalizar) {
+            btnPersonalizar.addEventListener('click', openModal);
+        }
+
+        if (closeModal) {
+            closeModal.addEventListener('click', closeModalPersonalization);
+        }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', closeModalPersonalization);
+        }
+
+        // Cerrar modal al hacer clic fuera
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalPersonalization();
+            }
+        });
+
+        // ==========================================
+        // FORMULARIO DE PERSONALIZACIÓN
+        // ==========================================
+        
+        if (formPersonalizacion) {
+            formPersonalizacion.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Validar que todos los campos estén completos
+                const formData = {
+                    tamano: formPersonalizacion.tamano.value,
+                    bizcocho: formPersonalizacion.bizcocho.value,
+                    relleno: formPersonalizacion.relleno.value,
+                    decoracion: formPersonalizacion.decoracion.value.trim()
+                };
+                
+                // Validación
+                if (!formData.tamano) {
+                    showNotification('Por favor, selecciona un tamaño', 'error');
+                    return;
+                }
+                
+                if (!formData.bizcocho) {
+                    showNotification('Por favor, selecciona un sabor de bizcocho', 'error');
+                    return;
+                }
+                
+                if (!formData.relleno) {
+                    showNotification('Por favor, selecciona un relleno', 'error');
+                    return;
+                }
+                
+                if (!formData.decoracion) {
+                    showNotification('Por favor, describe la decoración que deseas', 'error');
+                    return;
+                }
+                
+                // Si todo está correcto, añadir al carrito
+                addCustomCakeToCart(formData);
+            });
+        }
+
+        // ==========================================
+        // NOTIFICACIONES
+        // ==========================================
+        
+        function showNotification(message, type = 'success') {
+            // Crear elemento de notificación
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = message;
+            
+            // Añadir estilos inline
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#B5EAD7' : '#FF6B7A'};
+                color: ${type === 'success' ? '#2d5a3d' : '#fff'};
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 10000;
+                font-weight: 600;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Eliminar después de 3 segundos
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // ==========================================
+        // INICIALIZAR AL CARGAR
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            initCart();
+        });
+
+        // Añadir animaciones CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+    <!-- ESTILOS DEL MODAL -->
+    <style>
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-xl);
+            border-bottom: 2px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            z-index: 10;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .personalization-form {
+            padding: var(--spacing-xl);
+        }
+
+        .form-section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .form-section h3 {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            color: var(--black);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .options-grid.compact {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--spacing-sm);
+        }
+
+        .option-card {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .option-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .option-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-md);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+
+        .option-content i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .option-content .emoji {
+            font-size: 2rem;
+        }
+
+        .option-content strong {
+            font-size: 1rem;
+            color: var(--black);
+        }
+
+        .option-content span:not(.emoji):not(.badge-popular) {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .option-card input[type="radio"]:checked + .option-content {
+            border-color: var(--primary-color);
+            background: rgba(255, 154, 162, 0.1);
+            box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.2);
+        }
+
+        .option-card:hover .option-content {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .badge-popular {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.25rem 0.625rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--gray-700);
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            resize: vertical;
+            transition: var(--transition-normal);
+        }
+
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.1);
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: var(--spacing-xs);
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: flex-end;
+            padding-top: var(--spacing-lg);
+            border-top: 2px solid var(--gray-200);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-height: 95vh;
+            }
+
+            .options-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .options-grid.compact {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+</body>
+</html>
