@@ -318,8 +318,11 @@
 
 
     
-    <!-- HERO INTERNO -->
-    <section class="page-hero">
+    <!-- HERO INTERNO CON IMAGEN DE FONDO -->
+    <section class="page-hero page-hero-with-image">
+        <div class="page-hero-background">
+            <img src="images/heroes/hero-macarons.jpg" alt="Fondo Macarons" onerror="this.src='https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=1920&q=80'">
+        </div>
         <div class="page-hero-overlay"></div>
         <div class="container">
             <div class="page-hero-content">
@@ -329,368 +332,314 @@
         </div>
     </section>
 
-    <!-- INTRODUCCIÓN -->
-    <section class="category-intro">
-        <div class="container">
-            <div class="category-intro-content">
-                <div class="category-intro-text">
-                    <span class="section-label">Técnica Francesa</span>
-                    <h2 class="section-title">El Arte del Macaron Perfecto</h2>
-                    
-                    <p class="category-intro-description">
-                        Nuestros macarons son pequeñas obras de arte elaboradas siguiendo la auténtica 
-                        técnica francesa. Cada uno tiene la textura perfecta: crujiente por fuera y 
-                        suave por dentro, con rellenos cremosos que explotan de sabor.
-                    </p>
-                    
-                    <p class="category-intro-description">
-                        Perfectos para regalar, acompañar tu café o ser parte de la decoración de 
-                        tus tartas y mesas dulces. Disponemos de más de 10 sabores diferentes 
-                        para satisfacer todos los paladares.
-                    </p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item-large">
-                            <i class="fas fa-rainbow"></i>
-                            <div>
-                                <h4>+10 Sabores Disponibles</h4>
-                                <p>Desde clásicos hasta creaciones únicas</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-award"></i>
-                            <div>
-                                <h4>Técnica Francesa Auténtica</h4>
-                                <p>Textura perfecta garantizada</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-palette"></i>
-                            <div>
-                                <h4>Colores Vibrantes</h4>
-                                <p>Presentación visual impecable</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-gift"></i>
-                            <div>
-                                <h4>Perfectos para Regalar</h4>
-                                <p>Un detalle dulce y elegante</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="category-intro-image">
-                    <img src="images/productos/macarons/macarons-variados.jpg" alt="Variedad de macarons" onerror="this.src='https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SABORES DESTACADOS -->
+    <!-- SELECTOR DE SABORES -->
     <section class="category-section gray-bg">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Nuestros Sabores</span>
-                <h2 class="section-title">Sabores Destacados</h2>
-                <p class="section-subtitle">Algunos de nuestros sabores más populares</p>
-            </div>
-            
-            <div class="products-grid">
-                <!-- Macaron Dubai -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/productos/macarons/macaron-dubai.jpg" alt="Macaron de Dubai" onerror="this.src='https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600&q=80'">
-                        <div class="product-badge premium">Premium</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Macaron de Dubai</h3>
-                        <p class="product-description-short">
-                            Nuestra creación premium inspirada en los sabores exóticos. Combinación 
-                            única de chocolate y pistachos en un macaron elegante y sofisticado.
-                        </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-gem"></i> Premium</span>
-                            <span class="feature-tag"><i class="fas fa-seedling"></i> Pistacho</span>
-                            <span class="feature-tag"><i class="fas fa-candy-cane"></i> Chocolate</span>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Macaron de Dubai', 'images/productos/macarons/macaron-dubai.jpg', 'Macarons')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Macaron Mango y Maracuyá -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/productos/macarons/macaron-mango-maracuya.jpg" alt="Macaron de Mango y Maracuyá" onerror="this.src='https://images.unsplash.com/photo-1571506165871-ee72a35bc9d4?w=600&q=80'">
-                        <div class="product-badge">Tropical</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Mango y Maracuyá</h3>
-                        <p class="product-description-short">
-                            Explosión tropical en cada bocado. La dulzura del mango se combina 
-                            con la acidez del maracuyá para crear un sabor refrescante e irresistible.
-                        </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-sun"></i> Tropical</span>
-                            <span class="feature-tag"><i class="fas fa-snowflake"></i> Refrescante</span>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Mango y Maracuyá', 'images/productos/macarons/macaron-mango-maracuya.jpg', 'Macarons')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Macaron Baileys y Fresa -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/productos/macarons/macaron-baileys-fresa.jpg" alt="Macaron de Baileys y Fresa" onerror="this.src='https://images.unsplash.com/photo-1587668178277-295251f900ce?w=600&q=80'">
-                        <div class="product-badge">Elegante</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Baileys y Fresa</h3>
-                        <p class="product-description-short">
-                            Combinación elegante y sofisticada. El toque cremoso del Baileys 
-                            se fusiona con la frescura de la fresa en una experiencia deliciosa.
-                        </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-wine-glass"></i> Con Baileys</span>
-                            <span class="feature-tag"><i class="fas fa-seedling"></i> Fresa</span>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Baileys y Fresa', 'images/productos/macarons/macaron-baileys-fresa.jpg', 'Macarons')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Macaron Pistacho -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/productos/macarons/macaron-pistacho.jpg" alt="Macaron de Pistacho" onerror="this.src='https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&q=80'">
-                        <div class="product-badge">Clásico</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Pistacho</h3>
-                        <p class="product-description-short">
-                            El clásico francés por excelencia. Sabor intenso a pistacho real 
-                            con un relleno cremoso que te transporta directamente a París.
-                        </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-star"></i> Clásico</span>
-                            <span class="feature-tag"><i class="fas fa-seedling"></i> Pistacho Real</span>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Pistacho', 'images/productos/macarons/macaron-pistacho.jpg', 'Macarons')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <span class="section-label">Personaliza tu Pedido</span>
+                <h2 class="section-title">Elige tus Sabores</h2>
+                <p class="section-subtitle">Selecciona los sabores que quieras. Mínimo 6 unidades por sabor.</p>
             </div>
 
-            <div class="info-box">
-                <i class="fas fa-plus-circle"></i>
-                <div>
-                    <h4>¡Y muchos más sabores!</h4>
-                    <p>Disponemos de más de 10 sabores diferentes incluyendo chocolate, vainilla, frambuesa, limón, café, caramelo salado y más. ¡Pregúntanos por el sabor que buscas!</p>
+            <!-- Imagen del producto -->
+            <div style="display:flex; justify-content:center; margin-bottom: var(--spacing-2xl);">
+                <img src="images/productos/macarons/macarons-variados.jpg"
+                     alt="Macarons artesanales variados"
+                     style="width:100%; max-width:780px; height:420px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); object-fit:cover; display:block;">
+            </div>
+
+            <!-- Selector siempre visible -->
+            <div class="macaron-acordeon" id="macaronAcordeon">
+                <div class="macaron-acordeon-body abierto" id="macaronBody">
+                    <div class="macaron-grid" id="macaronGrid">
+                        <!-- Generado por JS -->
+                    </div>
+
+                    <div class="macaron-resumen" id="macaronResumen">
+                        <div class="macaron-resumen-info">
+                            <span>Sabores seleccionados: <strong id="resumenSabores">0</strong></span>
+                            <span>Total unidades: <strong id="resumenUnidades">0</strong></span>
+                        </div>
+                        <button class="btn btn-primary" id="macaronAddBtn" onclick="macaronAddToCart()" disabled>
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INFORMACIÓN DE PEDIDO -->
-    <section class="category-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Cómo Pedir</span>
-                <h2 class="section-title">Información Importante</h2>
-            </div>
-            
-            <div class="info-cards">
-                <div class="info-card">
-                    <h4><i class="fas fa-box"></i> Pedido Mínimo</h4>
-                    <p><strong>6 unidades mínimo</strong> por pedido de macarons. Puedes mezclar sabores.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-euro-sign"></i> Pedido General</h4>
-                    <p>Recuerda que el pedido mínimo general de la tienda es de <strong>20€</strong>.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-clock"></i> Antelación</h4>
-                    <p>Mínimo <strong>4 días de antelación</strong> para garantizar disponibilidad y frescura.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-gift"></i> Para Eventos</h4>
-                    <p>Perfectos como detalles para invitados o decoración de mesas dulces.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <style>
+    /* ==========================================
+       SELECTOR DE MACARONS
+       ========================================== */
+    .macaron-acordeon {
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        background: var(--white);
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-    <!-- FORMULARIO DE PEDIDO -->
-    <section class="order-form-section" id="pedir">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Haz tu Pedido</span>
-                <h2 class="section-title">Pide tus Macarons</h2>
-                <p class="section-subtitle">Selecciona los sabores y cantidad que deseas</p>
+    .macaron-acordeon-body {
+        border-radius: var(--radius-lg);
+        overflow: visible;
+    }
+
+    .macaron-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: var(--spacing-md);
+        padding: var(--spacing-xl);
+    }
+
+    .macaron-sabor-card {
+        border: 2px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+        transition: all var(--transition-normal);
+        background: var(--gray-50);
+    }
+
+    .macaron-sabor-card.activo {
+        border-color: var(--primary-color);
+        background: rgba(255, 154, 162, 0.07);
+    }
+
+    .macaron-sabor-emoji {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .macaron-sabor-nombre {
+        font-weight: 600;
+        font-size: 0.9375rem;
+        color: var(--gray-800);
+        text-align: center;
+    }
+
+    .macaron-stepper {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        border: 1.5px solid var(--gray-300);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+    }
+
+    .macaron-stepper button {
+        width: 34px;
+        height: 34px;
+        border: none;
+        background: var(--gray-100);
+        color: var(--gray-700);
+        font-size: 1.125rem;
+        cursor: pointer;
+        transition: background var(--transition-fast);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .macaron-stepper button:hover:not(:disabled) {
+        background: var(--primary-color);
+        color: var(--white);
+    }
+
+    .macaron-stepper button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    .macaron-stepper input {
+        width: 44px;
+        height: 34px;
+        border: none;
+        border-left: 1.5px solid var(--gray-300);
+        border-right: 1.5px solid var(--gray-300);
+        text-align: center;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        background: var(--white);
+        outline: none;
+        -moz-appearance: textfield;
+    }
+
+    .macaron-stepper input::-webkit-inner-spin-button,
+    .macaron-stepper input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .macaron-min-label {
+        font-size: 0.75rem;
+        color: var(--gray-500);
+    }
+
+    .macaron-resumen {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
+        border-top: 2px solid var(--gray-200);
+        background: var(--gray-50);
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .macaron-resumen-info {
+        display: flex;
+        gap: var(--spacing-lg);
+        font-size: 0.9375rem;
+        color: var(--gray-700);
+    }
+
+    @media (max-width: 600px) {
+        .macaron-grid {
+            grid-template-columns: 1fr 1fr;
+            padding: var(--spacing-md);
+        }
+        .macaron-resumen {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .macaron-resumen-info {
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+    }
+    </style>
+
+    <script>
+    const SABORES_MACARON = [
+        { nombre: 'Fresa',           emoji: '🍓' },
+        { nombre: 'Vainilla',        emoji: '🤍' },
+        { nombre: 'Chocolate',       emoji: '🍫' },
+        { nombre: 'Pistacho',        emoji: '🟢' },
+        { nombre: 'Limón',           emoji: '🍋' },
+        { nombre: 'Baileys & Fresa', emoji: '🍷' },
+        { nombre: 'Frambuesa',       emoji: '🫐' },
+        { nombre: 'Caramelo Salado', emoji: '🍮' },
+        { nombre: 'Café',            emoji: '☕' },
+        { nombre: 'Coco',            emoji: '🥥' },
+        { nombre: 'Rosa',            emoji: '🌹' },
+        { nombre: 'Maracuyá',        emoji: '🌟' },
+    ];
+    const MIN_UDS = 6;
+
+    function buildMacaronGrid() {
+        const grid = document.getElementById('macaronGrid');
+        grid.innerHTML = SABORES_MACARON.map((s, i) => `
+            <div class="macaron-sabor-card" id="card-${i}">
+                <div class="macaron-sabor-emoji">${s.emoji}</div>
+                <div class="macaron-sabor-nombre">${s.nombre}</div>
+                <div class="macaron-stepper">
+                    <button onclick="cambiarCantidad(${i}, -1)" id="btn-menos-${i}" disabled>−</button>
+                    <input type="number" id="qty-${i}" value="0" min="0" readonly>
+                    <button onclick="cambiarCantidad(${i}, 1)" id="btn-mas-${i}">+</button>
+                </div>
+                <span class="macaron-min-label" id="label-${i}">Mín. ${MIN_UDS} uds.</span>
             </div>
-            
-            <div class="order-form-wrapper">
-                <form id="macaronsForm" class="order-form">
-                    <!-- Datos personales -->
-                    <h3 class="form-section-title"><i class="fas fa-user"></i> Tus Datos</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                    
-                    <!-- Selección de macarons -->
-                    <h3 class="form-section-title"><i class="fas fa-cookie"></i> Tus Macarons</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="cantidad">Cantidad total (mínimo 6) *</label>
-                            <input type="number" id="cantidad" name="cantidad" min="6" required placeholder="6" value="6">
-                        </div>
-                        <div class="form-group">
-                            <label for="fecha">Fecha de recogida/entrega *</label>
-                            <input type="date" id="fecha" name="fecha" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Sabores que te interesan (selecciona los que quieras)</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="dubai" name="sabores" value="dubai">
-                                <label for="dubai">Dubai (Premium)</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="pistacho" name="sabores" value="pistacho">
-                                <label for="pistacho">Pistacho</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="mango-maracuya" name="sabores" value="mango-maracuya">
-                                <label for="mango-maracuya">Mango y Maracuyá</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="baileys-fresa" name="sabores" value="baileys-fresa">
-                                <label for="baileys-fresa">Baileys y Fresa</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="chocolate" name="sabores" value="chocolate">
-                                <label for="chocolate">Chocolate</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="vainilla" name="sabores" value="vainilla">
-                                <label for="vainilla">Vainilla</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="frambuesa" name="sabores" value="frambuesa">
-                                <label for="frambuesa">Frambuesa</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="limon" name="sabores" value="limon">
-                                <label for="limon">Limón</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="cafe" name="sabores" value="cafe">
-                                <label for="cafe">Café</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="caramelo" name="sabores" value="caramelo">
-                                <label for="caramelo">Caramelo Salado</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="otro-sabor" name="sabores" value="otro">
-                                <label for="otro-sabor">Otro (especificar)</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comentarios">Comentarios adicionales</label>
-                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Indica cuántos de cada sabor quieres, o si tienes alguna petición especial..."></textarea>
-                    </div>
-                    
-                    <!-- Entrega -->
-                    <h3 class="form-section-title"><i class="fas fa-truck"></i> Entrega</h3>
-                    
-                    <div class="form-group">
-                        <label>¿Cómo prefieres recibirlos?</label>
-                        <div class="radio-group">
-                            <div class="radio-item">
-                                <input type="radio" id="recogida" name="entrega" value="recogida" checked>
-                                <label for="recogida">Recogida en punto de entrega (Tarragona)</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="domicilio" name="entrega" value="domicilio">
-                                <label for="domicilio">Entrega a domicilio (consultar disponibilidad)</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <i class="fas fa-paper-plane"></i>
-                        Enviar Pedido
-                    </button>
-                </form>
-                
-                <div id="formMessage" class="form-message" style="display: none;"></div>
-            </div>
-        </div>
-    </section>
+        `).join('');
+    }
+
+    function cambiarCantidad(idx, delta) {
+        const input = document.getElementById('qty-' + idx);
+        const card  = document.getElementById('card-' + idx);
+        const btnM  = document.getElementById('btn-menos-' + idx);
+        const label = document.getElementById('label-' + idx);
+
+        let val = parseInt(input.value) || 0;
+
+        if (delta > 0) {
+            // Si está en 0, saltar directamente a MIN_UDS
+            val = (val === 0) ? MIN_UDS : val + 1;
+        } else {
+            // Si baja de MIN_UDS, poner a 0 (quitar sabor)
+            val = (val <= MIN_UDS) ? 0 : val - 1;
+        }
+
+        input.value = val;
+        btnM.disabled = (val === 0);
+        card.classList.toggle('activo', val > 0);
+        label.textContent = val === 0 ? `Mín. ${MIN_UDS} uds.` : `${val} uds.`;
+        actualizarResumen();
+    }
+
+    function actualizarResumen() {
+        let sabores = 0, total = 0;
+        SABORES_MACARON.forEach((_, i) => {
+            const v = parseInt(document.getElementById('qty-' + i).value) || 0;
+            if (v > 0) { sabores++; total += v; }
+        });
+        document.getElementById('resumenSabores').textContent  = sabores;
+        document.getElementById('resumenUnidades').textContent = total;
+        document.getElementById('macaronAddBtn').disabled = (total === 0);
+    }
+
+    function macaronAddToCart() {
+        const seleccion = [];
+        let totalUnidades = 0;
+        SABORES_MACARON.forEach((s, i) => {
+            const v = parseInt(document.getElementById('qty-' + i).value) || 0;
+            if (v > 0) {
+                seleccion.push(`${s.nombre}: ${v} uds.`);
+                totalUnidades += v;
+            }
+        });
+        if (!seleccion.length) return;
+
+        const detalles = {
+            sabores:  seleccion.join(' | '),
+            unidades: totalUnidades + ' uds. en total'
+        };
+        addToCart(
+            'Macarons artesanales',
+            'images/productos/macarons/macarons-variados.jpg',
+            'Macarons',
+            detalles
+        );
+
+        // Reset
+        SABORES_MACARON.forEach((_, i) => {
+            document.getElementById('qty-' + i).value = 0;
+            document.getElementById('btn-menos-' + i).disabled = true;
+            document.getElementById('card-' + i).classList.remove('activo');
+            document.getElementById('label-' + i).textContent = `Mín. ${MIN_UDS} uds.`;
+        });
+        actualizarResumen();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        buildMacaronGrid();
+        actualizarResumen();
+    });
+    </script>
 
     <!-- LLAMADA A LA ACCIÓN FINAL -->
     <section class="final-cta-section">
         <div class="container">
             <div class="final-cta-content">
-                <h2 class="final-cta-title">¿Tienes Dudas sobre los Sabores?</h2>
+                <h2 class="final-cta-title">¿Lista para Pedir tus Macarons?</h2>
                 <p class="final-cta-text">
-                    Contacta con nosotros y te ayudaremos a elegir la combinación perfecta 
-                    para tu ocasión especial.
+                    Contáctanos por WhatsApp o por email y cuéntanos cuántos macarons necesitas.
+                    Te ayudaremos a elegir la combinación perfecta de sabores.
                 </p>
                 <div class="cta-buttons">
                     <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20macarons" class="btn btn-primary btn-large" target="_blank">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp
+                        Contactar por WhatsApp
                     </a>
-                    <a href="productos.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-arrow-left"></i>
-                        Ver Más Productos
+                    <a href="index.html#contacto" class="btn btn-secondary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Formulario de Contacto
                     </a>
                 </div>
             </div>
@@ -786,6 +735,14 @@
         </div>
     </footer>
     
+    <!-- Botón Instagram Flotante -->
+    <a href="https://www.instagram.com/tartas_de_tina/" 
+       class="instagram-float" 
+       target="_blank" 
+       aria-label="Seguir en Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
     <!-- Botón WhatsApp Flotante -->
     <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20macarons" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -794,32 +751,6 @@
     
     <script src="js/cart.js"></script>
     <script src="js/header.js"></script>
-
-    <script>
-        document.getElementById('macaronsForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const cantidad = document.getElementById('cantidad').value;
-            const fecha = document.getElementById('fecha').value;
-            const saboresChecked = Array.from(document.querySelectorAll('input[name="sabores"]:checked')).map(cb => cb.value);
-            const comentarios = document.getElementById('comentarios').value.trim();
-            const entrega = document.querySelector('input[name="entrega"]:checked').value;
-
-            const texto = `Hola Tina! Quiero hacer un pedido de macarons.\n\n` +
-                `Nombre: ${nombre}\n` +
-                `Teléfono: ${telefono}\n` +
-                `Email: ${email}\n` +
-                `Cantidad: ${cantidad} uds.\n` +
-                `Fecha de recogida/entrega: ${fecha}\n` +
-                (saboresChecked.length ? `Sabores: ${saboresChecked.join(', ')}\n` : '') +
-                `Entrega: ${entrega}\n` +
-                (comentarios ? `Comentarios: ${comentarios}` : '');
-
-            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
-        });
-    </script>
 
 </body>
 </html>

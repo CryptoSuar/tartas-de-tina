@@ -318,8 +318,11 @@
 
 
     
-    <!-- HERO INTERNO -->
-    <section class="page-hero">
+    <!-- HERO INTERNO CON IMAGEN DE FONDO -->
+    <section class="page-hero page-hero-with-image">
+        <div class="page-hero-background">
+            <img src="images/heroes/hero-cheesecake.jpg" alt="Fondo Cheesecakes" onerror="this.src='https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1920&q=80'">
+        </div>
         <div class="page-hero-overlay"></div>
         <div class="container">
             <div class="page-hero-content">
@@ -330,52 +333,21 @@
     </section>
 
     <!-- INTRODUCCIÓN -->
-    <section class="category-intro">
+    <section class="category-section">
         <div class="container">
-            <div class="category-intro-content">
-                <div class="category-intro-text">
-                    <span class="section-label">Cremosas y Deliciosas</span>
-                    <h2 class="section-title">El Arte del Cheesecake Perfecto</h2>
-                    
-                    <p class="category-intro-description">
-                        Nuestras cheesecakes son elaboradas con queso de la mejor calidad y técnicas 
-                        tradicionales que garantizan la textura perfecta. Cada bocado es una experiencia 
-                        que se derrite en tu boca, equilibrando dulzura y cremosidad de manera magistral.
-                    </p>
-                    
-                    <p class="category-intro-description">
-                        Desde la clásica tarta de queso vasca hasta nuestra creación premium de Dubai, 
-                        cada cheesecake está pensada para hacer de tu momento algo especial. 
-                        Elaboradas artesanalmente, con ingredientes seleccionados y todo nuestro cariño.
-                    </p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item-large">
-                            <i class="fas fa-certificate"></i>
-                            <div>
-                                <h4>Certificación Profesional</h4>
-                                <p>Formación especializada en cheesecakes de las mejores escuelas</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-cheese"></i>
-                            <div>
-                                <h4>Queso Premium</h4>
-                                <p>Solo utilizamos queso de la más alta calidad</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-heart"></i>
-                            <div>
-                                <h4>Elaboración Artesanal</h4>
-                                <p>Cada cheesecake es única y hecha con amor</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="category-intro-image">
-                    <img src="images/productos/cheesecakes/cheesecake-frambuesa.jpg" alt="Cheesecake de Frambuesa" onerror="this.src='https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=800&q=80'">
+            <div class="section-header">
+                <span class="section-label">Cremosas y Deliciosas</span>
+                <h2 class="section-title">El Arte del Cheesecake Perfecto</h2>
+                <p class="section-subtitle">
+                    Elaboradas con queso de la mejor calidad y técnicas tradicionales que garantizan la textura perfecta.
+                    Desde la clásica tarta de queso vasca hasta nuestra creación premium de Dubai, cada cheesecake está pensada para hacer de tu momento algo especial.
+                </p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                    <h4>¿Buscas otro sabor?</h4>
+                    <p>Si tienes en mente un sabor diferente o una combinación especial, ¡consúltanos! Podemos crear cheesecakes personalizadas según tus preferencias.</p>
                 </div>
             </div>
         </div>
@@ -387,234 +359,84 @@
             <div class="section-header">
                 <span class="section-label">Nuestros Sabores</span>
                 <h2 class="section-title">Elige tu Cheesecake Favorito</h2>
-                <p class="section-subtitle">Tres opciones deliciosas para todos los gustos</p>
+                <p class="section-subtitle">Cinco opciones deliciosas para todos los gustos</p>
             </div>
-            
+
             <div class="products-grid">
                 <!-- Cheesecake de Frambuesa -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/productos/cheesecakes/cheesecake-frambuesa.jpg" alt="Cheesecake de Frambuesa" onerror="this.src='https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&q=80'">
-                        <div class="product-badge">Fresco</div>
+                        <img src="images/productos/cheesecakes/cheesecake-frambuesa.jpg" alt="Cheesecake de Frambuesa">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Cheesecake de Frambuesa</h3>
-                        <p class="product-description-short">
-                            Cremosa base de queso con un toque de frescura gracias a las frambuesas naturales. 
-                            El equilibrio perfecto entre dulce y ácido que conquista a primera vista.
-                        </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-seedling"></i> Frambuesa Natural</span>
-                            <span class="feature-tag"><i class="fas fa-heart"></i> Cremoso</span>
-                            <span class="feature-tag"><i class="fas fa-snowflake"></i> Refrescante</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-star"></i> Perfecto para...</h4>
-                            <p>Celebraciones de primavera y verano, amantes de los sabores frescos y afrutados.</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Cheesecake de Frambuesa', 'images/productos/cheesecakes/cheesecake-frambuesa.jpg', 'Cheesecakes')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+                        <p class="product-description-short">Cremosa base de queso con un toque de frescura gracias a las frambuesas naturales. El equilibrio perfecto entre dulce y ácido que conquista a primera vista.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Cheesecake de Frambuesa', 'images/productos/cheesecakes/cheesecake-frambuesa.jpg', 'Cheesecakes')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
 
                 <!-- Tarta de Queso Vasca -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/productos/cheesecakes/tarta-queso-vasca.jpg" alt="Tarta de Queso Vasca" onerror="this.src='https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80'">
-                        <div class="product-badge">Tradicional</div>
+                        <img src="images/productos/cheesecakes/tarta-queso-vasca.jpg" alt="Tarta de Queso Vasca">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Tarta de Queso Vasca</h3>
-                        <p class="product-description-short">
-                            La auténtica receta vasca con su característico exterior caramelizado y su interior 
-                            cremoso que se deshace en la boca. Un clásico irresistible que nunca falla.
-                        </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-fire"></i> Caramelizada</span>
-                            <span class="feature-tag"><i class="fas fa-award"></i> Receta Auténtica</span>
-                            <span class="feature-tag"><i class="fas fa-cloud"></i> Ultra Cremosa</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-star"></i> Perfecto para...</h4>
-                            <p>Los puristas del cheesecake, reuniones familiares y quienes buscan sabores tradicionales.</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Tarta de Queso Vasca', 'images/productos/cheesecakes/tarta-queso-vasca.jpg', 'Cheesecakes')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+                        <p class="product-description-short">La auténtica receta vasca con su característico exterior caramelizado y su interior cremoso que se deshace en la boca. Un clásico irresistible que nunca falla.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Queso Vasca', 'images/productos/cheesecakes/tarta-queso-vasca.jpg', 'Cheesecakes')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
 
                 <!-- Cheesecake de Dubai -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/productos/cheesecakes/cheesecake-dubai.jpg" alt="Cheesecake de Dubai" onerror="this.src='https://images.unsplash.com/photo-1533134486753-c833f0ed4866?w=600&q=80'">
-                        <div class="product-badge premium">Premium</div>
+                        <img src="images/productos/cheesecakes/cheesecake-dubai.jpg" alt="Cheesecake de Dubai">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Cheesecake de Dubai</h3>
-                        <p class="product-description-short">
-                            Nuestra creación premium inspirada en los sabores exóticos de Dubai. 
-                            Una experiencia única que combina chocolate, pistachos y la textura perfecta del cheesecake.
-                        </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-gem"></i> Premium</span>
-                            <span class="feature-tag"><i class="fas fa-seedling"></i> Pistacho</span>
-                            <span class="feature-tag"><i class="fas fa-candy-cane"></i> Chocolate</span>
-                            <span class="feature-tag"><i class="fas fa-magic"></i> Exclusivo</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-crown"></i> Nuestra Joya</h4>
-                            <p>Una experiencia gastronómica única. Perfecta para impresionar y sorprender en ocasiones especiales.</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Cheesecake de Dubai', 'images/productos/cheesecakes/cheesecake-dubai.jpg', 'Cheesecakes')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+                        <p class="product-description-short">Nuestra creación premium inspirada en los sabores exóticos de Dubai. Combina chocolate, pistachos y la textura perfecta del cheesecake en una experiencia única.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Cheesecake de Dubai', 'images/productos/cheesecakes/cheesecake-dubai.jpg', 'Cheesecakes')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- INFORMACIÓN DE PEDIDO -->
-    <section class="category-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Cómo Pedir</span>
-                <h2 class="section-title">Información de Pedido</h2>
-            </div>
-            
-            <div class="info-cards">
-                <div class="info-card">
-                    <h4><i class="fas fa-euro-sign"></i> Pedido Mínimo</h4>
-                    <p>El pedido mínimo general es de 20€. El pago se realiza al recibir el producto.</p>
+                <!-- Cheesecake de Fresa -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/cheesecakes/tarta-queso-fresa.png" alt="Tarta de Queso con Fresa">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cheesecake de Fresa</h3>
+                        <p class="product-description-short">Una irresistible combinación de cremoso queso y fresas frescas que aportan un toque de color y sabor afrutado. Perfecta para los que buscan frescura y dulzura a partes iguales.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Queso con Fresa', 'images/productos/cheesecakes/tarta-queso-fresa.png', 'Cheesecakes')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-clock"></i> Antelación</h4>
-                    <p>Mínimo 4 días de antelación para garantizar la frescura y calidad óptima.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-truck"></i> Entrega</h4>
-                    <p>Recogida en Tarragona o entrega a domicilio (consultar disponibilidad).</p>
-                </div>
-            </div>
-            
-            <div class="info-box">
-                <i class="fas fa-lightbulb"></i>
-                <div>
-                    <h4>¿Buscas otro sabor?</h4>
-                    <p>Si tienes en mente un sabor diferente o una combinación especial, ¡consúltanos! Podemos crear cheesecakes personalizadas según tus preferencias.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FORMULARIO DE PEDIDO -->
-    <section class="order-form-section" id="pedir">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Haz tu Pedido</span>
-                <h2 class="section-title">Solicita tu Cheesecake</h2>
-                <p class="section-subtitle">Completa el formulario y te contactaremos para confirmar tu pedido</p>
-            </div>
-            
-            <div class="order-form-wrapper">
-                <form id="cheesecakeForm" class="order-form">
-                    <!-- Datos personales -->
-                    <h3 class="form-section-title"><i class="fas fa-user"></i> Tus Datos</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
-                        </div>
+                <!-- Tarta de Queso con Frambuesas -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/cheesecakes/tarta-queso-frambuesas.png" alt="Tarta de Queso con Frambuesas">
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    <div class="product-info">
+                        <h3 class="product-name">Tarta de Queso con Frambuesas</h3>
+                        <p class="product-description-short">Suave y cremosa tarta de queso coronada con frambuesas frescas que le dan un contraste ácido y elegante. Un capricho artesanal que enamora tanto por su sabor como por su presentación.</p>
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Tarta de Queso con Frambuesas', 'images/productos/cheesecakes/tarta-queso-frambuesas.png', 'Cheesecakes')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
-                    
-                    <!-- Selección de producto -->
-                    <h3 class="form-section-title"><i class="fas fa-birthday-cake"></i> Tu Cheesecake</h3>
-                    
-                    <div class="form-group">
-                        <label for="sabor">Sabor de Cheesecake *</label>
-                        <select id="sabor" name="sabor" required>
-                            <option value="">Selecciona un sabor</option>
-                            <option value="frambuesa">Cheesecake de Frambuesa</option>
-                            <option value="vasca">Tarta de Queso Vasca</option>
-                            <option value="dubai">Cheesecake de Dubai (Premium)</option>
-                            <option value="otro">Otro sabor (especificar)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fecha">Fecha de recogida/entrega *</label>
-                            <input type="date" id="fecha" name="fecha" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="ocasion">Ocasión (opcional)</label>
-                            <select id="ocasion" name="ocasion">
-                                <option value="">Selecciona una opción</option>
-                                <option value="cumpleanos">Cumpleaños</option>
-                                <option value="celebracion">Celebración familiar</option>
-                                <option value="regalo">Regalo</option>
-                                <option value="capricho">Capricho personal</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comentarios">Comentarios adicionales</label>
-                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="¿Alguna petición especial? ¿Alergias que debamos tener en cuenta?"></textarea>
-                    </div>
-                    
-                    <!-- Entrega -->
-                    <h3 class="form-section-title"><i class="fas fa-truck"></i> Entrega</h3>
-                    
-                    <div class="form-group">
-                        <label>¿Cómo prefieres recibirla?</label>
-                        <div class="radio-group">
-                            <div class="radio-item">
-                                <input type="radio" id="recogida" name="entrega" value="recogida" checked>
-                                <label for="recogida">Recogida en punto de entrega (Tarragona)</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="domicilio" name="entrega" value="domicilio">
-                                <label for="domicilio">Entrega a domicilio (consultar disponibilidad)</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <i class="fas fa-paper-plane"></i>
-                        Enviar Pedido
-                    </button>
-                </form>
-                
-                <div id="formMessage" class="form-message" style="display: none;"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -623,19 +445,19 @@
     <section class="final-cta-section">
         <div class="container">
             <div class="final-cta-content">
-                <h2 class="final-cta-title">¿Tienes Dudas?</h2>
+                <h2 class="final-cta-title">¿Lista para Pedir tu Cheesecake?</h2>
                 <p class="final-cta-text">
-                    Contacta con nosotros por WhatsApp o teléfono y te ayudaremos a elegir 
-                    el cheesecake perfecto para tu ocasión.
+                    Contáctanos por WhatsApp o por email y cuéntanos qué ocasión celebras.
+                    Te ayudaremos a elegir el cheesecake perfecto.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20información%20sobre%20los%20cheesecakes" class="btn btn-primary btn-large" target="_blank">
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20un%20cheesecake" class="btn btn-primary btn-large" target="_blank">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp
+                        Contactar por WhatsApp
                     </a>
-                    <a href="productos.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-arrow-left"></i>
-                        Ver Más Productos
+                    <a href="index.html#contacto" class="btn btn-secondary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Formulario de Contacto
                     </a>
                 </div>
             </div>
@@ -731,6 +553,14 @@
     </div>
 </footer>
 
+    <!-- Botón Instagram Flotante -->
+    <a href="https://www.instagram.com/tartas_de_tina/" 
+       class="instagram-float" 
+       target="_blank" 
+       aria-label="Seguir en Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
     <!-- Botón WhatsApp Flotante -->
     <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20un%20cheesecake" 
        class="whatsapp-float" 
@@ -743,31 +573,6 @@
     <script src="js/cart.js"></script>
     <script src="js/header.js"></script>
 
-    <script>
-        document.getElementById('cheesecakeForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const sabor = document.getElementById('sabor').value;
-            const fecha = document.getElementById('fecha').value;
-            const ocasion = document.getElementById('ocasion').value;
-            const comentarios = document.getElementById('comentarios').value.trim();
-            const entrega = document.querySelector('input[name="entrega"]:checked').value;
-
-            const texto = `Hola Tina! Quiero hacer un pedido de cheesecake.\n\n` +
-                `Nombre: ${nombre}\n` +
-                `Teléfono: ${telefono}\n` +
-                `Email: ${email}\n` +
-                `Cheesecake: ${sabor}\n` +
-                `Fecha de recogida/entrega: ${fecha}\n` +
-                (ocasion ? `Ocasión: ${ocasion}\n` : '') +
-                `Entrega: ${entrega}\n` +
-                (comentarios ? `Comentarios: ${comentarios}` : '');
-
-            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
-        });
-    </script>
 
 </body>
 </html>

@@ -763,6 +763,14 @@
         </div>
     </footer>
 
+    <!-- Botón Instagram Flotante -->
+    <a href="https://www.instagram.com/tartas_de_tina/" 
+       class="instagram-float" 
+       target="_blank" 
+       aria-label="Seguir en Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
     <!-- Botón WhatsApp Flotante -->
     <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20hacer%20un%20pedido" 
        class="whatsapp-float" 
@@ -771,635 +779,795 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- MODAL DE PERSONALIZACIÓN -->
+    <!-- MODAL WIZARD DE PERSONALIZACIÓN -->
     <div id="modalPersonalizacion" class="modal">
         <div class="modal-content">
+
+            <!-- HEADER CON PROGRESO -->
             <div class="modal-header">
-                <h2><i class="fas fa-sliders"></i> Personaliza tu Tarta</h2>
-                <button class="modal-close" id="closeModal">&times;</button>
-            </div>
-            
-            <form id="formPersonalizacion" class="personalization-form">
-                <!-- Paso 1: Tamaño -->
-                <div class="form-section">
-                    <h3><span class="step-number">1</span> Elige el Tamaño *</h3>
-                    <div class="options-grid">
-                        <label class="option-card">
-                            <input type="radio" name="tamano" value="1kg (4-6 personas)" required>
-                            <div class="option-content">
-                                <i class="fas fa-birthday-cake"></i>
-                                <strong>1 kg</strong>
-                                <span>4-6 personas</span>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="tamano" value="2kg (8-10 personas)" required>
-                            <div class="option-content">
-                                <i class="fas fa-birthday-cake"></i>
-                                <strong>2 kg</strong>
-                                <span>8-10 personas</span>
-                                <span class="badge-popular">Más popular</span>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="tamano" value="3kg (14-16 personas)" required>
-                            <div class="option-content">
-                                <i class="fas fa-birthday-cake"></i>
-                                <strong>3 kg</strong>
-                                <span>14-16 personas</span>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="tamano" value="4kg (20-22 personas)" required>
-                            <div class="option-content">
-                                <i class="fas fa-birthday-cake"></i>
-                                <strong>4 kg</strong>
-                                <span>20-22 personas</span>
-                            </div>
-                        </label>
+                <div class="modal-header-top">
+                    <div class="modal-title-group">
+                        <span class="modal-cake-icon">🎂</span>
+                        <div>
+                            <h2>Personaliza tu Tarta</h2>
+                            <p class="modal-subtitle">Paso <span id="currentStepLabel">1</span> de 4</p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Paso 2: Bizcocho -->
-                <div class="form-section">
-                    <h3><span class="step-number">2</span> Elige el Bizcocho *</h3>
-                    <div class="options-grid compact">
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Vainilla" required>
-                            <div class="option-content">
-                                <i class="fas fa-seedling"></i>
-                                <strong>Vainilla</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Almendra" required>
-                            <div class="option-content">
-                                <i class="fas fa-leaf"></i>
-                                <strong>Almendra</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Pistacho" required>
-                            <div class="option-content">
-                                <i class="fas fa-spa"></i>
-                                <strong>Pistacho</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Chocolate" required>
-                            <div class="option-content">
-                                <i class="fas fa-cube"></i>
-                                <strong>Chocolate</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Zanahoria" required>
-                            <div class="option-content">
-                                <i class="fas fa-carrot"></i>
-                                <strong>Zanahoria</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Red Velvet" required>
-                            <div class="option-content">
-                                <i class="fas fa-heart"></i>
-                                <strong>Red Velvet</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Limón" required>
-                            <div class="option-content">
-                                <i class="fas fa-lemon"></i>
-                                <strong>Limón</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Mantequilla" required>
-                            <div class="option-content">
-                                <i class="fas fa-star"></i>
-                                <strong>Mantequilla</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Naranja" required>
-                            <div class="option-content">
-                                <i class="fas fa-sun"></i>
-                                <strong>Naranja</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Coco" required>
-                            <div class="option-content">
-                                <i class="fas fa-umbrella-beach"></i>
-                                <strong>Coco</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Café" required>
-                            <div class="option-content">
-                                <i class="fas fa-mug-hot"></i>
-                                <strong>Café</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="bizcocho" value="Speculoos" required>
-                            <div class="option-content">
-                                <i class="fas fa-cookie"></i>
-                                <strong>Speculoos</strong>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Paso 3: Relleno -->
-                <div class="form-section">
-                    <h3><span class="step-number">3</span> Elige el Relleno *</h3>
-                    <div class="options-grid compact">
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Nata" required>
-                            <div class="option-content">
-                                <i class="fas fa-cloud"></i>
-                                <strong>Nata</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Fresa" required>
-                            <div class="option-content">
-                                <i class="fas fa-heart"></i>
-                                <strong>Fresa</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Frambuesa" required>
-                            <div class="option-content">
-                                <i class="fas fa-droplet"></i>
-                                <strong>Frambuesa</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Cereza" required>
-                            <div class="option-content">
-                                <i class="fas fa-circle-dot"></i>
-                                <strong>Cereza</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Frutas del Bosque" required>
-                            <div class="option-content">
-                                <i class="fas fa-leaf"></i>
-                                <strong>Frutas del Bosque</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Mango" required>
-                            <div class="option-content">
-                                <i class="fas fa-sun"></i>
-                                <strong>Mango</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Maracuyá" required>
-                            <div class="option-content">
-                                <i class="fas fa-star"></i>
-                                <strong>Maracuyá</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Limón" required>
-                            <div class="option-content">
-                                <i class="fas fa-lemon"></i>
-                                <strong>Limón</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Chocolate" required>
-                            <div class="option-content">
-                                <i class="fas fa-cube"></i>
-                                <strong>Chocolate</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Nocilla" required>
-                            <div class="option-content">
-                                <i class="fas fa-jar"></i>
-                                <strong>Nocilla</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Pistacho" required>
-                            <div class="option-content">
-                                <i class="fas fa-seedling"></i>
-                                <strong>Pistacho</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Caramelo" required>
-                            <div class="option-content">
-                                <i class="fas fa-candy-cane"></i>
-                                <strong>Caramelo</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Dulce de Leche" required>
-                            <div class="option-content">
-                                <i class="fas fa-droplet"></i>
-                                <strong>Dulce de Leche</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Turrón" required>
-                            <div class="option-content">
-                                <i class="fas fa-cookie-bite"></i>
-                                <strong>Turrón</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Café" required>
-                            <div class="option-content">
-                                <i class="fas fa-mug-hot"></i>
-                                <strong>Café</strong>
-                            </div>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="relleno" value="Trufa" required>
-                            <div class="option-content">
-                                <i class="fas fa-gem"></i>
-                                <strong>Trufa</strong>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Paso 4: Decoración -->
-                <div class="form-section">
-                    <h3><span class="step-number">4</span> Personalización y Decoración *</h3>
-                    <div class="form-group">
-                        <label for="decoracion">Describe cómo quieres tu tarta:</label>
-                        <textarea id="decoracion" name="decoracion" rows="4" required placeholder="Ej: Colores azul y amarillo, con fresas en la parte superior, mensaje 'Feliz Cumpleaños María', con lazos decorativos..."></textarea>
-                        <small>Cuéntanos los colores, tema, mensaje, decoración especial, imágenes comestibles, figuritas, etc.                             
-                            Nos pondremos en contacto antes de preparar la tarta.
-                        </small>
-                    </div>
-                </div>
-
-                <!-- Botón de envío -->
-                <div class="form-actions">
-                    <button type="button" class="btn btn-outline" id="cancelBtn">Cancelar</button>
-                    <button type="submit" class="btn btn-primary btn-large">
-                        <i class="fas fa-shopping-cart"></i>
-                        Añadir al Carrito
+                    <button class="modal-close" id="closeModal" aria-label="Cerrar">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
+                <div class="wizard-progress-bar">
+                    <div class="wizard-progress-fill" id="progressFill"></div>
+                </div>
+                <div class="wizard-steps-labels">
+                    <span class="wsl active" data-step="1">Tamaño</span>
+                    <span class="wsl" data-step="2">Bizcocho</span>
+                    <span class="wsl" data-step="3">Relleno</span>
+                    <span class="wsl" data-step="4">Decoración</span>
+                </div>
+            </div>
+
+            <!-- CHIPS RESUMEN EN TIEMPO REAL -->
+            <div class="selection-summary">
+                <div class="summary-chips" id="summaryChips">
+                    <span class="summary-empty">Tus elecciones aparecerán aquí</span>
+                </div>
+            </div>
+
+            <!-- PASOS DEL WIZARD -->
+            <form id="formPersonalizacion" novalidate>
+
+                <!-- PASO 1: TAMAÑO -->
+                <div class="wizard-panel active" id="step1">
+                    <div class="step-header">
+                        <h3 class="step-title">¿Para cuántas personas?</h3>
+                        <p class="step-desc">Elige el tamaño de tu tarta</p>
+                    </div>
+                    <div class="size-grid">
+                        <label class="size-card">
+                            <input type="radio" name="tamano" value="1kg (4-6 personas)">
+                            <div class="size-content">
+                                <span class="size-emoji">🎂</span>
+                                <div class="size-kg">1 kg</div>
+                                <div class="size-personas">4–6 personas</div>
+                                <div class="size-ideal">Reunión pequeña</div>
+                            </div>
+                        </label>
+                        <label class="size-card popular">
+                            <input type="radio" name="tamano" value="2kg (8-10 personas)">
+                            <div class="size-content">
+                                <span class="popular-badge">⭐ Más popular</span>
+                                <span class="size-emoji">🎂</span>
+                                <div class="size-kg">2 kg</div>
+                                <div class="size-personas">8–10 personas</div>
+                                <div class="size-ideal">Cumpleaños familiar</div>
+                            </div>
+                        </label>
+                        <label class="size-card">
+                            <input type="radio" name="tamano" value="3kg (14-16 personas)">
+                            <div class="size-content">
+                                <span class="size-emoji">🎂</span>
+                                <div class="size-kg">3 kg</div>
+                                <div class="size-personas">14–16 personas</div>
+                                <div class="size-ideal">Celebración grande</div>
+                            </div>
+                        </label>
+                        <label class="size-card">
+                            <input type="radio" name="tamano" value="4kg (20-22 personas)">
+                            <div class="size-content">
+                                <span class="size-emoji">🎂</span>
+                                <div class="size-kg">4 kg</div>
+                                <div class="size-personas">20–22 personas</div>
+                                <div class="size-ideal">Gran evento</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- PASO 2: BIZCOCHO -->
+                <div class="wizard-panel" id="step2">
+                    <div class="step-header">
+                        <h3 class="step-title">¿Qué sabor de bizcocho?</h3>
+                        <p class="step-desc">La base de tu tarta</p>
+                    </div>
+                    <div class="flavor-grid">
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Almendra"><div class="flavor-content"><strong>Almendra</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Avellana"><div class="flavor-content"><strong>Avellana</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Chocolate"><div class="flavor-content"><strong>Chocolate</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Coco"><div class="flavor-content"><strong>Coco</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Limón"><div class="flavor-content"><strong>Limón</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Mantequilla"><div class="flavor-content"><strong>Mantequilla</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Pistacho"><div class="flavor-content"><strong>Pistacho</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Red Velvet"><div class="flavor-content"><strong>Red Velvet</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Vainilla"><div class="flavor-content"><strong>Vainilla</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="bizcocho" value="Zanahoria"><div class="flavor-content"><strong>Zanahoria</strong><span class="flavor-check">✓</span></div></label>
+                    </div>
+                    <p class="custom-flavor-hint">¿Tienes en mente otro sabor? ¡Consúltanos! Podemos crear bizcochos personalizados que no están en la lista.</p>
+                </div>
+
+                <!-- PASO 3: RELLENO -->
+                <div class="wizard-panel" id="step3">
+                    <div class="step-header">
+                        <h3 class="step-title">¿Qué relleno prefieres?</h3>
+                        <p class="step-desc">El corazón de tu tarta</p>
+                    </div>
+                    <div class="flavor-grid">
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Cereza"><div class="flavor-content"><strong>Cereza</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Chocolate blanco"><div class="flavor-content"><strong>Chocolate blanco</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Crema de mascarpone"><div class="flavor-content"><strong>Crema de mascarpone</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Crema de queso con mango y maracuyá"><div class="flavor-content"><strong>Crema de queso con mango y maracuyá</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Crema pastelera"><div class="flavor-content"><strong>Crema pastelera</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Dulce de leche"><div class="flavor-content"><strong>Dulce de leche</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Frambuesa"><div class="flavor-content"><strong>Frambuesa</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Fresa con nata"><div class="flavor-content"><strong>Fresa con nata</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Frutas del bosque"><div class="flavor-content"><strong>Frutas del bosque</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Limón"><div class="flavor-content"><strong>Limón</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Mango"><div class="flavor-content"><strong>Mango</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Maracuyá"><div class="flavor-content"><strong>Maracuyá</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Nata"><div class="flavor-content"><strong>Nata</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Nutella"><div class="flavor-content"><strong>Nutella</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Oreo"><div class="flavor-content"><strong>Oreo</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Pistacho con queso crema"><div class="flavor-content"><strong>Pistacho con queso crema</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Plátano con caramelo"><div class="flavor-content"><strong>Plátano con caramelo</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Queso crema"><div class="flavor-content"><strong>Queso crema</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Snickers"><div class="flavor-content"><strong>Snickers</strong><span class="flavor-check">✓</span></div></label>
+                        <label class="flavor-card"><input type="radio" name="relleno" value="Trufa de chocolate"><div class="flavor-content"><strong>Trufa de chocolate</strong><span class="flavor-check">✓</span></div></label>
+                    </div>
+                    <p class="custom-flavor-hint">¿Tienes en mente otro relleno? ¡Consúltanos! Trabajamos con muchos más sabores a petición.</p>
+                </div>
+
+                <!-- PASO 4: DECORACIÓN -->
+                <div class="wizard-panel" id="step4">
+                    <div class="step-header">
+                        <h3 class="step-title">¿Cómo la decoramos?</h3>
+                        <p class="step-desc">Cuéntanos todos los detalles</p>
+                    </div>
+                    <div class="deco-section">
+                        <input type="hidden" name="ocasion" id="ocasionSeleccionada">
+                        <div class="deco-group">
+                            <label class="deco-label">Ocasión <span class="optional-tag">opcional</span></label>
+                            <div class="tag-options">
+                                <button type="button" class="tag-btn" data-tag="Cumpleaños">🎂 Cumpleaños</button>
+                                <button type="button" class="tag-btn" data-tag="Boda">💍 Boda</button>
+                                <button type="button" class="tag-btn" data-tag="Comunión">✨ Comunión</button>
+                                <button type="button" class="tag-btn" data-tag="Bautizo">👶 Bautizo</button>
+                                <button type="button" class="tag-btn" data-tag="Aniversario">❤️ Aniversario</button>
+                                <button type="button" class="tag-btn" data-tag="Graduación">🎓 Graduación</button>
+                                <button type="button" class="tag-btn" data-tag="Navidad">🎄 Navidad</button>
+                                <button type="button" class="tag-btn" data-tag="Otro">🎉 Otro</button>
+                            </div>
+                        </div>
+                        <div class="deco-group">
+                            <label class="deco-label" for="decoracion">¿Cómo la decoramos? Cuéntanos todos los detalles *</label>
+                            <textarea id="decoracion" name="decoracion" rows="5" required placeholder="Ej: Colores azul y amarillo, fresas en la parte superior, mensaje 'Feliz Cumpleaños María', lazos decorativos, figuritas..."></textarea>
+                            <small>Cuéntanos colores, tema, mensaje, imágenes comestibles, figuritas... Nos pondremos en contacto antes de prepararla.</small>
+                        </div>
+                        <div class="final-summary">
+                            <h4>Tu tarta:</h4>
+                            <div class="final-chips" id="finalChips"></div>
+                        </div>
+                    </div>
+                </div>
+
             </form>
+
+            <!-- FOOTER DE NAVEGACIÓN -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline btn-prev" id="prevBtn" style="display:none">
+                    <i class="fas fa-arrow-left"></i> Anterior
+                </button>
+                <div class="footer-step-dots">
+                    <span class="dot active" data-step="1"></span>
+                    <span class="dot" data-step="2"></span>
+                    <span class="dot" data-step="3"></span>
+                    <span class="dot" data-step="4"></span>
+                </div>
+                <button type="button" class="btn btn-primary btn-next" id="nextBtn">
+                    Siguiente <i class="fas fa-arrow-right"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-submit" id="submitBtn" style="display:none">
+                    <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                </button>
+            </div>
+
         </div>
     </div>
 
-        <script src="js/cart.js"></script>
-        <script src="js/header.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/header.js"></script>
 
-    <!-- JAVASCRIPT -->
     <script>
         // ==========================================
-        // VARIABLES GLOBALES
+        // WIZARD PERSONALIZADOR DE TARTA
         // ==========================================
-        const modal = document.getElementById('modalPersonalizacion');
+        const modal         = document.getElementById('modalPersonalizacion');
         const btnPersonalizar = document.getElementById('btnPersonalizar');
-        const closeModal = document.getElementById('closeModal');
-        const cancelBtn = document.getElementById('cancelBtn');
+        const closeModalBtn = document.getElementById('closeModal');
         const formPersonalizacion = document.getElementById('formPersonalizacion');
+        const prevBtn       = document.getElementById('prevBtn');
+        const nextBtn       = document.getElementById('nextBtn');
+        const submitBtn     = document.getElementById('submitBtn');
+        let currentStep     = 1;
+        const totalSteps    = 4;
 
-        // ==========================================
-        // TARTA PERSONALIZADA — Añadir al carrito
-        // getCart/saveCart/addToCart/showToast vienen de js/cart.js
-        // ==========================================
-
-        function addCustomCakeToCart(formData) {
-            addToCart(
-                'Tarta Personalizada',
-                'images/productos/tartas/tarta-personalizada.jpg',
-                'Tartas Personalizadas',
-                {
-                    tamano:     formData.tamano,
-                    bizcocho:   formData.bizcocho,
-                    relleno:    formData.relleno,
-                    decoracion: formData.decoracion
-                }
-            );
-            closeModalPersonalization();
-            formPersonalizacion.reset();
-        }
-
-        // ==========================================
-        // FUNCIONES DEL MODAL
-        // ==========================================
-        
-        // Abrir modal
+        // --- Abrir / Cerrar ---
         function openModal() {
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            goToStep(1);
         }
-
-        // Cerrar modal
         function closeModalPersonalization() {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+        if (btnPersonalizar) btnPersonalizar.addEventListener('click', openModal);
+        if (closeModalBtn)   closeModalBtn.addEventListener('click', closeModalPersonalization);
+        window.addEventListener('click', e => { if (e.target === modal) closeModalPersonalization(); });
 
-        // Event listeners del modal
-        if (btnPersonalizar) {
-            btnPersonalizar.addEventListener('click', openModal);
-        }
+        // --- Navegación de pasos ---
+        function goToStep(n) {
+            document.querySelectorAll('.wizard-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById('step' + n).classList.add('active');
+            currentStep = n;
 
-        if (closeModal) {
-            closeModal.addEventListener('click', closeModalPersonalization);
-        }
+            // Barra de progreso
+            document.getElementById('progressFill').style.width = ((n / totalSteps) * 100) + '%';
+            document.getElementById('currentStepLabel').textContent = n;
 
-        if (cancelBtn) {
-            cancelBtn.addEventListener('click', closeModalPersonalization);
-        }
+            // Labels de pasos
+            document.querySelectorAll('.wsl').forEach(el => {
+                const s = parseInt(el.dataset.step);
+                el.classList.toggle('active', s === n);
+                el.classList.toggle('done', s < n);
+            });
 
-        // Cerrar modal al hacer clic fuera
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModalPersonalization();
+            // Dots
+            document.querySelectorAll('.dot').forEach(d => {
+                const s = parseInt(d.dataset.step);
+                d.classList.toggle('active', s === n);
+                d.classList.toggle('done', s < n);
+            });
+
+            // Botones
+            prevBtn.style.display = n === 1 ? 'none' : '';
+            if (n < totalSteps) {
+                nextBtn.style.display = '';
+                submitBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = '';
+                renderFinalChips();
             }
+
+            document.querySelector('.modal-content').scrollTop = 0;
+        }
+
+        function validateStep() {
+            if (currentStep === 1 && !formPersonalizacion.tamano.value) {
+                showToast('Por favor, elige un tamaño', 'error'); return false;
+            }
+            if (currentStep === 2 && !formPersonalizacion.bizcocho.value) {
+                showToast('Por favor, elige un bizcocho', 'error'); return false;
+            }
+            if (currentStep === 3 && !formPersonalizacion.relleno.value) {
+                showToast('Por favor, elige un relleno', 'error'); return false;
+            }
+            return true;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (!validateStep()) return;
+            updateSummaryChips();
+            if (currentStep < totalSteps) goToStep(currentStep + 1);
+        });
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) goToStep(currentStep - 1);
         });
 
-        // ==========================================
-        // FORMULARIO DE PERSONALIZACIÓN
-        // ==========================================
-        
-        if (formPersonalizacion) {
-            formPersonalizacion.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const tamano = formPersonalizacion.tamano.value;
-                const bizcocho = formPersonalizacion.bizcocho.value;
-                const relleno = formPersonalizacion.relleno.value;
-                const decoracion = formPersonalizacion.decoracion.value.trim();
-
-                if (!tamano) { showToast('Por favor, selecciona un tamaño', 'error'); return; }
-                if (!bizcocho) { showToast('Por favor, selecciona un sabor de bizcocho', 'error'); return; }
-                if (!relleno) { showToast('Por favor, selecciona un relleno', 'error'); return; }
-                if (!decoracion) { showToast('Por favor, describe la decoración que deseas', 'error'); return; }
-
-                const texto = `Hola Tina! Me gustaría pedir una tarta personalizada.\n\n` +
-                    `Tamaño: ${tamano}\n` +
-                    `Bizcocho: ${bizcocho}\n` +
-                    `Relleno: ${relleno}\n` +
-                    `Decoración: ${decoracion}`;
-
-                window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
+        // --- Tags de ocasión ---
+        const ocasionInput = document.getElementById('ocasionSeleccionada');
+        document.querySelectorAll('.tag-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isActive = btn.classList.contains('active');
+                document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+                ocasionInput.value = '';
+                if (!isActive) {
+                    btn.classList.add('active');
+                    ocasionInput.value = btn.dataset.tag;
+                }
             });
+        });
+
+        // --- Chips de resumen ---
+        function updateSummaryChips() {
+            const tamano   = formPersonalizacion.tamano   ? formPersonalizacion.tamano.value   : '';
+            const bizcocho = formPersonalizacion.bizcocho ? formPersonalizacion.bizcocho.value : '';
+            const relleno  = formPersonalizacion.relleno  ? formPersonalizacion.relleno.value  : '';
+            const ocasion  = document.getElementById('ocasionSeleccionada')?.value || '';
+            const container = document.getElementById('summaryChips');
+            let html = '';
+            if (tamano)   html += `<span class="chip chip-size">📏 ${tamano}</span>`;
+            if (bizcocho) html += `<span class="chip chip-biz">🍞 ${bizcocho}</span>`;
+            if (relleno)  html += `<span class="chip chip-rel">🍓 ${relleno}</span>`;
+            if (ocasion)  html += `<span class="chip chip-rel">🎉 ${ocasion}</span>`;
+            container.innerHTML = html || '<span class="summary-empty">Tus elecciones aparecerán aquí</span>';
         }
 
+        function renderFinalChips() {
+            updateSummaryChips();
+            const tamano   = formPersonalizacion.tamano   ? formPersonalizacion.tamano.value   : '';
+            const bizcocho = formPersonalizacion.bizcocho ? formPersonalizacion.bizcocho.value : '';
+            const relleno  = formPersonalizacion.relleno  ? formPersonalizacion.relleno.value  : '';
+            const ocasion  = document.getElementById('ocasionSeleccionada')?.value || '';
+            let html = `<span class="chip chip-size">📏 ${tamano}</span>` +
+                `<span class="chip chip-biz">🍞 ${bizcocho}</span>` +
+                `<span class="chip chip-rel">🍓 ${relleno}</span>`;
+            if (ocasion) html += `<span class="chip chip-rel">🎉 ${ocasion}</span>`;
+            document.getElementById('finalChips').innerHTML = html;
+        }
+
+        // --- Enviar ---
+        submitBtn.addEventListener('click', () => {
+            const tamano     = formPersonalizacion.tamano.value;
+            const bizcocho   = formPersonalizacion.bizcocho.value;
+            const relleno    = formPersonalizacion.relleno.value;
+            const ocasion    = document.getElementById('ocasionSeleccionada')?.value || '';
+            const decoracion = document.getElementById('decoracion').value.trim();
+
+            if (!decoracion) { showToast('Por favor, describe la decoración que deseas', 'error'); return; }
+
+            addToCart(
+                'Tarta Personalizada',
+                'images/productos/tartas/tarta-personalizada.jpg',
+                'Tartas Personalizadas',
+                { tamano, bizcocho, relleno, ocasion, decoracion }
+            );
+
+            let texto = `Hola Tina! Me gustaría pedir una tarta personalizada.\n\n` +
+                `Tamaño: ${tamano}\nBizcocho: ${bizcocho}\nRelleno: ${relleno}`;
+            if (ocasion) texto += `\nOcasión: ${ocasion}`;
+            texto += `\nDecoración: ${decoracion}`;
+            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
+
+            closeModalPersonalization();
+            formPersonalizacion.reset();
+            document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('ocasionSeleccionada').value = '';
+        });
     </script>
 
-    <!-- ESTILOS DEL MODAL -->
+    <!-- ESTILOS DEL WIZARD -->
     <style>
-        /* Modal */
+        /* ==========================================
+           MODAL WIZARD — PERSONALIZACIÓN DE TARTA
+        ========================================== */
+
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            inset: 0;
+            background: rgba(0,0,0,0.6);
             z-index: 9999;
             align-items: center;
             justify-content: center;
-            padding: var(--spacing-md);
-            overflow-y: auto;
+            padding: 1rem;
+            backdrop-filter: blur(4px);
         }
 
         .modal-content {
-            background: var(--white);
-            border-radius: var(--radius-xl);
+            background: #fff;
+            border-radius: 24px;
             width: 100%;
-            max-width: 900px;
-            max-height: 90vh;
+            max-width: 820px;
+            max-height: 92vh;
             overflow-y: auto;
-            box-shadow: var(--shadow-xl);
-            animation: modalSlideIn 0.3s ease;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.22);
+            display: flex;
+            flex-direction: column;
+            animation: modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
         }
 
-        @keyframes modalSlideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        @keyframes modalIn {
+            from { transform: scale(0.9) translateY(30px); opacity: 0; }
+            to   { transform: scale(1)   translateY(0);    opacity: 1; }
         }
 
+        /* HEADER */
         .modal-header {
+            padding: 1.5rem 1.5rem 0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 10;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .modal-header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: var(--spacing-xl);
-            border-bottom: 2px solid var(--gray-200);
-            position: sticky;
-            top: 0;
-            background: var(--white);
-            z-index: 10;
+            margin-bottom: 1.25rem;
         }
 
-        .modal-header h2 {
-            margin: 0;
+        .modal-title-group {
             display: flex;
             align-items: center;
-            gap: var(--spacing-sm);
-            color: var(--primary-color);
+            gap: 0.75rem;
+        }
+
+        .modal-cake-icon { font-size: 2.2rem; line-height: 1; }
+
+        .modal-title-group h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--primary-dark, #c2546a);
+            font-family: var(--font-heading, 'Playfair Display', serif);
+        }
+
+        .modal-subtitle {
+            margin: 0.1rem 0 0;
+            font-size: 0.82rem;
+            color: #9ca3af;
         }
 
         .modal-close {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--gray-100);
-            border: none;
-            font-size: 1.5rem;
+            border: 2px solid #e5e7eb;
+            background: transparent;
+            font-size: 0.95rem;
             cursor: pointer;
-            transition: var(--transition-normal);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #6b7280;
+            transition: all 0.2s;
+            flex-shrink: 0;
         }
-
         .modal-close:hover {
-            background: var(--primary-color);
-            color: var(--white);
+            background: var(--primary-color, #ff9aa2);
+            border-color: var(--primary-color, #ff9aa2);
+            color: #fff;
         }
 
-        .personalization-form {
-            padding: var(--spacing-xl);
+        /* Barra de progreso */
+        .wizard-progress-bar {
+            height: 6px;
+            background: #f3f4f6;
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+        .wizard-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color, #ff9aa2), var(--primary-dark, #c2546a));
+            border-radius: 999px;
+            width: 25%;
+            transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
         }
 
-        .form-section {
-            margin-bottom: var(--spacing-2xl);
+        /* Labels de pasos */
+        .wizard-steps-labels {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f3f4f6;
         }
+        .wsl {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #9ca3af;
+            transition: color 0.25s;
+        }
+        .wsl.active { color: var(--primary-dark, #c2546a); font-weight: 700; }
+        .wsl.done   { color: var(--primary-color, #ff9aa2); }
 
-        .form-section h3 {
+        /* CHIPS RESUMEN */
+        .selection-summary {
+            padding: 0.7rem 1.5rem;
+            background: #fafafa;
+            border-bottom: 1px solid #f3f4f6;
+            min-height: 50px;
             display: flex;
             align-items: center;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-lg);
-            color: var(--black);
         }
-
-        .step-number {
+        .summary-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .summary-empty {
+            font-size: 0.82rem;
+            color: #9ca3af;
+            font-style: italic;
+        }
+        .chip {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--white);
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 1.125rem;
+            gap: 0.3rem;
+            padding: 0.28rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: chipIn 0.25s ease;
+        }
+        @keyframes chipIn {
+            from { transform: scale(0.75); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+        .chip-size { background: #fce7f3; color: #9d174d; }
+        .chip-biz  { background: #fef3c7; color: #92400e; }
+        .chip-rel  { background: #dcfce7; color: #166534; }
+
+        /* PANELES DE PASOS */
+        .wizard-panel { display: none; padding: 1.5rem; animation: panelIn 0.28s ease; }
+        .wizard-panel.active { display: block; }
+        @keyframes panelIn {
+            from { opacity: 0; transform: translateX(18px); }
+            to   { opacity: 1; transform: translateX(0); }
         }
 
-        .options-grid {
+        .step-header { margin-bottom: 1.5rem; }
+        .step-title {
+            margin: 0 0 0.2rem;
+            font-size: 1.25rem;
+            color: #111;
+            font-family: var(--font-heading, 'Playfair Display', serif);
+        }
+        .step-desc { margin: 0; font-size: 0.88rem; color: #6b7280; }
+
+        /* PASO 1 — Tarjetas de tamaño */
+        .size-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: var(--spacing-md);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
-
-        .options-grid.compact {
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: var(--spacing-sm);
-        }
-
-        .option-card {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .option-card input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .option-content {
+        .size-card { position: relative; cursor: pointer; }
+        .size-card input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+        .size-content {
+            border: 2.5px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            background: #fff;
+            transition: all 0.22s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: var(--spacing-xs);
-            padding: var(--spacing-md);
-            border: 2px solid var(--gray-300);
-            border-radius: var(--radius-md);
-            background: var(--white);
-            transition: all var(--transition-normal);
-            text-align: center;
+            gap: 0.2rem;
         }
-
-        .option-content i {
-            font-size: 2rem;
-            color: var(--primary-color);
+        .size-card.popular .size-content {
+            border-color: var(--primary-color, #ff9aa2);
+            background: #fff8f8;
         }
-
-        .option-content strong {
-            font-size: 1rem;
-            color: var(--black);
-        }
-
-        .option-content span:not(.emoji):not(.badge-popular) {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }
-
-        .option-card input[type="radio"]:checked + .option-content {
-            border-color: var(--primary-color);
-            background: rgba(255, 154, 162, 0.1);
-            box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.2);
-        }
-
-        .option-card:hover .option-content {
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .badge-popular {
+        .popular-badge {
             display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 0.25rem 0.625rem;
-            border-radius: var(--radius-full);
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.25rem;
+            background: linear-gradient(135deg, var(--primary-color, #ff9aa2), var(--primary-dark, #c2546a));
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.22rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.3rem;
+        }
+        .size-emoji { font-size: 2.6rem; line-height: 1; margin-bottom: 0.4rem; }
+        .size-kg    { font-size: 1.8rem; font-weight: 800; color: #111; line-height: 1; }
+        .size-personas { font-size: 0.9rem; color: #374151; font-weight: 600; margin-top: 0.2rem; }
+        .size-ideal    { font-size: 0.78rem; color: #9ca3af; margin-top: 0.1rem; }
+
+        .size-card input:checked + .size-content {
+            border-color: var(--primary-color, #ff9aa2);
+            background: linear-gradient(135deg, #fff5f5, #ffe4e6);
+            box-shadow: 0 0 0 4px rgba(255,154,162,0.2);
+            transform: translateY(-2px);
+        }
+        .size-card:hover .size-content {
+            border-color: var(--primary-color, #ff9aa2);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(255,154,162,0.2);
         }
 
-        .form-group {
-            margin-bottom: var(--spacing-lg);
+        /* PASOS 2 y 3 — Pill cards de sabor / relleno */
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: var(--spacing-xs);
-            color: var(--gray-700);
+        /* Último item ocupa ancho completo si el total es impar */
+        .flavor-card:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
         }
-
-        .form-group textarea {
-            width: 100%;
-            padding: var(--spacing-sm);
-            border: 2px solid var(--gray-300);
-            border-radius: var(--radius-sm);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            resize: vertical;
-            transition: var(--transition-normal);
-        }
-
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.1);
-        }
-
-        .form-group small {
-            display: block;
-            margin-top: var(--spacing-xs);
-            color: var(--gray-600);
-            font-size: 0.875rem;
-        }
-
-        .form-actions {
+        .flavor-card { position: relative; cursor: pointer; }
+        .flavor-card input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+        .flavor-content {
+            height: 56px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 0 0.9rem;
+            background: #fff;
+            transition: background 0.18s ease, border-color 0.18s ease;
             display: flex;
-            gap: var(--spacing-md);
-            justify-content: flex-end;
-            padding-top: var(--spacing-lg);
-            border-top: 2px solid var(--gray-200);
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .flavor-content strong {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #374151;
+            line-height: 1.3;
+            flex: 1;
+        }
+        .flavor-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #e5e7eb;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: transparent;
+            transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .modal-content {
-                max-height: 95vh;
-            }
-
-            .options-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .options-grid.compact {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .form-actions {
-                flex-direction: column;
-            }
-
-            .form-actions .btn {
-                width: 100%;
-            }
+        .flavor-card:hover .flavor-content {
+            background: #fff0f3;
+            border-color: #f9a8b8;
         }
+
+        .flavor-card input:checked + .flavor-content {
+            background: #fce7ec;
+            border-color: #e85d7a;
+        }
+        .flavor-card input:checked + .flavor-content strong {
+            font-weight: 700;
+            color: #e85d7a;
+        }
+        .flavor-card input:checked + .flavor-content .flavor-check {
+            background: #e85d7a;
+            border-color: #e85d7a;
+            color: #fff;
+        }
+
+        /* PASO 4 — Decoración */
+        .deco-section { display: flex; flex-direction: column; gap: 1.5rem; }
+        .deco-label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: #374151;
+            margin-bottom: 0.7rem;
+        }
+        .optional-tag { font-weight: 400; font-size: 0.78rem; color: #9ca3af; margin-left: 0.35rem; }
+
+        .tag-options { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag-btn {
+            padding: 0.45rem 0.9rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 999px;
+            background: #fff;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: var(--font-body, 'Poppins', sans-serif);
+            color: #374151;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .tag-btn:hover { border-color: var(--primary-color, #ff9aa2); background: #fff5f5; }
+        .tag-btn.active {
+            background: linear-gradient(135deg, var(--primary-color, #ff9aa2), var(--primary-dark, #c2546a));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        #decoracion {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 14px;
+            font-family: var(--font-body, 'Poppins', sans-serif);
+            font-size: 0.93rem;
+            resize: vertical;
+            transition: all 0.2s;
+            color: #1f2937;
+            line-height: 1.6;
+            box-sizing: border-box;
+        }
+        #decoracion:focus {
+            outline: none;
+            border-color: var(--primary-color, #ff9aa2);
+            box-shadow: 0 0 0 3px rgba(255,154,162,0.15);
+        }
+        .deco-group small {
+            display: block;
+            margin-top: 0.5rem;
+            color: #6b7280;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .final-summary {
+            background: linear-gradient(135deg, #fff5f5, #ffe4e6);
+            border: 1.5px solid #fecdd3;
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+        }
+        .final-summary h4 {
+            margin: 0 0 0.75rem;
+            font-size: 0.82rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+        }
+        .final-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+        /* FOOTER */
+        .modal-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #f3f4f6;
+            position: sticky;
+            bottom: 0;
+            background: #fff;
+            border-radius: 0 0 24px 24px;
+            gap: 0.75rem;
+        }
+        .footer-step-dots { display: flex; gap: 0.4rem; align-items: center; }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d1d5db;
+            transition: all 0.3s;
+        }
+        .dot.active {
+            width: 24px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--primary-color, #ff9aa2), var(--primary-dark, #c2546a));
+        }
+        .dot.done { background: var(--primary-color, #ff9aa2); }
+
+        .btn-prev   { min-width: 110px; }
+        .btn-next,
+        .btn-submit { min-width: 130px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .modal { padding: 0; align-items: flex-end; }
+            .modal-content { border-radius: 20px 20px 0 0; max-height: 96vh; }
+            .size-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+
+            .modal-footer { padding: 0.75rem 1rem; }
+            .wsl { font-size: 0.7rem; }
+            .btn-prev, .btn-next, .btn-submit { min-width: auto; font-size: 0.88rem; padding: 0.6rem 1rem; }
+        }
+        @media (max-width: 380px) {
+            .flavor-content { height: 52px; padding: 0 0.7rem; }
+            .flavor-content strong { font-size: 0.82rem; }
+        }
+
+        .custom-flavor-hint {
+            margin-top: 0.85rem;
+            font-size: 0.82rem;
+            color: #9d174d;
+            background: #fdf2f8;
+            border-left: 3px solid #f9a8d4;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.5;
+        }
+
     </style>
 
 </body>

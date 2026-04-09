@@ -318,8 +318,11 @@
 
 
     
-    <!-- HERO INTERNO -->
-    <section class="page-hero">
+    <!-- HERO INTERNO CON IMAGEN DE FONDO -->
+    <section class="page-hero page-hero-with-image">
+        <div class="page-hero-background">
+            <img src="images/heroes/hero-numeros.jpg" alt="Fondo Tartas de Números" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1920&q=80'">
+        </div>
         <div class="page-hero-overlay"></div>
         <div class="container">
             <div class="page-hero-content">
@@ -330,339 +333,97 @@
     </section>
 
     <!-- INTRODUCCIÓN -->
-    <section class="category-intro">
-        <div class="container">
-            <div class="category-intro-content">
-                <div class="category-intro-text">
-                    <span class="section-label">Muy Demandadas</span>
-                    <h2 class="section-title">Celebra con Estilo tu Número Especial</h2>
-                    
-                    <p class="category-intro-description">
-                        Las tartas de números son perfectas para celebrar cumpleaños y ocasiones especiales 
-                        de una manera única y espectacular. Cada número es creado artesanalmente con una 
-                        base de galleta crujiente, relleno de deliciosas cremas y decoración totalmente 
-                        personalizada.
-                    </p>
-                    
-                    <p class="category-intro-description">
-                        Ya sea para celebrar los 18, los 30, los 50 o cualquier edad especial, 
-                        nuestras tartas de números son el centro de atención perfecto. Combina 
-                        dos dígitos para crear números de dos cifras impresionantes.
-                    </p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item-large">
-                            <i class="fas fa-sort-numeric-up"></i>
-                            <div>
-                                <h4>Números del 0 al 9</h4>
-                                <p>Cualquier número, combínalos para crear tu edad</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-cookie"></i>
-                            <div>
-                                <h4>Base de Galleta</h4>
-                                <p>Crujiente y deliciosa, la base perfecta</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-ice-cream"></i>
-                            <div>
-                                <h4>Rellenos Variados</h4>
-                                <p>Crema de queso, chocolate, kinder, nata y más</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-palette"></i>
-                            <div>
-                                <h4>Decoración Personalizada</h4>
-                                <p>Frutas, macarons, chocolates y más</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="category-intro-image">
-                    <img src="images/productos/numeros/tarta-numero-50.jpg" alt="Tarta de número 50" onerror="this.src='https://images.unsplash.com/photo-1607923439755-7fdbfdbf2c93?w=800&q=80'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OPCIONES DE PERSONALIZACIÓN -->
-    <section class="customization-section">
+    <section class="category-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Personaliza</span>
-                <h2 class="section-title">Crea tu Tarta de Número Perfecta</h2>
-                <p class="section-subtitle">Elige cada detalle para hacerla única</p>
+                <span class="section-label">Muy Demandadas</span>
+                <h2 class="section-title">Celebra con Estilo tu Número Especial</h2>
+                <p class="section-subtitle">
+                    Las tartas de números son perfectas para celebrar cumpleaños y ocasiones especiales de forma única.
+                    Elige número, relleno y decoración a tu gusto. Disponibles del 0 al 9.
+                </p>
             </div>
-            
-            <div class="customization-grid">
-                <!-- Número -->
-                <div class="customization-card">
-                    <div class="customization-icon">
-                        <i class="fas fa-hashtag"></i>
-                    </div>
-                    <h3>Elige tu Número</h3>
-                    <p>Disponibles del 0 al 9, combínalos para crear cualquier cifra</p>
-                    <div class="customization-options">
-                        <span class="option-tag">0</span>
-                        <span class="option-tag">1</span>
-                        <span class="option-tag">2</span>
-                        <span class="option-tag">3</span>
-                        <span class="option-tag">4</span>
-                        <span class="option-tag">5</span>
-                        <span class="option-tag">6</span>
-                        <span class="option-tag">7</span>
-                        <span class="option-tag">8</span>
-                        <span class="option-tag">9</span>
-                    </div>
-                </div>
-                
-                <!-- Relleno -->
-                <div class="customization-card">
-                    <div class="customization-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3>Elige el Relleno</h3>
-                    <p>Deliciosas cremas para el interior</p>
-                    <div class="customization-options">
-                        <span class="option-tag">Crema de queso</span>
-                        <span class="option-tag">Chocolate</span>
-                        <span class="option-tag">Kinder</span>
-                        <span class="option-tag">Nata</span>
-                        <span class="option-tag">Nutella</span>
-                        <span class="option-tag">Lotus</span>
-                        <span class="option-tag">Dulce de leche</span>
-                    </div>
-                </div>
-                
-                <!-- Decoración -->
-                <div class="customization-card">
-                    <div class="customization-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Decoración</h3>
-                    <p>Personaliza el exterior a tu gusto</p>
-                    <div class="customization-options">
-                        <span class="option-tag">Frutas frescas</span>
-                        <span class="option-tag">Macarons</span>
-                        <span class="option-tag">Chocolates</span>
-                        <span class="option-tag">Flores comestibles</span>
-                        <span class="option-tag">Merengues</span>
-                        <span class="option-tag">Galletas</span>
-                    </div>
-                </div>
-                
-                <!-- Colores -->
-                <div class="customization-card">
-                    <div class="customization-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Colores</h3>
-                    <p>Elige la paleta de colores que prefieras</p>
-                    <div class="customization-options">
-                        <span class="option-tag">Rosa</span>
-                        <span class="option-tag">Azul</span>
-                        <span class="option-tag">Dorado</span>
-                        <span class="option-tag">Rojo</span>
-                        <span class="option-tag">Natural</span>
-                        <span class="option-tag">Multicolor</span>
-                        <span class="option-tag">Personalizado</span>
-                    </div>
-                </div>
-            </div>
-            
             <div class="info-box">
                 <i class="fas fa-info-circle"></i>
                 <div>
                     <h4>Importante: Solo Números</h4>
-                    <p>Actualmente solo trabajamos con números (0-9), no realizamos letras. Cada número tiene una base fija de galleta que no se puede cambiar.</p>
+                    <p>Actualmente solo trabajamos con números (0-9), no realizamos letras. Para edades de dos cifras como 18, 25, 40, 50... pide los dos números y los preparamos para que encajen perfectamente.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EJEMPLO DESTACADO -->
+    <!-- PRODUCTOS -->
     <section class="category-section gray-bg">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Ejemplo</span>
+                <span class="section-label">Ejemplo Real</span>
                 <h2 class="section-title">Así Quedan Nuestras Tartas de Números</h2>
+                <p class="section-subtitle">Mira el ejemplo y personaliza tu tarta con el número que quieras</p>
             </div>
-            
-            <div class="products-grid single-item">
-                <div class="product-card featured-large">
-                    <div class="product-image">
+
+            <div class="productos-numeros-grid">
+
+                <!-- Ejemplo visual -->
+                <div class="product-card">
+                    <div class="product-image" style="position: relative;">
+                        <span class="numero-ejemplo-badge">Ejemplo visual</span>
                         <img src="images/productos/numeros/tarta-numero-50.jpg" alt="Tarta en forma de número 50" onerror="this.src='https://images.unsplash.com/photo-1607923439755-7fdbfdbf2c93?w=800&q=80'">
-                        <div class="product-badge">Ejemplo Real</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Tarta Número 50</h3>
                         <p class="product-description-short">
-                            Impresionante tarta en forma de número 50, perfecta para celebrar medio siglo de vida. 
-                            Base de galleta crujiente, rellena de crema suave y decorada con frutas frescas, 
-                            macarons artesanales y detalles de chocolate.
+                            Ejemplo de cómo quedan nuestras tartas de números. Base de galleta crujiente,
+                            rellena de crema suave y decorada con frutas frescas, macarons artesanales
+                            y detalles de chocolate. ¡Tú eliges tu número!
                         </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-cookie"></i> Base de Galleta</span>
-                            <span class="feature-tag"><i class="fas fa-ice-cream"></i> Crema Suave</span>
-                            <span class="feature-tag"><i class="fas fa-seedling"></i> Frutas Frescas</span>
-                            <span class="feature-tag"><i class="fas fa-circle"></i> Macarons</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-lightbulb"></i> ¿Sabías que?</h4>
-                            <p>Podemos crear cualquier combinación de números. Para edades de dos cifras como 18, 25, 40, 50... simplemente pide los dos números y los preparamos para que encajen perfectamente juntos.</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Tarta Número 50', 'images/productos/numeros/tarta-numero-50.jpg', 'Tartas de Números')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+                    </div>
+                </div>
+
+                <!-- Formulario de pedido -->
+                <div class="product-card numero-pedido-card">
+                    <div class="product-info">
+                        <h3 class="product-name">Pide tu Tarta de Número</h3>
+                        <p class="product-description-short">
+                            Escribe el número que quieres celebrar y cuéntanos cualquier detalle.
+                            Para edades de dos cifras (18, 25, 40...) preparamos los dos dígitos juntos.
+                        </p>
+
+                        <div class="numero-form">
+                            <div class="numero-form-group">
+                                <label for="numero-tarta" class="numero-form-label">
+                                    <i class="fas fa-hashtag"></i> ¿Qué número quieres? *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="numero-tarta"
+                                    class="numero-form-input"
+                                    placeholder="Ej: 7, 25, 40, 50, 100..."
+                                    maxlength="10"
+                                >
+                                <span class="numero-form-error" id="numero-error">Por favor, escribe el número que quieres.</span>
+                            </div>
+
+                            <div class="numero-form-group">
+                                <label for="observaciones-tarta" class="numero-form-label">
+                                    <i class="fas fa-comment-alt"></i> Observaciones o comentarios
+                                </label>
+                                <textarea
+                                    id="observaciones-tarta"
+                                    class="numero-form-textarea"
+                                    placeholder="Ej: sabor del relleno, tipo de decoración, fecha de entrega, nombre del festejado..."
+                                    rows="4"
+                                ></textarea>
+                            </div>
+
+                            <button class="btn btn-product numero-form-btn" onclick="addTartaNumero()">
+                                <i class="fas fa-shopping-cart"></i>
+                                Añadir al Carrito
                             </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FORMULARIO DE PEDIDO -->
-    <section class="order-form-section" id="pedir">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Haz tu Pedido</span>
-                <h2 class="section-title">Personaliza tu Tarta de Número</h2>
-                <p class="section-subtitle">Cuéntanos qué número celebras y cómo te gustaría decorarlo</p>
-            </div>
-            
-            <div class="order-form-wrapper">
-                <form id="numeroForm" class="order-form">
-                    <!-- Datos personales -->
-                    <h3 class="form-section-title"><i class="fas fa-user"></i> Tus Datos</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                    
-                    <!-- Detalles del número -->
-                    <h3 class="form-section-title"><i class="fas fa-hashtag"></i> Tu Tarta de Número</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="numero">Número(s) que necesitas *</label>
-                            <input type="text" id="numero" name="numero" required placeholder="Ej: 50, 18, 3..." maxlength="3">
-                        </div>
-                        <div class="form-group">
-                            <label for="fecha">Fecha del evento *</label>
-                            <input type="date" id="fecha" name="fecha" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="relleno">Relleno preferido *</label>
-                            <select id="relleno" name="relleno" required>
-                                <option value="">Selecciona un relleno</option>
-                                <option value="crema-queso">Crema de queso</option>
-                                <option value="chocolate">Chocolate</option>
-                                <option value="kinder">Kinder</option>
-                                <option value="nata">Nata</option>
-                                <option value="nutella">Nutella</option>
-                                <option value="lotus">Lotus</option>
-                                <option value="dulce-leche">Dulce de leche</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="colores">Colores preferidos</label>
-                            <input type="text" id="colores" name="colores" placeholder="Ej: Rosa y dorado, azul...">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Decoración deseada (selecciona las que quieras)</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="frutas" name="decoracion" value="frutas">
-                                <label for="frutas">Frutas frescas</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="macarons" name="decoracion" value="macarons">
-                                <label for="macarons">Macarons</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="chocolates" name="decoracion" value="chocolates">
-                                <label for="chocolates">Chocolates</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="flores" name="decoracion" value="flores">
-                                <label for="flores">Flores comestibles</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="merengues" name="decoracion" value="merengues">
-                                <label for="merengues">Merengues</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="galletas" name="decoracion" value="galletas">
-                                <label for="galletas">Galletas</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comentarios">Comentarios adicionales</label>
-                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="¿Alguna petición especial? ¿Una temática concreta? ¿Tienes alguna imagen de referencia?"></textarea>
-                    </div>
-                    
-                    <!-- Entrega -->
-                    <h3 class="form-section-title"><i class="fas fa-truck"></i> Entrega</h3>
-                    
-                    <div class="form-group">
-                        <label>¿Cómo prefieres recibirla?</label>
-                        <div class="radio-group">
-                            <div class="radio-item">
-                                <input type="radio" id="recogida" name="entrega" value="recogida" checked>
-                                <label for="recogida">Recogida en punto de entrega (Tarragona)</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="domicilio" name="entrega" value="domicilio">
-                                <label for="domicilio">Entrega a domicilio (consultar disponibilidad)</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="info-cards">
-                        <div class="info-card">
-                            <h4><i class="fas fa-clock"></i> Antelación</h4>
-                            <p>Mínimo 4 días de antelación para garantizar disponibilidad.</p>
-                        </div>
-                        <div class="info-card">
-                            <h4><i class="fas fa-euro-sign"></i> Pedido mínimo</h4>
-                            <p>El pedido mínimo es de 20€. Pago al recibir el producto.</p>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <i class="fas fa-paper-plane"></i>
-                        Solicitar Presupuesto
-                    </button>
-                </form>
-                
-                <div id="formMessage" class="form-message" style="display: none;"></div>
             </div>
         </div>
     </section>
@@ -671,19 +432,19 @@
     <section class="final-cta-section">
         <div class="container">
             <div class="final-cta-content">
-                <h2 class="final-cta-title">¿Prefieres Contarnos tu Idea?</h2>
+                <h2 class="final-cta-title">¿Listo para Crear tu Tarta de Número?</h2>
                 <p class="final-cta-text">
-                    Si tienes dudas o quieres explicarnos mejor lo que tienes en mente, 
-                    contacta con nosotros directamente.
+                    Contáctanos por WhatsApp o por email y cuéntanos tu número especial y cómo te gustaría decorarlo.
+                    Te ayudaremos a crear algo único.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20número" class="btn btn-primary btn-large" target="_blank">
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20una%20tarta%20de%20n%C3%BAmeros" class="btn btn-primary btn-large" target="_blank">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp
+                        Contactar por WhatsApp
                     </a>
-                    <a href="productos.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-arrow-left"></i>
-                        Ver Más Productos
+                    <a href="index.html#contacto" class="btn btn-secondary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Formulario de Contacto
                     </a>
                 </div>
             </div>
@@ -779,6 +540,14 @@
         </div>
     </footer>
     
+    <!-- Botón Instagram Flotante -->
+    <a href="https://www.instagram.com/tartas_de_tina/" 
+       class="instagram-float" 
+       target="_blank" 
+       aria-label="Seguir en Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
     <!-- Botón WhatsApp Flotante -->
     <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20número" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -788,34 +557,151 @@
     <script src="js/cart.js"></script>
     <script src="js/header.js"></script>
 
+    <style>
+    /* Grid de dos columnas para la sección de números */
+    .productos-numeros-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+        align-items: start;
+    }
+
+    @media (max-width: 768px) {
+        .productos-numeros-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Badge "Ejemplo visual" sobre la imagen */
+    .numero-ejemplo-badge {
+        position: absolute;
+        top: var(--spacing-md);
+        left: var(--spacing-md);
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        letter-spacing: 0.03em;
+        z-index: 2;
+        backdrop-filter: blur(4px);
+    }
+
+    /* Tarjeta del formulario */
+    .numero-pedido-card .product-info {
+        padding: var(--spacing-xl);
+    }
+
+    /* Formulario */
+    .numero-form {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .numero-form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .numero-form-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--gray-700);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .numero-form-label i {
+        color: var(--primary-color);
+        font-size: 0.85rem;
+    }
+
+    .numero-form-input,
+    .numero-form-textarea {
+        border: 1.5px solid var(--gray-300);
+        border-radius: var(--radius-md);
+        padding: 0.65rem 0.9rem;
+        font-size: 0.95rem;
+        font-family: inherit;
+        color: var(--gray-800);
+        background: var(--white);
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;
+        resize: vertical;
+    }
+
+    .numero-form-input:focus,
+    .numero-form-textarea:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.2);
+    }
+
+    .numero-form-input.error,
+    .numero-form-textarea.error {
+        border-color: #e53e3e;
+    }
+
+    .numero-form-error {
+        font-size: 0.8rem;
+        color: #e53e3e;
+        display: none;
+    }
+
+    .numero-form-error.visible {
+        display: block;
+    }
+
+    .numero-form-btn {
+        width: 100%;
+        margin-top: var(--spacing-sm);
+    }
+    </style>
+
     <script>
-        document.getElementById('numeroForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const numero = document.getElementById('numero').value.trim();
-            const fecha = document.getElementById('fecha').value;
-            const relleno = document.getElementById('relleno').value;
-            const colores = document.getElementById('colores').value.trim();
-            const decoracionChecked = Array.from(document.querySelectorAll('input[name="decoracion"]:checked')).map(cb => cb.value);
-            const comentarios = document.getElementById('comentarios').value.trim();
-            const entrega = document.querySelector('input[name="entrega"]:checked').value;
+    function addTartaNumero() {
+        const inputNumero = document.getElementById('numero-tarta');
+        const inputObs    = document.getElementById('observaciones-tarta');
+        const errorEl     = document.getElementById('numero-error');
 
-            const texto = `Hola Tina! Me gustaría pedir una tarta de número.\n\n` +
-                `Nombre: ${nombre}\n` +
-                `Teléfono: ${telefono}\n` +
-                `Email: ${email}\n` +
-                `Número(s): ${numero}\n` +
-                `Fecha del evento: ${fecha}\n` +
-                `Relleno: ${relleno}\n` +
-                (colores ? `Colores: ${colores}\n` : '') +
-                (decoracionChecked.length ? `Decoración: ${decoracionChecked.join(', ')}\n` : '') +
-                `Entrega: ${entrega}\n` +
-                (comentarios ? `Comentarios: ${comentarios}` : '');
+        const numero       = inputNumero.value.trim();
+        const observaciones = inputObs.value.trim();
 
-            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
-        });
+        // Validación
+        if (!numero) {
+            inputNumero.classList.add('error');
+            errorEl.classList.add('visible');
+            inputNumero.focus();
+            return;
+        }
+
+        inputNumero.classList.remove('error');
+        errorEl.classList.remove('visible');
+
+        const detalles = { numero: numero };
+        if (observaciones) detalles.observaciones = observaciones;
+
+        addToCart(
+            'Tarta de Número ' + numero,
+            'images/productos/numeros/tarta-numero-50.jpg',
+            'Tartas de Números',
+            detalles
+        );
+
+        // Limpiar formulario
+        inputNumero.value  = '';
+        inputObs.value     = '';
+    }
+
+    // Limpiar error al escribir
+    document.getElementById('numero-tarta').addEventListener('input', function () {
+        this.classList.remove('error');
+        document.getElementById('numero-error').classList.remove('visible');
+    });
     </script>
 
 </body>

@@ -46,7 +46,12 @@ Abrir cualquier `.html` directamente en el navegador también funciona.
 - `js/cart.js` — lógica compartida del carrito (cargado en TODAS las páginas)
 - `images/` — organizado por categorías:
   - `productos/tartas/`
-  - `productos/cheesecakes/`
+  - `productos/cheesecakes/` — cheesecake-dubai.jpg, cheesecake-frambuesa.jpg, tarta-queso-vasca.jpg, tarta-queso-fresa.png, tarta-queso-frambuesas.png
+  - `productos/macarons/`
+  - `productos/mousses/`
+  - `productos/numeros/`
+  - `productos/otros/`
+  - `productos/vasos/`
   - `about/`
   - `heroes/`
 
@@ -108,7 +113,7 @@ Las clases de componentes son compartidas entre todas las páginas via `style.cs
 - Publicado en GitHub Pages: https://cryptosuar.github.io/tartas-de-tina
 
 ### 🔧 Pendiente de datos externos (no requiere código)
-- Fotos propias de Tina (actualmente imágenes de stock)
+- Fotos propias de Tina — cheesecakes ya tiene fotos reales (5 productos); resto de categorías siguen con imágenes de stock
 - Precios reales de los productos (mostrar en fichas de producto)
 
 ### ❌ Pendiente de configuración / credenciales

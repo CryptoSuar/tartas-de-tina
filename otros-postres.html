@@ -316,72 +316,16 @@
 
 
     
-    <!-- HERO -->
-    <section class="page-hero">
+    <!-- HERO INTERNO CON IMAGEN DE FONDO -->
+    <section class="page-hero page-hero-with-image">
+        <div class="page-hero-background">
+            <img src="images/heroes/hero-otros.jpg" alt="Fondo Otros Postres Artesanales" onerror="this.src='https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=1920&q=80'">
+        </div>
         <div class="page-hero-overlay"></div>
         <div class="container">
             <div class="page-hero-content">
                 <h1 class="page-hero-title">Otros Postres Artesanales</h1>
                 <p class="page-hero-subtitle">Más dulces creaciones para completar tus celebraciones</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTRODUCCIÓN -->
-    <section class="category-intro">
-        <div class="container">
-            <div class="category-intro-content">
-                <div class="category-intro-text">
-                    <span class="section-label">Variedad Dulce</span>
-                    <h2 class="section-title">Delicias que Complementan tu Celebración</h2>
-                    
-                    <p class="category-intro-description">
-                        Además de nuestras tartas y cheesecakes, ofrecemos una variedad de postres 
-                        artesanales únicos que harán las delicias de todos. Desde galletas especiales 
-                        hasta creaciones originales, cada producto está elaborado con el mismo amor 
-                        y dedicación.
-                    </p>
-                    
-                    <p class="category-intro-description">
-                        Perfectos para acompañar tus tartas, como detalles para invitados o simplemente 
-                        para darte un capricho. Descubre nuestra variedad de postres artesanales.
-                    </p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item-large">
-                            <i class="fas fa-cookie-bite"></i>
-                            <div>
-                                <h4>Galletas Especiales</h4>
-                                <p>En forma de nuez con deliciosos rellenos</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-ice-cream"></i>
-                            <div>
-                                <h4>Flautas Rellenas</h4>
-                                <p>Crujientes con nata o merengue</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-candy-cane"></i>
-                            <div>
-                                <h4>Helados de Bizcocho</h4>
-                                <p>Originales y bañados en chocolate</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-star"></i>
-                            <div>
-                                <h4>Creaciones Únicas</h4>
-                                <p>Tartas especiales y originales</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="category-intro-image">
-                    <img src="images/productos/otros/nueces-galleta.jpg" alt="Nueces de galleta rellenas" onerror="this.src='https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80'">
-                </div>
             </div>
         </div>
     </section>
@@ -394,46 +338,33 @@
                 <h2 class="section-title">Postres Disponibles</h2>
                 <p class="section-subtitle">Descubre nuestra variedad de dulces artesanales</p>
             </div>
-            
             <div class="products-grid">
-                <!-- Nueces de Galleta -->
+                
+                <!-- Mochi -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/productos/otros/nueces-galleta.jpg" alt="Nueces de galleta rellenas" onerror="this.src='https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80'">
-                        <div class="product-badge">Popular</div>
+                        <img src="images/productos/otros/mochi.png" alt="Mochi artesanal">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Nueces de Galleta Rellenas</h3>
+                        <h3 class="product-name">Mochi</h3>
                         <p class="product-description-short">
-                            Deliciosas galletas en forma de nuez con tres opciones de relleno irresistibles. 
-                            Perfectas para acompañar tu café o como detalle especial.
+                            Delicioso mochi artesanal de inspiración japonesa, con una suave masa de arroz
+                            y relleno cremoso. Un bocado único que fusiona tradición y sabor.
                         </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-cookie"></i> Forma de Nuez</span>
-                            <span class="feature-tag"><i class="fas fa-heart"></i> 3 Rellenos</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-list"></i> Rellenos Disponibles</h4>
-                            <p><strong>Dulce de leche</strong> - Suave y cremoso<br>
-                            <strong>Nutella</strong> - Chocolate y avellana<br>
-                            <strong>Lotus</strong> - Galleta caramelizada</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Nueces de Galleta Rellenas', 'images/productos/otros/nueces-galleta.jpg', 'Postres Artesanales')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Mochi', 'images/productos/otros/mochi.png', 'Postres Artesanales')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
+
+
 
                 <!-- Flautas Rellenas -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="images/productos/otros/flautas-rellenas.jpg" alt="Flautas rellenas de nata o merengue" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80'">
-                        <div class="product-badge">Clásico</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Flautas Rellenas</h3>
@@ -441,23 +372,11 @@
                             Crujientes flautas rellenas de suave nata o esponjoso merengue. 
                             Un postre clásico que nunca pasa de moda y encanta a todos.
                         </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-cookie-bite"></i> Crujientes</span>
-                            <span class="feature-tag"><i class="fas fa-cloud"></i> Ligeras</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-list"></i> Opciones de Relleno</h4>
-                            <p><strong>Nata</strong> - Suave y cremosa<br>
-                            <strong>Merengue</strong> - Esponjoso y dulce</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Flautas Rellenas', 'images/productos/otros/flautas-rellenas.jpg', 'Postres Artesanales')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+                        
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Flautas Rellenas', 'images/productos/otros/flautas-rellenas.jpg', 'Postres Artesanales')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
 
@@ -465,34 +384,40 @@
                 <div class="product-card">
                     <div class="product-image">
                         <img src="images/productos/otros/helado-bizcocho.jpg" alt="Helados de bizcocho bañados en chocolate" onerror="this.src='https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80'">
-                        <div class="product-badge">Único</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Helados de Bizcocho</h3>
                         <p class="product-description-short">
-                            Nuestra creación más original: helados hechos de bizcocho y bañados en chocolate. 
+                            Nuestra creación más original: helados hechos de bizcocho y bañados en chocolate.
                             Una combinación única de texturas y sabores que te sorprenderá.
                         </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-ice-cream"></i> Base Bizcocho</span>
-                            <span class="feature-tag"><i class="fas fa-candy-cane"></i> Baño Chocolate</span>
-                            <span class="feature-tag"><i class="fas fa-star"></i> Creación Única</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-lightbulb"></i> ¿Sabías que?</h4>
-                            <p>Esta es una de nuestras creaciones más originales, perfecta para sorprender a tus invitados con algo diferente.</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Helados de Bizcocho', 'images/productos/otros/helado-bizcocho.jpg', 'Postres Artesanales')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Helados de Bizcocho', 'images/productos/otros/helado-bizcocho.jpg', 'Postres Artesanales')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
-            </div>
+
+                                <!-- Nueces de Galleta -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/otros/nueces-galleta.jpg" alt="Nueces de galleta rellenas" onerror="this.src='https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nueces de Galleta Rellenas</h3>
+                        <p class="product-description-short">
+                            Deliciosas galletas en forma de nuez con tres opciones de relleno irresistibles. 
+                            Perfectas para acompañar tu café o como detalle especial.
+                        </p>
+                        
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Nueces de Galleta Rellenas', 'images/productos/otros/nueces-galleta.jpg', 'Postres Artesanales')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+                </div>
 
             <div class="info-box">
                 <i class="fas fa-magic"></i>
@@ -504,144 +429,23 @@
         </div>
     </section>
 
-    <!-- INFO PEDIDO -->
-    <section class="category-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Cómo Pedir</span>
-                <h2 class="section-title">Información de Pedido</h2>
-            </div>
-            <div class="info-cards">
-                <div class="info-card">
-                    <h4><i class="fas fa-euro-sign"></i> Pedido Mínimo</h4>
-                    <p>El pedido mínimo general es de <strong>20€</strong>. Pago al recibir el producto.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-clock"></i> Antelación</h4>
-                    <p>Mínimo <strong>4 días de antelación</strong> para garantizar disponibilidad.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-truck"></i> Entrega</h4>
-                    <p>Recogida en Tarragona o entrega a domicilio (consultar disponibilidad).</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-gift"></i> Para Complementar</h4>
-                    <p>Perfectos para acompañar tus tartas o como detalles para invitados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULARIO -->
-    <section class="order-form-section" id="pedir">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Haz tu Pedido</span>
-                <h2 class="section-title">Solicita tus Postres</h2>
-                <p class="section-subtitle">Cuéntanos qué necesitas y te contactaremos</p>
-            </div>
-            
-            <div class="order-form-wrapper">
-                <form id="postresForm" class="order-form">
-                    <h3 class="form-section-title"><i class="fas fa-user"></i> Tus Datos</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                    
-                    <h3 class="form-section-title"><i class="fas fa-cookie-bite"></i> Tu Pedido</h3>
-                    <div class="form-group">
-                        <label for="fecha">Fecha de recogida/entrega *</label>
-                        <input type="date" id="fecha" name="fecha" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Productos que te interesan</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="nueces-dulce" name="productos" value="nueces-dulce">
-                                <label for="nueces-dulce">Nueces de galleta - Dulce de leche</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="nueces-nutella" name="productos" value="nueces-nutella">
-                                <label for="nueces-nutella">Nueces de galleta - Nutella</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="nueces-lotus" name="productos" value="nueces-lotus">
-                                <label for="nueces-lotus">Nueces de galleta - Lotus</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="flautas-nata" name="productos" value="flautas-nata">
-                                <label for="flautas-nata">Flautas rellenas - Nata</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="flautas-merengue" name="productos" value="flautas-merengue">
-                                <label for="flautas-merengue">Flautas rellenas - Merengue</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="helados" name="productos" value="helados">
-                                <label for="helados">Helados de bizcocho</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="otro-postre" name="productos" value="otro">
-                                <label for="otro-postre">Otro (especificar)</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comentarios">Comentarios y cantidades</label>
-                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Indica las cantidades de cada producto y cualquier petición especial..."></textarea>
-                    </div>
-                    
-                    <h3 class="form-section-title"><i class="fas fa-truck"></i> Entrega</h3>
-                    <div class="form-group">
-                        <div class="radio-group">
-                            <div class="radio-item">
-                                <input type="radio" id="recogida" name="entrega" value="recogida" checked>
-                                <label for="recogida">Recogida en Tarragona</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="domicilio" name="entrega" value="domicilio">
-                                <label for="domicilio">Entrega a domicilio (consultar)</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <i class="fas fa-paper-plane"></i> Enviar Pedido
-                    </button>
-                </form>
-                <div id="formMessage" class="form-message" style="display: none;"></div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA -->
     <section class="final-cta-section">
         <div class="container">
             <div class="final-cta-content">
-                <h2 class="final-cta-title">¿Tienes una Idea Especial?</h2>
+                <h2 class="final-cta-title">¿Lista para Pedir tus Postres?</h2>
                 <p class="final-cta-text">
-                    Si buscas algo diferente o tienes una idea para un postre personalizado, 
-                    ¡cuéntanos! Nos encanta crear cosas nuevas.
+                    Contáctanos por WhatsApp o por email y cuéntanos qué necesitas.
+                    Te ayudaremos a encontrar la opción perfecta.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20información%20sobre%20otros%20postres" class="btn btn-primary btn-large" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20postres%20artesanales" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Contactar por WhatsApp
                     </a>
-                    <a href="productos.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-arrow-left"></i> Ver Más Productos
+                    <a href="index.html#contacto" class="btn btn-secondary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Formulario de Contacto
                     </a>
                 </div>
             </div>
@@ -742,30 +546,6 @@
 
     <script src="js/cart.js"></script>
     <script src="js/header.js"></script>
-
-    <script>
-        document.getElementById('postresForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const fecha = document.getElementById('fecha').value;
-            const productosChecked = Array.from(document.querySelectorAll('input[name="productos"]:checked')).map(cb => cb.value);
-            const comentarios = document.getElementById('comentarios').value.trim();
-            const entrega = document.querySelector('input[name="entrega"]:checked').value;
-
-            const texto = `Hola Tina! Quiero hacer un pedido de postres.\n\n` +
-                `Nombre: ${nombre}\n` +
-                `Teléfono: ${telefono}\n` +
-                `Email: ${email}\n` +
-                `Fecha de recogida/entrega: ${fecha}\n` +
-                (productosChecked.length ? `Productos: ${productosChecked.join(', ')}\n` : '') +
-                `Entrega: ${entrega}\n` +
-                (comentarios ? `Comentarios: ${comentarios}` : '');
-
-            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
-        });
-    </script>
 
 </body>
 </html>

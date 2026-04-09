@@ -318,72 +318,16 @@
 
 
     
-    <!-- HERO INTERNO -->
-    <section class="page-hero">
+    <!-- HERO INTERNO CON IMAGEN DE FONDO -->
+    <section class="page-hero page-hero-with-image">
+        <div class="page-hero-background">
+            <img src="images/heroes/hero-mousses.jpg" alt="Fondo Tartas de Mousse">
+        </div>
         <div class="page-hero-overlay"></div>
         <div class="container">
             <div class="page-hero-content">
                 <h1 class="page-hero-title">Tartas de Mousse</h1>
                 <p class="page-hero-subtitle">Ligeras, esponjosas y llenas de sabor</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTRODUCCIÓN -->
-    <section class="category-intro">
-        <div class="container">
-            <div class="category-intro-content">
-                <div class="category-intro-text">
-                    <span class="section-label">Textura Perfecta</span>
-                    <h2 class="section-title">El Placer de una Mousse Artesanal</h2>
-                    
-                    <p class="category-intro-description">
-                        Nuestras tartas de mousse son una experiencia sensorial única. Con una textura 
-                        increíblemente ligera y esponjosa, cada bocado se deshace en tu boca dejando 
-                        un sabor intenso y delicado que perdura.
-                    </p>
-                    
-                    <p class="category-intro-description">
-                        Perfectas para cualquier ocasión del año, estas tartas combinan elegancia 
-                        y sabor en una presentación espectacular. Elaboradas con ingredientes 
-                        de primera calidad y técnicas profesionales.
-                    </p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item-large">
-                            <i class="fas fa-cloud"></i>
-                            <div>
-                                <h4>Textura Ligera</h4>
-                                <p>Suaves y esponjosas como una nube</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-fire"></i>
-                            <div>
-                                <h4>Sabores Intensos</h4>
-                                <p>Cada sabor está perfectamente equilibrado</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-calendar"></i>
-                            <div>
-                                <h4>Para Cualquier Ocasión</h4>
-                                <p>Deliciosas durante todo el año</p>
-                            </div>
-                        </div>
-                        <div class="feature-item-large">
-                            <i class="fas fa-magic"></i>
-                            <div>
-                                <h4>Presentación Elegante</h4>
-                                <p>Ideales para impresionar</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="category-intro-image">
-                    <img src="images/productos/mousses/mousse-fresa-vainilla.jpg" alt="Tarta Mousse de Fresa con Vainilla" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80'">
-                </div>
             </div>
         </div>
     </section>
@@ -394,7 +338,7 @@
             <div class="section-header">
                 <span class="section-label">Nuestras Opciones</span>
                 <h2 class="section-title">Tartas de Mousse Disponibles</h2>
-                <p class="section-subtitle">Dos sabores irresistibles para elegir</p>
+                <p class="section-subtitle">Cinco sabores irresistibles para elegir</p>
             </div>
             
             <div class="products-grid">
@@ -402,7 +346,6 @@
                 <div class="product-card">
                     <div class="product-image">
                         <img src="images/productos/mousses/mousse-fresa-vainilla.jpg" alt="Tarta Mousse de Fresa con Vainilla" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'">
-                        <div class="product-badge">Popular</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mousse de Fresa con Vainilla</h3>
@@ -410,23 +353,11 @@
                             Delicada combinación de mousse de fresa fresca con toques de vainilla natural. 
                             Ligera, esponjosa y con un equilibrio perfecto entre dulzura y frescura.
                         </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-seedling"></i> Fresa Fresca</span>
-                            <span class="feature-tag"><i class="fas fa-cookie"></i> Vainilla Natural</span>
-                            <span class="feature-tag"><i class="fas fa-cloud"></i> Ultra Ligera</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-star"></i> Perfecto para...</h4>
-                            <p>Celebraciones de primavera y verano, San Valentín, o cualquier momento que necesite un toque romántico y fresco.</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Mousse de Fresa con Vainilla', 'images/productos/mousses/mousse-fresa-vainilla.jpg', 'Tartas de Mousse')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+                        
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Mousse de Fresa con Vainilla', 'images/productos/mousses/mousse-fresa-vainilla.jpg', 'Tartas de Mousse')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
 
@@ -434,31 +365,75 @@
                 <div class="product-card">
                     <div class="product-image">
                         <img src="images/productos/mousses/mousse-frutos-bosque.jpg" alt="Tarta Mousse de Frutos del Bosque" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'">
-                        <div class="product-badge">Intenso</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mousse de Frutos del Bosque</h3>
                         <p class="product-description-short">
-                            Intenso sabor a frutos rojos en una mousse suave y esponjosa. 
+                            Intenso sabor a frutos rojos en una mousse suave y esponjosa.
                             Frambuesas, arándanos y moras se combinan para crear una experiencia deliciosa.
                         </p>
-                        <div class="product-features-list">
-                            <span class="feature-tag"><i class="fas fa-leaf"></i> Frutos Rojos</span>
-                            <span class="feature-tag"><i class="fas fa-fire"></i> Sabor Intenso</span>
-                            <span class="feature-tag"><i class="fas fa-cloud"></i> Esponjosa</span>
-                        </div>
-                        <div class="product-highlight-box">
-                            <h4><i class="fas fa-star"></i> Perfecto para...</h4>
-                            <p>Amantes de los sabores intensos y naturales, celebraciones elegantes y quienes buscan algo diferente.</p>
-                        </div>
-                        <div class="product-card-actions">
-                            <button class="btn btn-primary" onclick="addToCart('Mousse de Frutos del Bosque', 'images/productos/mousses/mousse-frutos-bosque.jpg', 'Tartas de Mousse')">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
-                            <a href="#pedir" class="btn btn-outline">
-                                <i class="fas fa-paper-plane"></i> Pedir Ahora
-                            </a>
-                        </div>
+
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Mousse de Frutos del Bosque', 'images/productos/mousses/mousse-frutos-bosque.jpg', 'Tartas de Mousse')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mousse Mermelada de Fresa con Nata -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/mousse-mermelada-fresa-nata.jpg" alt="Tarta Mousse de Mermelada de Fresa con Nata" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse Mermelada de Fresa con Nata</h3>
+                        <p class="product-description-short">
+                            Clásica combinación de mermelada de fresa casera con mousse de nata.
+                            Un sabor tradicional en una textura moderna y sofisticada.
+                        </p>
+
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Mousse Mermelada de Fresa con Nata', 'images/productos/mousses/mousse-mermelada-fresa-nata.jpg', 'Tartas de Mousse')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mousse Red Velvet -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/redvelvet.png" alt="Tarta Mousse Red Velvet">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse Red Velvet</h3>
+                        <p class="product-description-short">
+                            El icónico sabor del Red Velvet en formato mousse. Suave, aterciopelado y
+                            con ese toque de cacao que lo hace irresistible.
+                        </p>
+
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Mousse Red Velvet', 'images/productos/mousses/redvelvet.png', 'Tartas de Mousse')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mousse de Frambuesa -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/productos/mousses/lila.png" alt="Tarta Mousse de Frambuesa">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mousse de Frambuesa</h3>
+                        <p class="product-description-short">
+                            Mousse ligera y aromática con el sabor intenso de la frambuesa.
+                            Un postre fresco y elegante con un color lila precioso.
+                        </p>
+
+                        <button class="btn btn-product" style="width: 100%; margin-top: var(--spacing-md);" onclick="addToCart('Mousse de Frambuesa', 'images/productos/mousses/lila.png', 'Tartas de Mousse')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 </div>
             </div>
@@ -473,146 +448,23 @@
         </div>
     </section>
 
-    <!-- INFORMACIÓN DE PEDIDO -->
-    <section class="category-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Cómo Pedir</span>
-                <h2 class="section-title">Información de Pedido</h2>
-            </div>
-            
-            <div class="info-cards">
-                <div class="info-card">
-                    <h4><i class="fas fa-euro-sign"></i> Pedido Mínimo</h4>
-                    <p>El pedido mínimo general es de <strong>20€</strong>. El pago se realiza al recibir el producto.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-clock"></i> Antelación</h4>
-                    <p>Mínimo <strong>4 días de antelación</strong> para garantizar la frescura y calidad óptima.</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-truck"></i> Entrega</h4>
-                    <p>Recogida en Tarragona o entrega a domicilio (consultar disponibilidad).</p>
-                </div>
-                <div class="info-card">
-                    <h4><i class="fas fa-snowflake"></i> Conservación</h4>
-                    <p>Las tartas de mousse deben conservarse en frío. Te daremos instrucciones al recogerla.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULARIO DE PEDIDO -->
-    <section class="order-form-section" id="pedir">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Haz tu Pedido</span>
-                <h2 class="section-title">Solicita tu Tarta de Mousse</h2>
-                <p class="section-subtitle">Elige tu sabor favorito y completa el formulario</p>
-            </div>
-            
-            <div class="order-form-wrapper">
-                <form id="mousseForm" class="order-form">
-                    <!-- Datos personales -->
-                    <h3 class="form-section-title"><i class="fas fa-user"></i> Tus Datos</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                    
-                    <!-- Selección de producto -->
-                    <h3 class="form-section-title"><i class="fas fa-birthday-cake"></i> Tu Tarta de Mousse</h3>
-                    
-                    <div class="form-group">
-                        <label for="sabor">Sabor de Mousse *</label>
-                        <select id="sabor" name="sabor" required>
-                            <option value="">Selecciona un sabor</option>
-                            <option value="fresa-vainilla">Mousse de Fresa con Vainilla</option>
-                            <option value="frutos-bosque">Mousse de Frutos del Bosque</option>
-                            <option value="personalizado">Otro sabor (consultar disponibilidad)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fecha">Fecha de recogida/entrega *</label>
-                            <input type="date" id="fecha" name="fecha" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="ocasion">Ocasión (opcional)</label>
-                            <select id="ocasion" name="ocasion">
-                                <option value="">Selecciona una opción</option>
-                                <option value="cumpleanos">Cumpleaños</option>
-                                <option value="celebracion">Celebración familiar</option>
-                                <option value="cena">Cena especial</option>
-                                <option value="regalo">Regalo</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comentarios">Comentarios adicionales</label>
-                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="¿Alguna petición especial? ¿Alergias? Si elegiste 'Otro sabor', cuéntanos qué tienes en mente..."></textarea>
-                    </div>
-                    
-                    <!-- Entrega -->
-                    <h3 class="form-section-title"><i class="fas fa-truck"></i> Entrega</h3>
-                    
-                    <div class="form-group">
-                        <label>¿Cómo prefieres recibirla?</label>
-                        <div class="radio-group">
-                            <div class="radio-item">
-                                <input type="radio" id="recogida" name="entrega" value="recogida" checked>
-                                <label for="recogida">Recogida en punto de entrega (Tarragona)</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="domicilio" name="entrega" value="domicilio">
-                                <label for="domicilio">Entrega a domicilio (consultar disponibilidad)</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <i class="fas fa-paper-plane"></i>
-                        Enviar Pedido
-                    </button>
-                </form>
-                
-                <div id="formMessage" class="form-message" style="display: none;"></div>
-            </div>
-        </div>
-    </section>
-
     <!-- LLAMADA A LA ACCIÓN FINAL -->
     <section class="final-cta-section">
         <div class="container">
             <div class="final-cta-content">
-                <h2 class="final-cta-title">¿Prefieres Hablar Directamente?</h2>
+                <h2 class="final-cta-title">¿Lista para Pedir tu Tarta de Mousse?</h2>
                 <p class="final-cta-text">
-                    Contacta con nosotros por WhatsApp y te ayudaremos a elegir 
-                    la tarta de mousse perfecta para tu ocasión.
+                    Contáctanos por WhatsApp o por email y cuéntanos qué necesitas.
+                    Te ayudaremos a encontrar la opción perfecta.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20mousse" class="btn btn-primary btn-large" target="_blank">
+                    <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20una%20tarta%20de%20mousse" class="btn btn-primary btn-large" target="_blank">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp
+                        Contactar por WhatsApp
                     </a>
-                    <a href="productos.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-arrow-left"></i>
-                        Ver Más Productos
+                    <a href="index.html#contacto" class="btn btn-secondary btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Formulario de Contacto
                     </a>
                 </div>
             </div>
@@ -708,6 +560,14 @@
         </div>
     </footer>
     
+    <!-- Botón Instagram Flotante -->
+    <a href="https://www.instagram.com/tartas_de_tina/" 
+       class="instagram-float" 
+       target="_blank" 
+       aria-label="Seguir en Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
     <!-- Botón WhatsApp Flotante -->
     <a href="https://wa.me/34627189264?text=Hola!%20Me%20gustaría%20pedir%20una%20tarta%20de%20mousse" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -716,32 +576,6 @@
     
     <script src="js/cart.js"></script>
     <script src="js/header.js"></script>
-
-    <script>
-        document.getElementById('mousseForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const sabor = document.getElementById('sabor').value;
-            const fecha = document.getElementById('fecha').value;
-            const ocasion = document.getElementById('ocasion').value;
-            const comentarios = document.getElementById('comentarios').value.trim();
-            const entrega = document.querySelector('input[name="entrega"]:checked').value;
-
-            const texto = `Hola Tina! Quiero hacer un pedido de tarta de mousse.\n\n` +
-                `Nombre: ${nombre}\n` +
-                `Teléfono: ${telefono}\n` +
-                `Email: ${email}\n` +
-                `Sabor: ${sabor}\n` +
-                `Fecha de recogida/entrega: ${fecha}\n` +
-                (ocasion ? `Ocasión: ${ocasion}\n` : '') +
-                `Entrega: ${entrega}\n` +
-                (comentarios ? `Comentarios: ${comentarios}` : '');
-
-            window.open(`https://wa.me/34627189264?text=${encodeURIComponent(texto)}`, '_blank');
-        });
-    </script>
 
 </body>
 </html>
